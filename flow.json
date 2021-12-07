@@ -1,1 +1,2866 @@
-[]
+[
+    {
+        "id": "755e7fce9de6d2ee",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fa2c9998251120d1",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1c438ac302aea20f",
+        "type": "tab",
+        "label": "Prix ticket",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "519fe3bfa0f9c4d6",
+        "type": "tab",
+        "label": "Trajet Transport",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e8f20bbce7f040f7",
+        "type": "tab",
+        "label": "Nombre arret",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "79dedaa104b8a461",
+        "type": "tab",
+        "label": "Direction",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "048311bebe6e223a",
+        "type": "tab",
+        "label": "Prochain bus",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "87fb38d3b12f7fd7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dc33db351c964072",
+        "type": "sqlitedb",
+        "db": "/home/inno/Bureau/nodeOpenData/sqlgtfs.db",
+        "mode": "RO"
+    },
+    {
+        "id": "79fb63e954284bda",
+        "type": "serial-port",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "3dfc597eb669681c",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Bonjour",
+        "payloadType": "str",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "486ba9738da530b6"
+            ]
+        ]
+    },
+    {
+        "id": "881bc1bed4b77bdd",
+        "type": "mqtt in",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "topic": "BorneEvent",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "87fb38d3b12f7fd7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "8f0ba658f0135405"
+            ]
+        ]
+    },
+    {
+        "id": "8f0ba658f0135405",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "486ba9738da530b6",
+        "type": "mqtt out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "topic": "synthetizeMessage",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "87fb38d3b12f7fd7",
+        "x": 430,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "01e4850feec953eb",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "startreco",
+        "payloadType": "str",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "3ca859ab2f3005b5"
+            ]
+        ]
+    },
+    {
+        "id": "a728307c3ac15c1f",
+        "type": "mqtt out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "topic": "BorneControl",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "87fb38d3b12f7fd7",
+        "x": 510,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "be295aa60fd1562e",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "stopreco",
+        "payloadType": "str",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "72ad19dcdba9b6c3"
+            ]
+        ]
+    },
+    {
+        "id": "0942f0b96748a651",
+        "type": "mqtt in",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "topic": "BorneResult",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "87fb38d3b12f7fd7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 690,
+        "y": 580,
+        "wires": [
+            [
+                "3868a88ec19d5586",
+                "eebf09bec4148cfc"
+            ]
+        ]
+    },
+    {
+        "id": "4ec8df55048bfad3",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "x": 990,
+        "y": 40,
+        "wires": [
+            [
+                "218cea6d79080785"
+            ]
+        ]
+    },
+    {
+        "id": "218cea6d79080785",
+        "type": "mqtt out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "topic": "stopApp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "87fb38d3b12f7fd7",
+        "x": 1180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3868a88ec19d5586",
+        "type": "json",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 850,
+        "y": 580,
+        "wires": [
+            [
+                "75213766363f0534",
+                "9eccf61e1ab6c8c8",
+                "4693ddbe51d21b82"
+            ]
+        ]
+    },
+    {
+        "id": "75213766363f0534",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9eccf61e1ab6c8c8",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "9efe2b8dc16c0a53"
+        ],
+        "x": 955,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9efe2b8dc16c0a53",
+        "type": "link in",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "links": [
+            "9eccf61e1ab6c8c8"
+        ],
+        "x": 175,
+        "y": 260,
+        "wires": [
+            [
+                "72ad19dcdba9b6c3"
+            ]
+        ]
+    },
+    {
+        "id": "3ca859ab2f3005b5",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "startreco",
+        "func": "msg.payload=\"startreco\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "a728307c3ac15c1f",
+                "d90f39e93d146b9a"
+            ]
+        ]
+    },
+    {
+        "id": "72ad19dcdba9b6c3",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "stopreco",
+        "func": "msg.payload=\"stopreco\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "a728307c3ac15c1f"
+            ]
+        ]
+    },
+    {
+        "id": "a456746f915fb481",
+        "type": "sqlite",
+        "z": "fa2c9998251120d1",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM routes WHERE  route_id IN (SELECT DISTINCT route_id FROM trips WHERE trip_id IN (SELECT DISTINCT trip_id FROM stop_times WHERE stop_id=$idArret))",
+        "name": "liste des lignes par rapport à un arret",
+        "x": 590,
+        "y": 660,
+        "wires": [
+            [
+                "fbaef2fc469c3bb8"
+            ]
+        ]
+    },
+    {
+        "id": "a1d82eb91669e056",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "lignes par rapport arret",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{    \"$idArret\": \"0893\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "requete lignes bus par rapport a un arret",
+        "payloadType": "str",
+        "x": 190,
+        "y": 660,
+        "wires": [
+            [
+                "a456746f915fb481"
+            ]
+        ]
+    },
+    {
+        "id": "32bfb266a1ee40fe",
+        "type": "http request",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 650,
+        "y": 1020,
+        "wires": [
+            [
+                "e550e9fdc2045de8"
+            ]
+        ]
+    },
+    {
+        "id": "5d545f3c23d89570",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "recupr horaire temps reel",
+        "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:26\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1020,
+        "wires": [
+            [
+                "32bfb266a1ee40fe"
+            ]
+        ]
+    },
+    {
+        "id": "b5fecc11f96b745e",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "08fd91db9782eccd",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"idBus\":\"0893\"}",
+        "payloadType": "json",
+        "x": 170,
+        "y": 1020,
+        "wires": [
+            [
+                "5d545f3c23d89570"
+            ]
+        ]
+    },
+    {
+        "id": "fbaef2fc469c3bb8",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "5faa36dc405f6de8",
+        "type": "sqlite",
+        "z": "fa2c9998251120d1",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM fare_attributes",
+        "name": "obtenir prix d'un ticket",
+        "x": 540,
+        "y": 720,
+        "wires": [
+            [
+                "efbd186b783b84c8"
+            ]
+        ]
+    },
+    {
+        "id": "8c23ded4375c4207",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "prix ticket",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{  }",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prix ticket",
+        "payloadType": "str",
+        "x": 150,
+        "y": 720,
+        "wires": [
+            [
+                "5faa36dc405f6de8"
+            ]
+        ]
+    },
+    {
+        "id": "efbd186b783b84c8",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "e550e9fdc2045de8",
+        "type": "json",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 830,
+        "y": 1020,
+        "wires": [
+            [
+                "b5fecc11f96b745e"
+            ]
+        ]
+    },
+    {
+        "id": "9045b7b0cf05970e",
+        "type": "sqlite",
+        "z": "fa2c9998251120d1",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM stops WHERE stop_id IN(SELECT DISTINCT stop_id FROM stop_times WHERE trip_id IN (SELECT trip_id FROM trips WHERE route_id=$ligne AND direction_id=$direction));",
+        "name": "liste des arrets par rapport à une ligne et une direction",
+        "x": 700,
+        "y": 840,
+        "wires": [
+            [
+                "c55be249cf1002f2"
+            ]
+        ]
+    },
+    {
+        "id": "ea2ad51c6c1a9c81",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "liste des  arrets d'une ligne 26 avec choix de la direction",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{\"$ligne\":\"26\",\"$direction\":\"1\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prochains arret",
+        "payloadType": "str",
+        "x": 240,
+        "y": 840,
+        "wires": [
+            [
+                "9045b7b0cf05970e"
+            ]
+        ]
+    },
+    {
+        "id": "c55be249cf1002f2",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "7e19158225611509",
+        "type": "sqlite",
+        "z": "fa2c9998251120d1",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT DISTINCT direction_id FROM trips WHERE trip_id IN (SELECT DISTINCT trip_id FROM stop_times WHERE stop_id=$idArret)",
+        "name": "obtenir direction a partir de l'arret",
+        "x": 580,
+        "y": 780,
+        "wires": [
+            [
+                "01df422ebfc63b0e"
+            ]
+        ]
+    },
+    {
+        "id": "7af7df2a7910fb4e",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "obtenir direction pour un abribus",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{    \"$idArret\": \"0893\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "obtenir direction",
+        "payloadType": "str",
+        "x": 220,
+        "y": 780,
+        "wires": [
+            [
+                "7e19158225611509"
+            ]
+        ]
+    },
+    {
+        "id": "01df422ebfc63b0e",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "d24186cffce08a48",
+        "type": "switch",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "property": "payload.hypotheses[0].items[0].name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "PRIX",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "TRAJET_TRANSPORT",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "NBARRETS",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "DIRECTION",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "NEXTBUS",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 1290,
+        "y": 580,
+        "wires": [
+            [
+                "815a2a645fb72034"
+            ],
+            [
+                "9bb27f2d47c78c3f"
+            ],
+            [
+                "ac7ac0e65c9a936a"
+            ],
+            [
+                "e696f0ee844bfa90"
+            ],
+            [
+                "e7e8ae5ab3a6db30"
+            ]
+        ]
+    },
+    {
+        "id": "815a2a645fb72034",
+        "type": "link call",
+        "z": "fa2c9998251120d1",
+        "name": "Prix",
+        "links": [
+            "f07399c04538d217"
+        ],
+        "timeout": "30",
+        "x": 1470,
+        "y": 460,
+        "wires": [
+            [
+                "e1dcea6e9a88151c",
+                "26e79a99900e1edd"
+            ]
+        ]
+    },
+    {
+        "id": "e1dcea6e9a88151c",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1790,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f973e2dbbefd369a",
+        "type": "link in",
+        "z": "fa2c9998251120d1",
+        "name": "TTS",
+        "links": [
+            "13f532013811d581"
+        ],
+        "x": 175,
+        "y": 120,
+        "wires": [
+            [
+                "486ba9738da530b6"
+            ]
+        ]
+    },
+    {
+        "id": "26e79a99900e1edd",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tts",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1860,
+        "y": 560,
+        "wires": [
+            [
+                "13f532013811d581"
+            ]
+        ]
+    },
+    {
+        "id": "13f532013811d581",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "f973e2dbbefd369a"
+        ],
+        "x": 2015,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "76137bbaa77a26a1",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "liste des  arrets d'une ligne C1 avec choix de la direction",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{\"$ligne\":\"1\",\"$direction\":\"0\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prochains arret",
+        "payloadType": "str",
+        "x": 240,
+        "y": 880,
+        "wires": [
+            [
+                "9045b7b0cf05970e"
+            ]
+        ]
+    },
+    {
+        "id": "9bb27f2d47c78c3f",
+        "type": "link call",
+        "z": "fa2c9998251120d1",
+        "name": "Trajet Transport",
+        "links": [
+            "ba880050917a1151"
+        ],
+        "timeout": "30",
+        "x": 1500,
+        "y": 500,
+        "wires": [
+            [
+                "26e79a99900e1edd",
+                "e1dcea6e9a88151c"
+            ]
+        ]
+    },
+    {
+        "id": "871258095f94b0d9",
+        "type": "json",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 630,
+        "y": 1180,
+        "wires": [
+            [
+                "a975b387be21ee11",
+                "3e4500674b766c3e"
+            ]
+        ]
+    },
+    {
+        "id": "38793434eb721064",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "1s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 1180,
+        "wires": [
+            [
+                "5de85e8eccf04a72"
+            ]
+        ]
+    },
+    {
+        "id": "5de85e8eccf04a72",
+        "type": "file in",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "filename": "/home/inno/.node-red/data/stops.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 350,
+        "y": 1180,
+        "wires": [
+            [
+                "871258095f94b0d9"
+            ]
+        ]
+    },
+    {
+        "id": "c811d0cdcc92e6c1",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "stops",
+                "pt": "global",
+                "to": "stops",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a975b387be21ee11",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "3e4500674b766c3e",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "stops = {}\nlistName4VDK = \"\"\n\nmsg.payload[0].rows.forEach(function(element) {\n    stops[element[0]] = {'name':element[1], 'lat':element[2], 'lon':element[3]}\n    \n    listName4VDK = listName4VDK + element[1].split(',')[1].trim().toLowerCase() + \" | \"\n})\n\nlistName4VDK = listName4VDK.trim().slice(0, -1)\n// remove ':' for VDK grammar\nlistName4VDK = listName4VDK.replaceAll(':','')\n\nmsg.stops = stops\nmsg.listName4VDK = listName4VDK\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1180,
+        "wires": [
+            [
+                "c811d0cdcc92e6c1",
+                "468a2de355e3e576",
+                "a6437d53a3fa24d0"
+            ]
+        ]
+    },
+    {
+        "id": "ac7ac0e65c9a936a",
+        "type": "link call",
+        "z": "fa2c9998251120d1",
+        "name": "Nombre arret",
+        "links": [
+            "12e9048d1def56fe"
+        ],
+        "timeout": "30",
+        "x": 1490,
+        "y": 540,
+        "wires": [
+            [
+                "26e79a99900e1edd",
+                "e1dcea6e9a88151c"
+            ]
+        ]
+    },
+    {
+        "id": "8ad40dbc29e36ed8",
+        "type": "comment",
+        "z": "fa2c9998251120d1",
+        "name": "Liste des arrets avec coordonnées GPS",
+        "info": "",
+        "x": 190,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "d65db838024e2b35",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 1280,
+        "wires": [
+            [
+                "a5404e1fc22ea504"
+            ]
+        ]
+    },
+    {
+        "id": "a5404e1fc22ea504",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "Arret de départ",
+        "func": "\n\ndepart = \"GARES\" // Grenoble, Gares\nstops = global.get('stops')\nvar keys = Object.keys(stops);\nfor (var i = 0; i < keys.length; i++) {\n    if(keys[i].indexOf(depart)>=0) {\n        destination = stops[keys[i]]\n        break\n    }\n  \n}\n\n// verrue pour depart abri gares avec ligne C1 = 45.19149,5.71514\ndestination.lat = \"45.19149\"\ndestination.lon = \"5.71514\"\ndestination.name = \"Grenoble, Gares\"\n\n\nmsg.payload = {}\nmsg.payload.lat = destination.lat\nmsg.payload.lon = destination.lon\nmsg.payload.name = destination.name\nmsg.payload.stopId = \"0893\"\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 1280,
+        "wires": [
+            [
+                "950688744888dbe4"
+            ]
+        ]
+    },
+    {
+        "id": "950688744888dbe4",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "depart",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f949c27283163299",
+        "type": "comment",
+        "z": "fa2c9998251120d1",
+        "name": "Arret de départ",
+        "info": "",
+        "x": 120,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "e696f0ee844bfa90",
+        "type": "link call",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "links": [
+            "195ec5dd475f464d"
+        ],
+        "timeout": "30",
+        "x": 1480,
+        "y": 580,
+        "wires": [
+            [
+                "e1dcea6e9a88151c",
+                "26e79a99900e1edd"
+            ]
+        ]
+    },
+    {
+        "id": "468a2de355e3e576",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "listName4VDK",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "b26732de5dc4fffb",
+        "type": "file",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "filename": "/home/inno/.node-red/data/listName4VDK.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1330,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6437d53a3fa24d0",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "listName4VDK",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 1300,
+        "wires": [
+            [
+                "b26732de5dc4fffb"
+            ]
+        ]
+    },
+    {
+        "id": "4693ddbe51d21b82",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sttItemName",
+                "pt": "msg",
+                "to": "payload.hypotheses[0].items[0].name",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1120,
+        "y": 580,
+        "wires": [
+            [
+                "d24186cffce08a48"
+            ]
+        ]
+    },
+    {
+        "id": "e7e8ae5ab3a6db30",
+        "type": "link call",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "links": [
+            "5850b80836ebf364"
+        ],
+        "timeout": "30",
+        "x": 1490,
+        "y": 620,
+        "wires": [
+            [
+                "e1dcea6e9a88151c",
+                "26e79a99900e1edd"
+            ]
+        ]
+    },
+    {
+        "id": "48a741d323cefdbc",
+        "type": "serial in",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "serial": "79fb63e954284bda",
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "900a7c34f9008540",
+                "8bcf5e07844ca29c"
+            ]
+        ]
+    },
+    {
+        "id": "e53e4b327b156d2f",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "900a7c34f9008540",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\nreturn msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "3ca859ab2f3005b5",
+                "e53e4b327b156d2f"
+            ]
+        ]
+    },
+    {
+        "id": "79675449a378e550",
+        "type": "comment",
+        "z": "fa2c9998251120d1",
+        "name": "TODO",
+        "info": "Qaund on demande le prochain sans spécifié de bus creer la réponse",
+        "x": 690,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "12d5b46ce21e8d7a",
+        "type": "serial out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "serial": "79fb63e954284bda",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "1cb3972075011b35",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "12d5b46ce21e8d7a"
+            ]
+        ]
+    },
+    {
+        "id": "6691f403f008e821",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "SWING_ON!",
+        "payloadType": "str",
+        "x": 190,
+        "y": 380,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "e5f50c06d72cf8eb",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "SWING_OFF!",
+        "payloadType": "str",
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "62585e69f5cdfeaa",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "CHEN_ON!",
+        "payloadType": "str",
+        "x": 190,
+        "y": 460,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "d2ec7c4690532a37",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "CHEN_OFF!",
+        "payloadType": "str",
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "ae78dcff56fdeabb",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "RESET_LED!",
+        "payloadType": "str",
+        "x": 190,
+        "y": 540,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "a757665292d142dd",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "REP_OK!",
+        "payloadType": "str",
+        "x": 180,
+        "y": 580,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "00a8e6d13a7819aa",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "REP_KO!",
+        "payloadType": "str",
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "8bcf5e07844ca29c",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d90f39e93d146b9a",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "CHEN_ON!",
+        "func": "msg.payload=\"CHEN_ON!\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "dc7cbd7fdd5bbf11"
+            ]
+        ]
+    },
+    {
+        "id": "eebf09bec4148cfc",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "CHEN_OFF!",
+        "func": "msg.payload=\"CHEN_OFF!\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 540,
+        "wires": [
+            [
+                "fef4a3da1ac9f213"
+            ]
+        ]
+    },
+    {
+        "id": "a4b14d6817ce653c",
+        "type": "link in",
+        "z": "fa2c9998251120d1",
+        "name": "controlLed",
+        "links": [
+            "dc7cbd7fdd5bbf11",
+            "fef4a3da1ac9f213"
+        ],
+        "x": 395,
+        "y": 520,
+        "wires": [
+            [
+                "1cb3972075011b35"
+            ]
+        ]
+    },
+    {
+        "id": "dc7cbd7fdd5bbf11",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "a4b14d6817ce653c"
+        ],
+        "x": 715,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fef4a3da1ac9f213",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "a4b14d6817ce653c"
+        ],
+        "x": 995,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "8dbf646a20b1d1b8",
+        "type": "sqlite",
+        "z": "1c438ac302aea20f",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM fare_attributes",
+        "name": "obtenir prix d'un ticket",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            [
+                "bdc8a69798dda420"
+            ]
+        ]
+    },
+    {
+        "id": "0592682b6fb37e42",
+        "type": "inject",
+        "z": "1c438ac302aea20f",
+        "name": "prix ticket",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{  }",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prix ticket",
+        "payloadType": "str",
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "8dbf646a20b1d1b8"
+            ]
+        ]
+    },
+    {
+        "id": "49161ca3b6cbb6e7",
+        "type": "debug",
+        "z": "1c438ac302aea20f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f07399c04538d217",
+        "type": "link in",
+        "z": "1c438ac302aea20f",
+        "name": "Tab PRIX",
+        "links": [
+            "fca0588ac9c9838d"
+        ],
+        "x": 175,
+        "y": 180,
+        "wires": [
+            [
+                "3b4ce71764277b2b"
+            ]
+        ]
+    },
+    {
+        "id": "d678a9cc2e1ec5c8",
+        "type": "link out",
+        "z": "1c438ac302aea20f",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 945,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "3b4ce71764277b2b",
+        "type": "change",
+        "z": "1c438ac302aea20f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "prix ticket",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "8dbf646a20b1d1b8"
+            ]
+        ]
+    },
+    {
+        "id": "bdc8a69798dda420",
+        "type": "function",
+        "z": "1c438ac302aea20f",
+        "name": "",
+        "func": "msg.payload.requestType = \nmsg.tts = \"Le prix d'un billet est de \"+msg.payload[0].price+\" euros.\"\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 180,
+        "wires": [
+            [
+                "d678a9cc2e1ec5c8",
+                "49161ca3b6cbb6e7"
+            ]
+        ]
+    },
+    {
+        "id": "ba880050917a1151",
+        "type": "link in",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "Trajet Transport",
+        "links": [],
+        "x": 135,
+        "y": 280,
+        "wires": [
+            [
+                "0e0a083fcc9aabf5"
+            ]
+        ]
+    },
+    {
+        "id": "c533c4977909ee20",
+        "type": "link out",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 1115,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "9bbb1bb61edf3c4f",
+        "type": "debug",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "44a934edc5c24228",
+        "type": "http request",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 750,
+        "y": 280,
+        "wires": [
+            [
+                "9bbb1bb61edf3c4f",
+                "78adf08474f4699e"
+            ]
+        ]
+    },
+    {
+        "id": "bb6b7fd3773dec56",
+        "type": "function",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "func": "msg.url = \"https://data.mobilites-m.fr/api/routers/default/plan\"\n\npayload = \"routerId=prod&otp=undefined&mode=WALK,TRANSIT&showIntermediateStops=true&minTransferTime=60&transferPenalty=60&numItineraries=2&walkBoardCost=300&\"\n//payload += \"fromPlace=45.19078,5.71554&toPlace=45.18731,5.73714&\"\npayload += \"fromPlace=\"+global.get('depart').lat+\",\"+global.get('depart').lon+\"&toPlace=\"+msg.lat+\",\"+msg.lon+\"&\"\npayload += \"arriveBy=false&locale=fr_FR&walkSpeed=1.1112&walkReluctance=5\"\n//payload += \"time=14%20:%2006&date=2021-11-24&ui_date=mercredi%2024%20novembre%20-%2024/11/2021\"\n\nmsg.url = msg.url +\"?\"+payload\n\n//msg.payload = payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "44a934edc5c24228"
+            ]
+        ]
+    },
+    {
+        "id": "0e0a083fcc9aabf5",
+        "type": "function",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "Extract destination",
+        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n    node.warn(destination)\n    \n    stops = global.get('stops')\n    var keys = Object.keys(stops);\n    for (var i = 0; i < keys.length; i++) {\n        // https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript\n        if(stops[keys[i]].name.toLowerCase().indexOf(destination)>=0) {\n            destination = stops[keys[i]]\n            break\n        }\n      \n    }\n    \n    \n} \n\nmsg.lat = destination.lat\nmsg.lon = destination.lon\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "8befece42322c5e8",
+                "bb6b7fd3773dec56"
+            ]
+        ]
+    },
+    {
+        "id": "8befece42322c5e8",
+        "type": "debug",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "destination",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "78adf08474f4699e",
+        "type": "switch",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "Error ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 950,
+        "y": 320,
+        "wires": [
+            [],
+            [
+                "c533c4977909ee20"
+            ]
+        ]
+    },
+    {
+        "id": "12e9048d1def56fe",
+        "type": "link in",
+        "z": "e8f20bbce7f040f7",
+        "name": "Nombre arret",
+        "links": [],
+        "x": 95,
+        "y": 120,
+        "wires": [
+            [
+                "f1074b4d39da6a42"
+            ]
+        ]
+    },
+    {
+        "id": "2f5f5526b57ba0ad",
+        "type": "link out",
+        "z": "e8f20bbce7f040f7",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 1335,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e359737ef31d72f8",
+        "type": "debug",
+        "z": "e8f20bbce7f040f7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4ee64ca445c343b3",
+        "type": "http request",
+        "z": "e8f20bbce7f040f7",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 710,
+        "y": 120,
+        "wires": [
+            [
+                "e359737ef31d72f8",
+                "f9230495ef440e6a"
+            ]
+        ]
+    },
+    {
+        "id": "d3b1d178ea1a5a00",
+        "type": "function",
+        "z": "e8f20bbce7f040f7",
+        "name": "",
+        "func": "msg.url = \"https://data.mobilites-m.fr/api/routers/default/plan\"\n\npayload = \"routerId=prod&otp=undefined&mode=WALK,TRANSIT&showIntermediateStops=true&minTransferTime=60&transferPenalty=60&numItineraries=2&walkBoardCost=300&\"\n//payload += \"fromPlace=45.19078,5.71554&toPlace=45.18731,5.73714&\"\npayload += \"fromPlace=\"+global.get('depart').lat+\",\"+global.get('depart').lon+\"&toPlace=\"+msg.lat+\",\"+msg.lon+\"&\"\npayload += \"arriveBy=false&locale=fr_FR&walkSpeed=1.1112&walkReluctance=5\"\n//payload += \"time=14%20:%2006&date=2021-11-24&ui_date=mercredi%2024%20novembre%20-%2024/11/2021\"\n\nmsg.url = msg.url +\"?\"+payload\n\n//msg.payload = payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "4ee64ca445c343b3"
+            ]
+        ]
+    },
+    {
+        "id": "f1074b4d39da6a42",
+        "type": "function",
+        "z": "e8f20bbce7f040f7",
+        "name": "Extract destination",
+        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n    stops = global.get('stops')\n    var keys = Object.keys(stops);\n    for (var i = 0; i < keys.length; i++) {\n        // https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript\n        if(stops[keys[i]].name.toLowerCase().indexOf(destination)>=0) {\n            destination = stops[keys[i]]\n            break\n        }\n      \n    }\n    \n    \n} \n\nmsg.lat = destination.lat\nmsg.lon = destination.lon\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "de4fdadbc72bad14",
+                "d3b1d178ea1a5a00"
+            ]
+        ]
+    },
+    {
+        "id": "de4fdadbc72bad14",
+        "type": "debug",
+        "z": "e8f20bbce7f040f7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "destination",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f9230495ef440e6a",
+        "type": "function",
+        "z": "e8f20bbce7f040f7",
+        "name": "",
+        "func": "// itinéraire 1\nlegs = msg.payload.plan.itineraries[0].legs\nnbStops = 0\n\nlegs.forEach(function(leg) {\n    if(leg.intermediateStops.length>0)\n        nbStops = nbStops + leg.intermediateStops.length + 1\n})\n\n\nmsg.tts = \"Il y a \"\nmsg.tts += nbStops\nmsg.tts += \" arrets\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 120,
+        "wires": [
+            [
+                "31375a592f5d2914"
+            ]
+        ]
+    },
+    {
+        "id": "31375a592f5d2914",
+        "type": "switch",
+        "z": "e8f20bbce7f040f7",
+        "name": "Error ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1150,
+        "y": 140,
+        "wires": [
+            [],
+            [
+                "2f5f5526b57ba0ad"
+            ]
+        ]
+    },
+    {
+        "id": "195ec5dd475f464d",
+        "type": "link in",
+        "z": "79dedaa104b8a461",
+        "name": "Direction",
+        "links": [],
+        "x": 75,
+        "y": 220,
+        "wires": [
+            [
+                "2edc6a9f0c5283cd"
+            ]
+        ]
+    },
+    {
+        "id": "12b8d13d8aef5cc5",
+        "type": "link out",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 2395,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "3ae75b99b0a5481b",
+        "type": "debug",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a3933ab4097c282d",
+        "type": "http request",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "3ae75b99b0a5481b",
+                "985623ead28429bc"
+            ]
+        ]
+    },
+    {
+        "id": "ec08a0244bed5038",
+        "type": "function",
+        "z": "79dedaa104b8a461",
+        "name": "Ligne C1",
+        "func": "msg.url = \"https://data.mobilites-m.fr/api/ficheHoraires/json?route=SEM:C1\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "a3933ab4097c282d"
+            ]
+        ]
+    },
+    {
+        "id": "2edc6a9f0c5283cd",
+        "type": "function",
+        "z": "79dedaa104b8a461",
+        "name": "Extract destination",
+        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n    //node.warn(destination)\n    stops = global.get('stops')\n    var keys = Object.keys(stops);\n    for (var i = 0; i < keys.length; i++) {\n        // https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript\n        if(stops[keys[i]].name.toLowerCase().indexOf(destination)>=0) {\n            destination = stops[keys[i]]\n            break\n        }\n      \n    }\n    \n    \n} \n\nmsg.destination = destination\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "ec08a0244bed5038"
+            ]
+        ]
+    },
+    {
+        "id": "985623ead28429bc",
+        "type": "switch",
+        "z": "79dedaa104b8a461",
+        "name": "Error ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 260,
+        "wires": [
+            [],
+            [
+                "4a55c7cf9a15f031"
+            ]
+        ]
+    },
+    {
+        "id": "b900928051da2611",
+        "type": "function",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "func": "destination = msg.destination.name\n\nmsg.result = {}\n// valeur direction\n// 0 : arret non déservi sur les lignes\n// 1 : bonne direction\n// -1 : mauvaise direction\nmsg.result.direction = 0\nmsg.result.ligne = \"\"\n\n\n// index de l'abri Gares sur ligne C1\nindexArretDepart = 2\nstops = msg.ligneC1\n\nstops.forEach(function(stop, index,array) {\n    //node.warn(\"C1 : \" + stop.stopName + \" - \" + destination)\n    if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n        msg.result.ligne = \"C1\"\n        if(index>indexArretDepart) {\n            msg.result.direction = 1\n        } else {\n            msg.result.direction = -1\n        }\n        \n        //node.warn(\"C1 : \" + msg.result)\n    }\n})\n\nif(msg.result.ligne.length===0) {\n    // index de l'abri Gares sur ligne 26\n    indexArretDepart = 1\n    stops = msg.ligne26\n    \n    stops.forEach(function(stop, index,array) {\n        //node.warn(\"26 : \" + stop.stopName + \" - \" + destination)\n        if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n            msg.result.ligne = \"26\"\n            if(index>indexArretDepart) {\n                msg.result.direction = 1\n            } else {\n                msg.result.direction = -1\n            }\n            \n            //node.warn(\"26 : \" + msg.result)\n        }\n    })\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 420,
+        "wires": [
+            [
+                "02069d3b57656c12"
+            ]
+        ]
+    },
+    {
+        "id": "e397509f8b848239",
+        "type": "comment",
+        "z": "79dedaa104b8a461",
+        "name": "Configuration arret Gares en direction Maupretuis, pré de l'eau",
+        "info": "",
+        "x": 280,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4a55c7cf9a15f031",
+        "type": "change",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ligneC1",
+                "pt": "msg",
+                "to": "payload[0].arrets",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 280,
+        "wires": [
+            [
+                "307e768d7333c32b"
+            ]
+        ]
+    },
+    {
+        "id": "307e768d7333c32b",
+        "type": "function",
+        "z": "79dedaa104b8a461",
+        "name": "Ligne 26",
+        "func": "msg.url = \"https://data.mobilites-m.fr/api/ficheHoraires/json?route=SEM:26\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 340,
+        "wires": [
+            [
+                "873072ca7602c884"
+            ]
+        ]
+    },
+    {
+        "id": "873072ca7602c884",
+        "type": "http request",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "51f6d20a4f922fea"
+            ]
+        ]
+    },
+    {
+        "id": "51f6d20a4f922fea",
+        "type": "switch",
+        "z": "79dedaa104b8a461",
+        "name": "Error ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 900,
+        "y": 380,
+        "wires": [
+            [],
+            [
+                "a998f281d346f9c7"
+            ]
+        ]
+    },
+    {
+        "id": "a998f281d346f9c7",
+        "type": "change",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ligne26",
+                "pt": "msg",
+                "to": "payload[0].arrets",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 420,
+        "wires": [
+            [
+                "b900928051da2611",
+                "92bced877403b3f1"
+            ]
+        ]
+    },
+    {
+        "id": "02069d3b57656c12",
+        "type": "switch",
+        "z": "79dedaa104b8a461",
+        "name": "Arret sur une des lignes",
+        "property": "result.ligne.length",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1590,
+        "y": 420,
+        "wires": [
+            [
+                "d10f9a44d0d35d55"
+            ],
+            [
+                "12b8d13d8aef5cc5"
+            ]
+        ]
+    },
+    {
+        "id": "b0f8762fd608d593",
+        "type": "debug",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2230,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "eb99ec072a275dc6",
+        "type": "http request",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 2050,
+        "y": 260,
+        "wires": [
+            [
+                "b0f8762fd608d593",
+                "cac40694297621a6"
+            ]
+        ]
+    },
+    {
+        "id": "d10f9a44d0d35d55",
+        "type": "function",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "func": "msg.url = \"https://data.mobilites-m.fr/api/routers/default/plan\"\n\npayload = \"routerId=prod&otp=undefined&mode=WALK,TRANSIT&showIntermediateStops=true&minTransferTime=60&transferPenalty=60&numItineraries=2&walkBoardCost=300&\"\n//payload += \"fromPlace=45.19078,5.71554&toPlace=45.18731,5.73714&\"\npayload += \"fromPlace=\"+global.get('depart').lat+\",\"+global.get('depart').lon+\"&toPlace=\"+msg.destination.lat+\",\"+msg.destination.lon+\"&\"\npayload += \"arriveBy=false&locale=fr_FR&walkSpeed=1.1112&walkReluctance=5\"\n//payload += \"time=14%20:%2006&date=2021-11-24&ui_date=mercredi%2024%20novembre%20-%2024/11/2021\"\n\nmsg.url = msg.url +\"?\"+payload\n\n//msg.payload = payload\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1830,
+        "y": 260,
+        "wires": [
+            [
+                "eb99ec072a275dc6"
+            ]
+        ]
+    },
+    {
+        "id": "cac40694297621a6",
+        "type": "switch",
+        "z": "79dedaa104b8a461",
+        "name": "Error ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 2250,
+        "y": 300,
+        "wires": [
+            [],
+            [
+                "12b8d13d8aef5cc5"
+            ]
+        ]
+    },
+    {
+        "id": "92bced877403b3f1",
+        "type": "debug",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "96fc961048a32770",
+        "type": "comment",
+        "z": "79dedaa104b8a461",
+        "name": "Voir si on pourrait récupérer les arrets des lignes une fois pour toute au lancement",
+        "info": "",
+        "x": 460,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5850b80836ebf364",
+        "type": "link in",
+        "z": "048311bebe6e223a",
+        "name": "Prochain bus",
+        "links": [],
+        "x": 95,
+        "y": 220,
+        "wires": [
+            [
+                "9b394c422fcad405"
+            ]
+        ]
+    },
+    {
+        "id": "be139021d627a0ab",
+        "type": "link out",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 1255,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "78391d0a10011c77",
+        "type": "debug",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b9bf3b7951ad1ce9",
+        "type": "http request",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "78391d0a10011c77",
+                "8d29463c20f2784b"
+            ]
+        ]
+    },
+    {
+        "id": "9b394c422fcad405",
+        "type": "function",
+        "z": "048311bebe6e223a",
+        "name": "Extract destination",
+        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n    //node.warn(destination)\n    msg.ligne = destination.trim()\n    \n    // Attention pas propre - gestion UTC\n    msg.url = \"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:\"\n    \n    if(destination.indexOf(\"C1\")>=0) {\n        msg.url = msg.url+\"C1\"\n    } else if(destination.indexOf(\"26\")>=0) {\n        msg.url = msg.url+\"26\"\n    }\n    \n    msg.headers={\n    \t\torigin: 'tpsreelGrenoble'\n    \t};    \n\n    \n} \n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "da7f79263d5e3eb4",
+                "b9bf3b7951ad1ce9"
+            ]
+        ]
+    },
+    {
+        "id": "da7f79263d5e3eb4",
+        "type": "debug",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8d29463c20f2784b",
+        "type": "switch",
+        "z": "048311bebe6e223a",
+        "name": "Error ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 910,
+        "y": 260,
+        "wires": [
+            [],
+            [
+                "f7cc4667edb701ad"
+            ]
+        ]
+    },
+    {
+        "id": "f45f4f959573eff8",
+        "type": "function",
+        "z": "048311bebe6e223a",
+        "name": "old",
+        "func": "stop = msg.payload[0].arrets[2]\n\nstart = new Date();\nstart.setHours(00, 00, 00);\n\nnode.warn(start.toString())\n\nnode.warn(stop.trips[0])\ntime = stop.trips[0]/3600\nnode.warn(\"time \" + time)\nhour = Math.floor(time)\nnode.warn(\"hour \" + hour)\nminute = Math.floor((time - Math.floor(time))*60)\nnode.warn(\"minute \" + minute)\n\n\nend = new Date();\nend.setHours(hour, minute, 00);\n\nnode.warn(end.toString())\n\ndiff = (end - new Date())/1000/60 // en min\n\nmsg.nextbus = diff\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d40876bbc64027c",
+        "type": "debug",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f7cc4667edb701ad",
+        "type": "function",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "func": "if(msg.payload && msg.payload.length>0) {\n    \n    nextBus = []\n    tts = \"\"\n    \n    msg.payload.forEach(function(trip) {\n        //node.warn(\"stopId \" + trip.times[0].stopId + \" \" + global.get(\"depart\").stopId)\n        if(trip.times && trip.times.length>0 && trip.times[0].stopId.indexOf(global.get(\"depart\").stopId)>=0) {\n            // controle du serviceday\n            currentDay = new Date();\n            currentDay.setHours(00, 00, 00);\n            \n            //node.warn(\"currentDay \" + currentDay.getTime() + \" \" + trip.times[0].serviceDay)\n            \n            if(Number(currentDay.getTime()).toString().indexOf(trip.times[0].serviceDay)===0) {\n                next = {}\n                \n                time = trip.times[0].realtimeArrival/3600\n                //node.warn(\"time \" + time)\n                hour = Math.floor(time)\n                //node.warn(\"hour \" + hour)\n                minute = Math.floor((time - Math.floor(time))*60)\n                //node.warn(\"minute \" + minute)\n                \n                nextHour = new Date();\n                nextHour.setHours(hour, minute, 00);\n                //node.warn(\"next \" + nextHour.toString())\n                \n                delay = (nextHour - new Date())/1000 // en s\n                \n                next.time = nextHour.getTime()\n                next.lastStopName =  trip.pattern.lastStopName\n                next.delay = delay\n                \n                nextBus.push(next)\n                \n                if(Math.round(delay/60)<1) {\n                    tts = tts + \"Le prochain bus \"+msg.ligne+\" à destination de \"+next.lastStopName+\" arrivera dans moins d'une minute environ. \"\n                } else {\n                    tts = tts + \"Le prochain bus \"+msg.ligne+\" à destination de \"+next.lastStopName+\" arrivera dans environ \"+Math.round(delay/60)+\" minutes. \"\n                }\n            \n                \n                \n            } else {\n                // Pas de trajet ce jour\n            }\n            \n        } else {\n            // pas de prochain horaire\n        }\n    })   \n    \n    msg.nextBus = nextBus\n    msg.tts = tts\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 280,
+        "wires": [
+            [
+                "6d40876bbc64027c",
+                "be139021d627a0ab"
+            ]
+        ]
+    },
+    {
+        "id": "9fb1650d1c8425b3",
+        "type": "comment",
+        "z": "048311bebe6e223a",
+        "name": "Quoi retourner si le prochain bus arrive dans plus de 20min ?",
+        "info": "",
+        "x": 1250,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "502b97a99c9aeb75",
+        "type": "comment",
+        "z": "048311bebe6e223a",
+        "name": "Pas de bus prévu dans l'immédiat ?",
+        "info": "",
+        "x": 1170,
+        "y": 380,
+        "wires": []
+    }
+]
