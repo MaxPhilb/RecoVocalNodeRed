@@ -1753,6 +1753,35 @@
         "wires": []
     },
     {
+        "id": "07bdae92d5dbeaab",
+        "type": "inject",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "le prochain bus arrive dans 5 minutes",
+        "payloadType": "str",
+        "x": 130,
+        "y": 20,
+        "wires": [
+            [
+                "486ba9738da530b6"
+            ]
+        ]
+    },
+    {
         "id": "8dbf646a20b1d1b8",
         "type": "sqlite",
         "z": "1c438ac302aea20f",
