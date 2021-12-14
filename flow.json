@@ -1771,7 +1771,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "le prochain bus 1 arrive dans 5 minutes",
+        "payload": "le prochain bus C1 arrive dans 5 minutes",
         "payloadType": "str",
         "x": 130,
         "y": 20,
