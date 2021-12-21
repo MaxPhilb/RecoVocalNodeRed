@@ -1248,7 +1248,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let mess=msg.payload.hypotheses[0];\nvar phrase=\"\";\nfor( var i=0;i<mess.items.length;i++)\n{\n    for( var j=0;j<mess.items[i].items.length;j++){\n        phrase+=\" \"+mess.items[i].items[j].orthography;\n    }\n    \n}\nmsg.payload=phrase.charAt(0).toUpperCase() + phrase.slice(1)+\" ?\";\nreturn msg;",
+        "func": "let mess=msg.payload.hypotheses[0];\nvar phrase=\"\";\nfor( var i=0;i<mess.items.length;i++)\n{\n    for( var j=0;j<mess.items[i].items.length;j++){\n        phrase+=\" \"+mess.items[i].items[j].orthography;\n    }\n    \n}\nmsg.payload=phrase.charAt(1).toUpperCase() + phrase.slice(1)+\" ?\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
