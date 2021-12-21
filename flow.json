@@ -328,8 +328,7 @@
         "wires": [
             [
                 "3868a88ec19d5586",
-                "eebf09bec4148cfc",
-                "c7765c9647000bba"
+                "eebf09bec4148cfc"
             ]
         ]
     },
@@ -715,7 +714,8 @@
         "y": 520,
         "wires": [
             [
-                "13f532013811d581"
+                "13f532013811d581",
+                "124a60272946421a"
             ]
         ]
     },
@@ -1231,7 +1231,7 @@
         ]
     },
     {
-        "id": "c7765c9647000bba",
+        "id": "124a60272946421a",
         "type": "link out",
         "z": "fa2c9998251120d1",
         "name": "",
@@ -1239,7 +1239,7 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 275,
+        "x": 1575,
         "y": 420,
         "wires": []
     },
@@ -2539,7 +2539,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "phraseDetected",
-        "func": "msg.payload={\"action\":\"phraseDetected\"};\nreturn msg;",
+        "func": "let phrase=msg.payload;\nmsg.payload={\"action\":\"phraseDetected\",\"phrase\":phrase};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2559,7 +2559,8 @@
         "z": "ab443a039cdf1926",
         "name": "phraseDetectedDisplay",
         "links": [
-            "c7765c9647000bba"
+            "c7765c9647000bba",
+            "124a60272946421a"
         ],
         "x": 285,
         "y": 260,
