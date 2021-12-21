@@ -1400,7 +1400,8 @@
         "y": 320,
         "wires": [
             [
-                "8bcf5e07844ca29c"
+                "8bcf5e07844ca29c",
+                "900a7c34f9008540"
             ]
         ]
     },
@@ -1960,6 +1961,28 @@
         "x": 705,
         "y": 360,
         "wires": []
+    },
+    {
+        "id": "900a7c34f9008540",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "checkAppui",
+        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nmsg.nbAppui=nbAppui;\nif(nbAppui<1)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n    return [msg,];\n}\nif(nbAppui>=1)\n{\n    //flow.set(\"nbAppui\",0);\n    return[,msg];\n}\n\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "e42a856b88cf1353"
+            ],
+            [
+                "aa3b284ce9f5d1d3"
+            ]
+        ]
     },
     {
         "id": "8dbf646a20b1d1b8",
