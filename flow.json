@@ -2532,8 +2532,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 160,
+        "x": 580,
+        "y": 120,
         "wires": [
             [
                 "2d4bd4c39fdbb487",
@@ -2578,8 +2578,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 800,
-        "y": 140,
+        "x": 760,
+        "y": 120,
         "wires": [
             [
                 "c89efb168be9046f"
@@ -2656,15 +2656,15 @@
         "id": "c89efb168be9046f",
         "type": "function",
         "z": "da93fe22a4429449",
-        "name": "reset Appui",
+        "name": "reset Appui + interface",
         "func": "\n\nif(flow.get(\"nbAppui\")==1){\nflow.set(\"nbAppui\",0);\nreturn msg;\n}\nflow.set(\"nbAppui\",0);",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 140,
+        "x": 1000,
+        "y": 120,
         "wires": [
             [
                 "1f2f2d3a1cf469ac"
@@ -2680,8 +2680,8 @@
         "links": [
             "749caaec1faa7187"
         ],
-        "x": 695,
-        "y": 120,
+        "x": 715,
+        "y": 60,
         "wires": []
     },
     {
@@ -2693,7 +2693,7 @@
         "links": [
             "4094d4a5689a30f6"
         ],
-        "x": 1175,
+        "x": 1115,
         "y": 120,
         "wires": []
     },
