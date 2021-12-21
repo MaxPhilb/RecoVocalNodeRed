@@ -328,7 +328,8 @@
         "wires": [
             [
                 "3868a88ec19d5586",
-                "eebf09bec4148cfc"
+                "eebf09bec4148cfc",
+                "c7765c9647000bba"
             ]
         ]
     },
@@ -1228,6 +1229,19 @@
                 "3ca859ab2f3005b5"
             ]
         ]
+    },
+    {
+        "id": "c7765c9647000bba",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8e217170ba11d68a"
+        ],
+        "x": 275,
+        "y": 420,
+        "wires": []
     },
     {
         "id": "8dbf646a20b1d1b8",
@@ -2544,7 +2558,9 @@
         "type": "link in",
         "z": "ab443a039cdf1926",
         "name": "phraseDetectedDisplay",
-        "links": [],
+        "links": [
+            "c7765c9647000bba"
+        ],
         "x": 285,
         "y": 260,
         "wires": [
