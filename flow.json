@@ -1248,7 +1248,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let mess=msg.payload.hypotheses[0];\nvar phrase=\"\";\nfunction recursiveItems(list){\n    var text=\"\";\n    if('items' in list){\n        for( let j=0;j<list.items.length;j++){\n            text+=\" \"+recursiveItems(list.items[j]);\n        }\n    }else{\n        text=list.orthography;\n    }\n    return text;\n    \n}\nphrase=recursiveItems(mess);\nmsg.payload=phrase.charAt(1).toUpperCase() + phrase.slice(2)+\" ?\";\nreturn msg;",
+        "func": "let mess=msg.payload.hypotheses[0];\nvar phrase=\"\";\nfunction recursiveItems(list){\n    var text=\"\";\n    if('items' in list){\n        for( let j=0;j<list.items.length;j++){\n            text+=\" \"+recursiveItems(list.items[j]);\n        }\n    }else{\n        text=list.orthography;\n    }\n    return text;\n    \n}\nphrase=recursiveItems(mess);\nmsg.payload=phrase.trim().charAt(0).toUpperCase() + phrase.trim().slice(1)+\" ?\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
