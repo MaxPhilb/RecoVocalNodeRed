@@ -3215,7 +3215,7 @@
         "id": "4094d4a5689a30f6",
         "type": "link in",
         "z": "ab443a039cdf1926",
-        "name": "callDisplay",
+        "name": "resetDisplay",
         "links": [
             "854dc0096230e6a4"
         ],
