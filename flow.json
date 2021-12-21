@@ -56,6 +56,14 @@
         "env": []
     },
     {
+        "id": "ab443a039cdf1926",
+        "type": "tab",
+        "label": "interfaceGraphique",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "87fb38d3b12f7fd7",
         "type": "mqtt-broker",
         "name": "",
