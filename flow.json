@@ -129,6 +129,12 @@
         "hb": "0"
     },
     {
+        "id": "83fed008d1f691a4",
+        "type": "websocket-listener",
+        "path": "/ws",
+        "wholemsg": "false"
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
@@ -2919,10 +2925,10 @@
         "type": "websocket out",
         "z": "ab443a039cdf1926",
         "name": "",
-        "server": "",
-        "client": "1ff5f88ca1d403b7",
-        "x": 1080,
-        "y": 260,
+        "server": "83fed008d1f691a4",
+        "client": "",
+        "x": 780,
+        "y": 200,
         "wires": []
     },
     {
@@ -2930,9 +2936,9 @@
         "type": "websocket in",
         "z": "ab443a039cdf1926",
         "name": "",
-        "server": "",
-        "client": "1ff5f88ca1d403b7",
-        "x": 390,
+        "server": "83fed008d1f691a4",
+        "client": "",
+        "x": 310,
         "y": 340,
         "wires": [
             [
