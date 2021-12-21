@@ -1418,27 +1418,28 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
-        "y": 320,
+        "x": 610,
+        "y": 240,
         "wires": []
     },
     {
         "id": "900a7c34f9008540",
         "type": "function",
         "z": "fa2c9998251120d1",
-        "name": "",
-        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nif(nbAppui<2)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n}else\n{\n    flow.set(\"nbAppui\",0);\n}\nmsg['nbAppui']=nbAppui;\nreturn msg;",
-        "outputs": 1,
+        "name": "checkAppui",
+        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nif(nbAppui<2)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n}else\n{\n    flow.set(\"nbAppui\",0);\n}\nmsg['nbAppui']=nbAppui;\nreturn [msg,];",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 320,
+        "x": 410,
+        "y": 300,
         "wires": [
             [
                 "e53e4b327b156d2f"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -1807,6 +1808,40 @@
             [
                 "486ba9738da530b6"
             ]
+        ]
+    },
+    {
+        "id": "e42a856b88cf1353",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa3b284ce9f5d1d3",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 320,
+        "wires": [
+            []
         ]
     },
     {
