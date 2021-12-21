@@ -2521,6 +2521,37 @@
         ]
     },
     {
+        "id": "69ec2e02b0af518e",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "phraseDetected",
+        "func": "msg.payload={\"action\":\"phraseDetected\"};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e217170ba11d68a",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "phraseDetectedDisplay",
+        "links": [],
+        "x": 285,
+        "y": 260,
+        "wires": [
+            [
+                "69ec2e02b0af518e"
+            ]
+        ]
+    },
+    {
         "id": "904ace6426fb4207",
         "type": "function",
         "z": "da93fe22a4429449",
