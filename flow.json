@@ -64,6 +64,14 @@
         "env": []
     },
     {
+        "id": "da93fe22a4429449",
+        "type": "tab",
+        "label": "bouton",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "87fb38d3b12f7fd7",
         "type": "mqtt-broker",
         "name": "",
@@ -1391,21 +1399,6 @@
         ]
     },
     {
-        "id": "48a741d323cefdbc",
-        "type": "serial in",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "serial": "79fb63e954284bda",
-        "x": 160,
-        "y": 320,
-        "wires": [
-            [
-                "8bcf5e07844ca29c",
-                "900a7c34f9008540"
-            ]
-        ]
-    },
-    {
         "id": "79675449a378e550",
         "type": "comment",
         "z": "fa2c9998251120d1",
@@ -1648,22 +1641,6 @@
         ]
     },
     {
-        "id": "8bcf5e07844ca29c",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 360,
-        "wires": []
-    },
-    {
         "id": "d90f39e93d146b9a",
         "type": "function",
         "z": "fa2c9998251120d1",
@@ -1774,111 +1751,6 @@
         ]
     },
     {
-        "id": "e42a856b88cf1353",
-        "type": "function",
-        "z": "fa2c9998251120d1",
-        "name": "1er appui",
-        "func": "\nif(msg.nbAppui==1){\nreturn msg;\n}\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 260,
-        "wires": [
-            [
-                "1ec5cb9c98cc37c2",
-                "9d943fea897ecf6e"
-            ]
-        ]
-    },
-    {
-        "id": "aa3b284ce9f5d1d3",
-        "type": "function",
-        "z": "fa2c9998251120d1",
-        "name": "2eme appui",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 610,
-        "y": 320,
-        "wires": [
-            [
-                "83d07d1dad1f9dcc",
-                "7bfe3fa14eb4d86e"
-            ]
-        ]
-    },
-    {
-        "id": "1ec5cb9c98cc37c2",
-        "type": "delay",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 880,
-        "y": 240,
-        "wires": [
-            [
-                "507fd72de0a9ef60"
-            ]
-        ]
-    },
-    {
-        "id": "854dc0096230e6a4",
-        "type": "link out",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "e5be6c334609ae62",
-            "4094d4a5689a30f6"
-        ],
-        "x": 875,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "9d943fea897ecf6e",
-        "type": "link out",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "749caaec1faa7187"
-        ],
-        "x": 775,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "63bf9472f419a1ec",
-        "type": "link out",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "4094d4a5689a30f6"
-        ],
-        "x": 1255,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "1bad072cfd7a6511",
         "type": "link in",
         "z": "fa2c9998251120d1",
@@ -1889,75 +1761,6 @@
         "wires": [
             [
                 "3ca859ab2f3005b5"
-            ]
-        ]
-    },
-    {
-        "id": "83d07d1dad1f9dcc",
-        "type": "link out",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "mode": "link",
-        "links": [],
-        "x": 875,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "900a7c34f9008540",
-        "type": "function",
-        "z": "fa2c9998251120d1",
-        "name": "checkAppui",
-        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nmsg.nbAppui=nbAppui;\nif(nbAppui<1)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n    msg.nbAppui+=1;\n    return [msg,];\n}\nif(nbAppui>=1)\n{\n    //flow.set(\"nbAppui\",0);\n    msg.nbAppui+=1;\n    return[,msg];\n}\n\n",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 300,
-        "wires": [
-            [
-                "e42a856b88cf1353"
-            ],
-            [
-                "aa3b284ce9f5d1d3"
-            ]
-        ]
-    },
-    {
-        "id": "7bfe3fa14eb4d86e",
-        "type": "function",
-        "z": "fa2c9998251120d1",
-        "name": "reset Appui",
-        "func": "\nflow.set(\"nbAppui\",0);\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "507fd72de0a9ef60",
-        "type": "function",
-        "z": "fa2c9998251120d1",
-        "name": "reset Appui",
-        "func": "\n\nif(flow.get(\"nbAppui\")==1){\nflow.set(\"nbAppui\",0);\nreturn msg;\n}\nflow.set(\"nbAppui\",0);",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1070,
-        "y": 240,
-        "wires": [
-            [
-                "63bf9472f419a1ec"
             ]
         ]
     },
@@ -3168,7 +2971,8 @@
         "z": "ab443a039cdf1926",
         "name": "startDisplay",
         "links": [
-            "9d943fea897ecf6e"
+            "9d943fea897ecf6e",
+            "6a13f682c9099730"
         ],
         "x": 285,
         "y": 140,
@@ -3203,7 +3007,8 @@
         "z": "ab443a039cdf1926",
         "name": "callDisplay",
         "links": [
-            "854dc0096230e6a4"
+            "854dc0096230e6a4",
+            "936fad29e25585ef"
         ],
         "x": 285,
         "y": 180,
@@ -3239,13 +3044,203 @@
         "name": "resetDisplay",
         "links": [
             "854dc0096230e6a4",
-            "63bf9472f419a1ec"
+            "63bf9472f419a1ec",
+            "936fad29e25585ef",
+            "1f2f2d3a1cf469ac"
         ],
         "x": 285,
         "y": 220,
         "wires": [
             [
                 "48cf66866fd16414"
+            ]
+        ]
+    },
+    {
+        "id": "904ace6426fb4207",
+        "type": "function",
+        "z": "da93fe22a4429449",
+        "name": "1er appui",
+        "func": "\nif(msg.nbAppui==1){\nreturn msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "2d4bd4c39fdbb487",
+                "6a13f682c9099730"
+            ]
+        ]
+    },
+    {
+        "id": "cb07b771aeea3b5a",
+        "type": "function",
+        "z": "da93fe22a4429449",
+        "name": "2eme appui",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "6420379de2c54850",
+                "4d7ff09cf1d5a583"
+            ]
+        ]
+    },
+    {
+        "id": "2d4bd4c39fdbb487",
+        "type": "delay",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 140,
+        "wires": [
+            [
+                "c89efb168be9046f"
+            ]
+        ]
+    },
+    {
+        "id": "936fad29e25585ef",
+        "type": "link out",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "e5be6c334609ae62",
+            "4094d4a5689a30f6"
+        ],
+        "x": 825,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6420379de2c54850",
+        "type": "link out",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "mode": "link",
+        "links": [],
+        "x": 825,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8f610cf592ce2bfd",
+        "type": "function",
+        "z": "da93fe22a4429449",
+        "name": "checkAppui",
+        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nmsg.nbAppui=nbAppui;\nif(nbAppui<1)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n    msg.nbAppui+=1;\n    return [msg,];\n}\nif(nbAppui>=1)\n{\n    //flow.set(\"nbAppui\",0);\n    msg.nbAppui+=1;\n    return[,msg];\n}\n\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "904ace6426fb4207"
+            ],
+            [
+                "cb07b771aeea3b5a"
+            ]
+        ]
+    },
+    {
+        "id": "4d7ff09cf1d5a583",
+        "type": "function",
+        "z": "da93fe22a4429449",
+        "name": "reset Appui",
+        "func": "\nflow.set(\"nbAppui\",0);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c89efb168be9046f",
+        "type": "function",
+        "z": "da93fe22a4429449",
+        "name": "reset Appui",
+        "func": "\n\nif(flow.get(\"nbAppui\")==1){\nflow.set(\"nbAppui\",0);\nreturn msg;\n}\nflow.set(\"nbAppui\",0);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 140,
+        "wires": [
+            [
+                "1f2f2d3a1cf469ac"
+            ]
+        ]
+    },
+    {
+        "id": "6a13f682c9099730",
+        "type": "link out",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "749caaec1faa7187"
+        ],
+        "x": 695,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1f2f2d3a1cf469ac",
+        "type": "link out",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "4094d4a5689a30f6"
+        ],
+        "x": 1175,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "707537184c55cabb",
+        "type": "serial in",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "serial": "79fb63e954284bda",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "8f610cf592ce2bfd"
             ]
         ]
     }
