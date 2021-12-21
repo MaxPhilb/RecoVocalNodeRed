@@ -1238,7 +1238,8 @@
         "name": "",
         "mode": "link",
         "links": [
-            "8e217170ba11d68a"
+            "8e217170ba11d68a",
+            "f652ca205e6eb293"
         ],
         "x": 815,
         "y": 360,
@@ -2664,6 +2665,41 @@
         "wires": [
             [
                 "69ec2e02b0af518e"
+            ]
+        ]
+    },
+    {
+        "id": "435bca4858b726ad",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "trajetDisplay",
+        "func": "let phrase=msg.payload;\nmsg.payload={\"action\":\"phraseDetected\",\"phrase\":phrase};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9"
+            ]
+        ]
+    },
+    {
+        "id": "f652ca205e6eb293",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "trajetDisplay",
+        "links": [
+            "124a60272946421a"
+        ],
+        "x": 285,
+        "y": 300,
+        "wires": [
+            [
+                "435bca4858b726ad"
             ]
         ]
     },
