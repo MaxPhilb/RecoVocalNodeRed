@@ -123,7 +123,7 @@
     {
         "id": "1ff5f88ca1d403b7",
         "type": "websocket-client",
-        "path": "ws://192.168.10.12:8000/ws",
+        "path": "ws://192.168.10.12:8000",
         "tls": "",
         "wholemsg": "false",
         "hb": "0"
@@ -2921,7 +2921,7 @@
         "name": "",
         "server": "",
         "client": "1ff5f88ca1d403b7",
-        "x": 1090,
+        "x": 1080,
         "y": 260,
         "wires": []
     },
