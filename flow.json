@@ -2981,9 +2981,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "test",
-        "payloadType": "str",
-        "x": 500,
+        "payload": "{\"json\":\"test\"}",
+        "payloadType": "json",
+        "x": 520,
         "y": 200,
         "wires": [
             [
