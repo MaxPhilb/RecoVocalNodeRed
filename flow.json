@@ -1817,7 +1817,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "1er appui",
-        "func": "\nreturn msg;",
+        "func": "let nbappui=flow.get(\"nbAppui\");\nif(nbappui==1){\nreturn msg;\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1938,7 +1938,7 @@
         "links": [
             "749caaec1faa7187"
         ],
-        "x": 1135,
+        "x": 715,
         "y": 200,
         "wires": []
     },
