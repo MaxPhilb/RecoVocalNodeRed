@@ -72,6 +72,14 @@
         "env": []
     },
     {
+        "id": "f4d9ba972926275f",
+        "type": "tab",
+        "label": "old",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "87fb38d3b12f7fd7",
         "type": "mqtt-broker",
         "name": "",
@@ -248,7 +256,7 @@
         "payload": "startreco",
         "payloadType": "str",
         "x": 140,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "3ca859ab2f3005b5"
@@ -270,7 +278,7 @@
         "expiry": "",
         "broker": "87fb38d3b12f7fd7",
         "x": 510,
-        "y": 240,
+        "y": 280,
         "wires": []
     },
     {
@@ -295,7 +303,7 @@
         "payload": "stopreco",
         "payloadType": "str",
         "x": 140,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "72ad19dcdba9b6c3"
@@ -315,8 +323,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 690,
-        "y": 580,
+        "x": 150,
+        "y": 500,
         "wires": [
             [
                 "3868a88ec19d5586",
@@ -379,8 +387,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 850,
-        "y": 580,
+        "x": 310,
+        "y": 500,
         "wires": [
             [
                 "75213766363f0534",
@@ -401,8 +409,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
-        "y": 540,
+        "x": 510,
+        "y": 460,
         "wires": []
     },
     {
@@ -414,8 +422,8 @@
         "links": [
             "9efe2b8dc16c0a53"
         ],
-        "x": 955,
-        "y": 580,
+        "x": 415,
+        "y": 500,
         "wires": []
     },
     {
@@ -427,7 +435,7 @@
             "9eccf61e1ab6c8c8"
         ],
         "x": 175,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "72ad19dcdba9b6c3"
@@ -446,7 +454,7 @@
         "finalize": "",
         "libs": [],
         "x": 320,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "a728307c3ac15c1f",
@@ -466,60 +474,10 @@
         "finalize": "",
         "libs": [],
         "x": 320,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "a728307c3ac15c1f"
-            ]
-        ]
-    },
-    {
-        "id": "a456746f915fb481",
-        "type": "sqlite",
-        "z": "fa2c9998251120d1",
-        "mydb": "dc33db351c964072",
-        "sqlquery": "prepared",
-        "sql": "SELECT * FROM routes WHERE  route_id IN (SELECT DISTINCT route_id FROM trips WHERE trip_id IN (SELECT DISTINCT trip_id FROM stop_times WHERE stop_id=$idArret))",
-        "name": "liste des lignes par rapport à un arret",
-        "x": 590,
-        "y": 660,
-        "wires": [
-            [
-                "fbaef2fc469c3bb8"
-            ]
-        ]
-    },
-    {
-        "id": "a1d82eb91669e056",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "lignes par rapport arret",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "params",
-                "v": "{    \"$idArret\": \"0893\"}",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "requete lignes bus par rapport a un arret",
-        "payloadType": "str",
-        "x": 190,
-        "y": 660,
-        "wires": [
-            [
-                "a456746f915fb481"
             ]
         ]
     },
@@ -610,88 +568,6 @@
         ]
     },
     {
-        "id": "fbaef2fc469c3bb8",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "5faa36dc405f6de8",
-        "type": "sqlite",
-        "z": "fa2c9998251120d1",
-        "mydb": "dc33db351c964072",
-        "sqlquery": "prepared",
-        "sql": "SELECT * FROM fare_attributes",
-        "name": "obtenir prix d'un ticket",
-        "x": 540,
-        "y": 720,
-        "wires": [
-            [
-                "efbd186b783b84c8"
-            ]
-        ]
-    },
-    {
-        "id": "8c23ded4375c4207",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "prix ticket",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "params",
-                "v": "{  }",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "prix ticket",
-        "payloadType": "str",
-        "x": 150,
-        "y": 720,
-        "wires": [
-            [
-                "5faa36dc405f6de8"
-            ]
-        ]
-    },
-    {
-        "id": "efbd186b783b84c8",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 720,
-        "wires": []
-    },
-    {
         "id": "e550e9fdc2045de8",
         "type": "json",
         "z": "fa2c9998251120d1",
@@ -706,138 +582,6 @@
                 "b5fecc11f96b745e"
             ]
         ]
-    },
-    {
-        "id": "9045b7b0cf05970e",
-        "type": "sqlite",
-        "z": "fa2c9998251120d1",
-        "mydb": "dc33db351c964072",
-        "sqlquery": "prepared",
-        "sql": "SELECT * FROM stops WHERE stop_id IN(SELECT DISTINCT stop_id FROM stop_times WHERE trip_id IN (SELECT trip_id FROM trips WHERE route_id=$ligne AND direction_id=$direction));",
-        "name": "liste des arrets par rapport à une ligne et une direction",
-        "x": 700,
-        "y": 840,
-        "wires": [
-            [
-                "c55be249cf1002f2"
-            ]
-        ]
-    },
-    {
-        "id": "ea2ad51c6c1a9c81",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "liste des  arrets d'une ligne 26 avec choix de la direction",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "params",
-                "v": "{\"$ligne\":\"26\",\"$direction\":\"1\"}",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "prochains arret",
-        "payloadType": "str",
-        "x": 240,
-        "y": 840,
-        "wires": [
-            [
-                "9045b7b0cf05970e"
-            ]
-        ]
-    },
-    {
-        "id": "c55be249cf1002f2",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1010,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "7e19158225611509",
-        "type": "sqlite",
-        "z": "fa2c9998251120d1",
-        "mydb": "dc33db351c964072",
-        "sqlquery": "prepared",
-        "sql": "SELECT DISTINCT direction_id FROM trips WHERE trip_id IN (SELECT DISTINCT trip_id FROM stop_times WHERE stop_id=$idArret)",
-        "name": "obtenir direction a partir de l'arret",
-        "x": 580,
-        "y": 780,
-        "wires": [
-            [
-                "01df422ebfc63b0e"
-            ]
-        ]
-    },
-    {
-        "id": "7af7df2a7910fb4e",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "obtenir direction pour un abribus",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "params",
-                "v": "{    \"$idArret\": \"0893\"}",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "obtenir direction",
-        "payloadType": "str",
-        "x": 220,
-        "y": 780,
-        "wires": [
-            [
-                "7e19158225611509"
-            ]
-        ]
-    },
-    {
-        "id": "01df422ebfc63b0e",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 780,
-        "wires": []
     },
     {
         "id": "d24186cffce08a48",
@@ -876,8 +620,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 1290,
-        "y": 580,
+        "x": 750,
+        "y": 500,
         "wires": [
             [
                 "815a2a645fb72034"
@@ -905,8 +649,8 @@
             "f07399c04538d217"
         ],
         "timeout": "30",
-        "x": 1470,
-        "y": 460,
+        "x": 1050,
+        "y": 420,
         "wires": [
             [
                 "e1dcea6e9a88151c",
@@ -927,8 +671,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1790,
-        "y": 460,
+        "x": 1370,
+        "y": 420,
         "wires": []
     },
     {
@@ -966,8 +710,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1860,
-        "y": 560,
+        "x": 1440,
+        "y": 520,
         "wires": [
             [
                 "13f532013811d581"
@@ -983,43 +727,9 @@
         "links": [
             "f973e2dbbefd369a"
         ],
-        "x": 2015,
-        "y": 560,
+        "x": 1595,
+        "y": 520,
         "wires": []
-    },
-    {
-        "id": "76137bbaa77a26a1",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "liste des  arrets d'une ligne C1 avec choix de la direction",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "params",
-                "v": "{\"$ligne\":\"1\",\"$direction\":\"0\"}",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "prochains arret",
-        "payloadType": "str",
-        "x": 240,
-        "y": 880,
-        "wires": [
-            [
-                "9045b7b0cf05970e"
-            ]
-        ]
     },
     {
         "id": "9bb27f2d47c78c3f",
@@ -1030,8 +740,8 @@
             "ba880050917a1151"
         ],
         "timeout": "30",
-        "x": 1500,
-        "y": 500,
+        "x": 1080,
+        "y": 460,
         "wires": [
             [
                 "26e79a99900e1edd",
@@ -1174,8 +884,8 @@
             "12e9048d1def56fe"
         ],
         "timeout": "30",
-        "x": 1490,
-        "y": 540,
+        "x": 1070,
+        "y": 500,
         "wires": [
             [
                 "26e79a99900e1edd",
@@ -1284,8 +994,8 @@
             "195ec5dd475f464d"
         ],
         "timeout": "30",
-        "x": 1480,
-        "y": 580,
+        "x": 1060,
+        "y": 540,
         "wires": [
             [
                 "e1dcea6e9a88151c",
@@ -1372,8 +1082,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1120,
-        "y": 580,
+        "x": 580,
+        "y": 500,
         "wires": [
             [
                 "d24186cffce08a48"
@@ -1389,8 +1099,8 @@
             "5850b80836ebf364"
         ],
         "timeout": "30",
-        "x": 1490,
-        "y": 620,
+        "x": 1070,
+        "y": 580,
         "wires": [
             [
                 "e1dcea6e9a88151c",
@@ -1420,7 +1130,7 @@
         "finalize": "",
         "libs": [],
         "x": 530,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "dc7cbd7fdd5bbf11"
@@ -1438,8 +1148,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 540,
+        "x": 330,
+        "y": 460,
         "wires": [
             [
                 "fef4a3da1ac9f213"
@@ -1457,7 +1167,7 @@
             "371a5b816644cda1"
         ],
         "x": 635,
-        "y": 200,
+        "y": 240,
         "wires": []
     },
     {
@@ -1470,8 +1180,8 @@
             "a4b14d6817ce653c",
             "371a5b816644cda1"
         ],
-        "x": 995,
-        "y": 480,
+        "x": 455,
+        "y": 400,
         "wires": []
     },
     {
@@ -1512,7 +1222,7 @@
             "6420379de2c54850"
         ],
         "x": 245,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "3ca859ab2f3005b5"
@@ -3247,6 +2957,304 @@
         "wires": [
             [
                 "70f1a3f73b354c82"
+            ]
+        ]
+    },
+    {
+        "id": "85b0c77d473e78f2",
+        "type": "sqlite",
+        "z": "f4d9ba972926275f",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM routes WHERE  route_id IN (SELECT DISTINCT route_id FROM trips WHERE trip_id IN (SELECT DISTINCT trip_id FROM stop_times WHERE stop_id=$idArret))",
+        "name": "liste des lignes par rapport à un arret",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "cf7769a363437b77"
+            ]
+        ]
+    },
+    {
+        "id": "4c017e22eb6fcc73",
+        "type": "inject",
+        "z": "f4d9ba972926275f",
+        "name": "lignes par rapport arret",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{    \"$idArret\": \"0893\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "requete lignes bus par rapport a un arret",
+        "payloadType": "str",
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "85b0c77d473e78f2"
+            ]
+        ]
+    },
+    {
+        "id": "cf7769a363437b77",
+        "type": "debug",
+        "z": "f4d9ba972926275f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0779c2badf227f66",
+        "type": "sqlite",
+        "z": "f4d9ba972926275f",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM fare_attributes",
+        "name": "obtenir prix d'un ticket",
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "e475a5709e0b4f3c"
+            ]
+        ]
+    },
+    {
+        "id": "e2381b33d1cc942d",
+        "type": "inject",
+        "z": "f4d9ba972926275f",
+        "name": "prix ticket",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{  }",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prix ticket",
+        "payloadType": "str",
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "0779c2badf227f66"
+            ]
+        ]
+    },
+    {
+        "id": "e475a5709e0b4f3c",
+        "type": "debug",
+        "z": "f4d9ba972926275f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "218145e98722a429",
+        "type": "sqlite",
+        "z": "f4d9ba972926275f",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT * FROM stops WHERE stop_id IN(SELECT DISTINCT stop_id FROM stop_times WHERE trip_id IN (SELECT trip_id FROM trips WHERE route_id=$ligne AND direction_id=$direction));",
+        "name": "liste des arrets par rapport à une ligne et une direction",
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "a54e452925d7992b"
+            ]
+        ]
+    },
+    {
+        "id": "118fddf37f0dca01",
+        "type": "inject",
+        "z": "f4d9ba972926275f",
+        "name": "liste des  arrets d'une ligne 26 avec choix de la direction",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{\"$ligne\":\"26\",\"$direction\":\"1\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prochains arret",
+        "payloadType": "str",
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "218145e98722a429"
+            ]
+        ]
+    },
+    {
+        "id": "a54e452925d7992b",
+        "type": "debug",
+        "z": "f4d9ba972926275f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a2fcb284400bb598",
+        "type": "sqlite",
+        "z": "f4d9ba972926275f",
+        "mydb": "dc33db351c964072",
+        "sqlquery": "prepared",
+        "sql": "SELECT DISTINCT direction_id FROM trips WHERE trip_id IN (SELECT DISTINCT trip_id FROM stop_times WHERE stop_id=$idArret)",
+        "name": "obtenir direction a partir de l'arret",
+        "x": 640,
+        "y": 280,
+        "wires": [
+            [
+                "66f0a7874c9bbd96"
+            ]
+        ]
+    },
+    {
+        "id": "37920bd147540eeb",
+        "type": "inject",
+        "z": "f4d9ba972926275f",
+        "name": "obtenir direction pour un abribus",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{    \"$idArret\": \"0893\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "obtenir direction",
+        "payloadType": "str",
+        "x": 280,
+        "y": 280,
+        "wires": [
+            [
+                "a2fcb284400bb598"
+            ]
+        ]
+    },
+    {
+        "id": "66f0a7874c9bbd96",
+        "type": "debug",
+        "z": "f4d9ba972926275f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3d881887e9e7f455",
+        "type": "inject",
+        "z": "f4d9ba972926275f",
+        "name": "liste des  arrets d'une ligne C1 avec choix de la direction",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "params",
+                "v": "{\"$ligne\":\"1\",\"$direction\":\"0\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "prochains arret",
+        "payloadType": "str",
+        "x": 300,
+        "y": 380,
+        "wires": [
+            [
+                "218145e98722a429"
             ]
         ]
     }
