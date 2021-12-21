@@ -115,6 +115,20 @@
         "responsetimeout": "10000"
     },
     {
+        "id": "380e2917cce3c84b",
+        "type": "websocket-listener",
+        "path": "192.168.10.12:8000",
+        "wholemsg": "false"
+    },
+    {
+        "id": "1ff5f88ca1d403b7",
+        "type": "websocket-client",
+        "path": "ws://192.168.10.12:8000",
+        "tls": "",
+        "wholemsg": "false",
+        "hb": "0"
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
@@ -2899,5 +2913,76 @@
         "x": 1170,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "59bb182ed1a3e8e9",
+        "type": "websocket out",
+        "z": "ab443a039cdf1926",
+        "name": "",
+        "server": "",
+        "client": "1ff5f88ca1d403b7",
+        "x": 1080,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "49fbadbca619f5b7",
+        "type": "websocket in",
+        "z": "ab443a039cdf1926",
+        "name": "",
+        "server": "",
+        "client": "1ff5f88ca1d403b7",
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "5bb12524f3153e11"
+            ]
+        ]
+    },
+    {
+        "id": "5bb12524f3153e11",
+        "type": "debug",
+        "z": "ab443a039cdf1926",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5ca2d1b0086d38a1",
+        "type": "inject",
+        "z": "ab443a039cdf1926",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test",
+        "payloadType": "str",
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9"
+            ]
+        ]
     }
 ]
