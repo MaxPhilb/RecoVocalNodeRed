@@ -3033,6 +3033,35 @@
         "wires": []
     },
     {
+        "id": "f02935d5c2b7c603",
+        "type": "inject",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 690,
+        "y": 340,
+        "wires": [
+            [
+                "936fad29e25585ef"
+            ]
+        ]
+    },
+    {
         "id": "85b0c77d473e78f2",
         "type": "sqlite",
         "z": "f4d9ba972926275f",
