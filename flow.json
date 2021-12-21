@@ -1417,7 +1417,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 510,
+        "x": 850,
         "y": 320,
         "wires": []
     },
@@ -1426,17 +1426,16 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\nreturn msg;\n}",
+        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\nreturn msg;\n}\nlet nbAppui=flow.get(\"nbAppui\");\nif(nbAppui<2)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n}else\n{\n    flow.set(\"nbAppui\",0);\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 400,
         "y": 320,
         "wires": [
             [
-                "3ca859ab2f3005b5",
                 "e53e4b327b156d2f"
             ]
         ]
