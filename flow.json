@@ -1418,7 +1418,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
+        "x": 870,
         "y": 280,
         "wires": []
     },
@@ -1936,9 +1936,7 @@
         "type": "link in",
         "z": "fa2c9998251120d1",
         "name": "",
-        "links": [
-            "83d07d1dad1f9dcc"
-        ],
+        "links": [],
         "x": 245,
         "y": 140,
         "wires": [
@@ -1953,11 +1951,9 @@
         "z": "fa2c9998251120d1",
         "name": "",
         "mode": "link",
-        "links": [
-            "1bad072cfd7a6511"
-        ],
-        "x": 705,
-        "y": 360,
+        "links": [],
+        "x": 795,
+        "y": 340,
         "wires": []
     },
     {
