@@ -1901,7 +1901,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "reset Appui",
-        "func": "flow.set(\"nbAppui\",0);\nreturn msg;",
+        "func": "let nbappui=flow.get(\"nbAppui\");\nif(nbappui==1){\nflow.set(\"nbAppui\",0);\nreturn msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
