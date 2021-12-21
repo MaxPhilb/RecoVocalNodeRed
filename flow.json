@@ -1427,7 +1427,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "checkAppui",
-        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nif(nbAppui<1)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n    return [msg,];\n}\nif(nbAppui>=1)\n{\n    flow.set(\"nbAppui\",0);\n    return[,msg];\n}\n\n",
+        "func": "let payload=msg.payload;\nif(payload.includes(\"SWITCH_ON!\")){\n\n}\nlet nbAppui=flow.get(\"nbAppui\");\nmsg.nbAppui=nbAppui;\nif(nbAppui<1)\n{\n    flow.set(\"nbAppui\",nbAppui+1);\n    return [msg,];\n}\nif(nbAppui>=1)\n{\n    flow.set(\"nbAppui\",0);\n    return[,msg];\n}\n\n",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
