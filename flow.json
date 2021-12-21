@@ -393,7 +393,8 @@
             [
                 "75213766363f0534",
                 "9eccf61e1ab6c8c8",
-                "4693ddbe51d21b82"
+                "4693ddbe51d21b82",
+                "ac9e0ad2de382d34"
             ]
         ]
     },
@@ -714,8 +715,7 @@
         "y": 520,
         "wires": [
             [
-                "13f532013811d581",
-                "124a60272946421a"
+                "13f532013811d581"
             ]
         ]
     },
@@ -1239,8 +1239,44 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 1575,
+        "x": 815,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ac9e0ad2de382d34",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "let mess=msg.payload.hypotheses[0];\nvar phrase=\"\";\nfor( var i=0;i<mess.items.length;i++)\n{\n    for( var j=0;j<mess.items[i].items.length;j++){\n        phrase+=\" \"+mess.items[i].items[j].orthography;\n    }\n    \n}\nmsg.payload=phrase.charAt(0).toUpperCase() + phrase.slice(1)+\" ?\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
         "y": 420,
+        "wires": [
+            [
+                "124a60272946421a",
+                "f29106d0ce945523"
+            ]
+        ]
+    },
+    {
+        "id": "f29106d0ce945523",
+        "type": "debug",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 320,
         "wires": []
     },
     {
