@@ -1543,7 +1543,7 @@
         "name": "",
         "filename": "./data/listName4VDK.txt",
         "appendNewline": true,
-        "createDir": false,
+        "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
         "x": 1290,
