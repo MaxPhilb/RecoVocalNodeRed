@@ -159,16 +159,6 @@
         "responsetimeout": "10000"
     },
     {
-        "id": "37e184919e6e299c",
-        "type": "serial out",
-        "z": "755e7fce9de6d2ee",
-        "name": "",
-        "serial": "79fb63e954284bda",
-        "x": 710,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "ac68d14afb921548",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
@@ -3034,7 +3024,9 @@
         "x": 460,
         "y": 520,
         "wires": [
-            []
+            [
+                "0996ac6a5e2379a2"
+            ]
         ]
     },
     {
@@ -3401,6 +3393,16 @@
                 "8f610cf592ce2bfd"
             ]
         ]
+    },
+    {
+        "id": "0996ac6a5e2379a2",
+        "type": "serial out",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "serial": "79fb63e954284bda",
+        "x": 610,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "85b0c77d473e78f2",
