@@ -233,7 +233,9 @@
         "z": "755e7fce9de6d2ee",
         "name": "",
         "mode": "link",
-        "links": [],
+        "links": [
+            "8e217170ba11d68a"
+        ],
         "x": 375,
         "y": 200,
         "wires": []
@@ -2804,7 +2806,8 @@
         "name": "phraseDetectedDisplay",
         "links": [
             "c7765c9647000bba",
-            "124a60272946421a"
+            "124a60272946421a",
+            "6fedd96774fc6be3"
         ],
         "x": 285,
         "y": 260,
