@@ -422,7 +422,7 @@
         "id": "84e561a87c50da27",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "Comment me rendre à hotel de ville",
+        "name": "Comment me rendre à Les Roses",
         "props": [
             {
                 "p": "payload"
@@ -437,9 +437,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Comment me rendre à hotel de ville ?",
+        "payload": "Comment me rendre à l'arret Les Roses ?",
         "payloadType": "str",
-        "x": 220,
+        "x": 210,
         "y": 340,
         "wires": [
             [
@@ -465,7 +465,7 @@
         "id": "7dcd4d0883cc4ddf",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "combien d'arrets j'usqu' à hotel de ville",
+        "name": "combien d'arrets j'usqu' à l'arret Les Roses",
         "props": [
             {
                 "p": "payload"
@@ -480,9 +480,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "combien d'arrets j'usqu' à hotel de ville ?",
+        "payload": "combien d'arrets j'usqu' à l'arret Les Roses ?",
         "payloadType": "str",
-        "x": 230,
+        "x": 240,
         "y": 420,
         "wires": [
             [
