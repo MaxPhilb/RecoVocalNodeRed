@@ -1287,8 +1287,7 @@
         "name": "",
         "mode": "link",
         "links": [
-            "8e217170ba11d68a",
-            "f652ca205e6eb293"
+            "8e217170ba11d68a"
         ],
         "x": 815,
         "y": 360,
@@ -2802,7 +2801,6 @@
         "z": "ab443a039cdf1926",
         "name": "trajetDisplay",
         "links": [
-            "124a60272946421a",
             "e9ef2f1bf03f63fc"
         ],
         "x": 285,
