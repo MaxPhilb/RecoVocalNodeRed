@@ -882,11 +882,16 @@
                 "t": "cont",
                 "v": "NEXTBUS",
                 "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "DEFIBRILATEUR",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 5,
+        "outputs": 6,
         "x": 830,
         "y": 500,
         "wires": [
@@ -904,6 +909,9 @@
             ],
             [
                 "e7e8ae5ab3a6db30"
+            ],
+            [
+                "6895304e030b0bcd"
             ]
         ]
     },
@@ -1578,11 +1586,16 @@
                 "t": "cont",
                 "v": "NEXTBUS",
                 "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "DEFIBRILATEUR",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 5,
+        "outputs": 6,
         "x": 1690,
         "y": 400,
         "wires": [
@@ -1596,6 +1609,7 @@
             [
                 "e9ef2f1bf03f63fc"
             ],
+            [],
             []
         ]
     },
@@ -1647,10 +1661,13 @@
             "468cdf07f1874e01"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1080,
         "y": 620,
         "wires": [
-            []
+            [
+                "e1dcea6e9a88151c",
+                "26e79a99900e1edd"
+            ]
         ]
     },
     {
