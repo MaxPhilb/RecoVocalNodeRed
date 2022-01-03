@@ -3328,7 +3328,7 @@
         "id": "5480f42ba0908d78",
         "type": "link in",
         "z": "da93fe22a4429449",
-        "name": "",
+        "name": "appuiBtn",
         "links": [],
         "x": 145,
         "y": 160,
