@@ -1953,7 +1953,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "stops = {}\nlistName4VDK = \"\"\n\nmsg.payload.forEach(function(element) {\n    node.warn(element);\n    stops[element.id] = {'name':element.name, 'lat':element.lat, 'lon':element.lon}\n    \n    listName4VDK = listName4VDK + element.name.split(',')[1].trim().toLowerCase() + \" | \"\n})\n\nlistName4VDK = listName4VDK.trim().slice(0, -1)\n// remove ':' for VDK grammar\nlistName4VDK = listName4VDK.replaceAll(':','')\n\nmsg.stops = stops\nmsg.listName4VDK = listName4VDK\n\nreturn msg;",
+        "func": "stops = {}\nlistName4VDK = \"\"\n\nmsg.payload.forEach(function(element) {\n    node.warn(element);\n    stops[element.id] = {'name':element.name, 'lat':element.lat, 'lon':element.lon}\n    \n    listName4VDK = listName4VDK + element.name.toLowerCase() + \" | \"\n})\n\nlistName4VDK = listName4VDK.trim().slice(0, -1)\n// remove ':' for VDK grammar\nlistName4VDK = listName4VDK.replaceAll(':','')\n\nmsg.stops = stops\nmsg.listName4VDK = listName4VDK\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
