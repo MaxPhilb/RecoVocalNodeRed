@@ -3348,7 +3348,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "trajetDisplay",
-        "func": "let phrase=msg.payload;\nmsg.payload={\"action\":\"trajet\",\"phrase\":phrase};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"trajet\",\"data\":data};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
