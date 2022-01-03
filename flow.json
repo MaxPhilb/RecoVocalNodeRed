@@ -1542,12 +1542,12 @@
         "type": "file",
         "z": "fa2c9998251120d1",
         "name": "",
-        "filename": "/home/inno/.node-red/data/listName4VDK.txt",
+        "filename": "./data/listName4VDK.txt",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1350,
+        "x": 1290,
         "y": 1000,
         "wires": [
             []
