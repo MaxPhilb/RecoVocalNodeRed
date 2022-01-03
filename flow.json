@@ -2704,8 +2704,8 @@
         "topic": "",
         "payload": "{\"json\":\"test\"}",
         "payloadType": "json",
-        "x": 610,
-        "y": 60,
+        "x": 630,
+        "y": 40,
         "wires": [
             [
                 "59bb182ed1a3e8e9"
