@@ -334,8 +334,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 360,
+        "x": 490,
+        "y": 380,
         "wires": [
             []
         ]
@@ -351,8 +351,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 440,
+        "x": 470,
+        "y": 460,
         "wires": [
             []
         ]
@@ -368,8 +368,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 500,
+        "x": 490,
+        "y": 540,
         "wires": [
             []
         ]
@@ -385,8 +385,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 560,
+        "x": 510,
+        "y": 620,
         "wires": [
             []
         ]
@@ -402,11 +402,226 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 620,
+        "x": 410,
+        "y": 720,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "84e561a87c50da27",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment me rendre à hotel de ville",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment me rendre à hotel de ville ?",
+        "payloadType": "str",
+        "x": 220,
+        "y": 340,
+        "wires": [
+            [
+                "d6f8a53b2862f135",
+                "b81cc92e90dd4ccc"
+            ]
+        ]
+    },
+    {
+        "id": "d6f8a53b2862f135",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8e217170ba11d68a"
+        ],
+        "x": 395,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7dcd4d0883cc4ddf",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "combien d'arrets j'usqu' à hotel de ville",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "combien d'arrets j'usqu' à hotel de ville ?",
+        "payloadType": "str",
+        "x": 230,
+        "y": 420,
+        "wires": [
+            [
+                "4bdf019686496f77",
+                "3c49492f004306f8"
+            ]
+        ]
+    },
+    {
+        "id": "4bdf019686496f77",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8e217170ba11d68a"
+        ],
+        "x": 435,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "edaaadfdc492404c",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Dans quel direction va le bus C1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Dans quel direction va le bus C1 ?",
+        "payloadType": "str",
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "523b13a7db4ddc42",
+                "39eca6426dca2e13"
+            ]
+        ]
+    },
+    {
+        "id": "523b13a7db4ddc42",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8e217170ba11d68a"
+        ],
+        "x": 385,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "98ac8f8e4ad1d828",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "quand arrive le prochain bus",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "quand arrive le prochain bus ?",
+        "payloadType": "str",
+        "x": 200,
+        "y": 580,
+        "wires": [
+            [
+                "6a76f882808a5b62",
+                "de2428d8dc8976f5"
+            ]
+        ]
+    },
+    {
+        "id": "6a76f882808a5b62",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8e217170ba11d68a"
+        ],
+        "x": 385,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e03e53b1c5f2baab",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "où trouver un defibrillateur",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ou trouver un défibrilateur ?",
+        "payloadType": "str",
+        "x": 190,
+        "y": 680,
+        "wires": [
+            [
+                "c70a44a241d273d3",
+                "16699e8cadb69462"
+            ]
+        ]
+    },
+    {
+        "id": "c70a44a241d273d3",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8e217170ba11d68a"
+        ],
+        "x": 385,
+        "y": 680,
+        "wires": []
     },
     {
         "id": "3dfc597eb669681c",
@@ -2995,7 +3210,12 @@
         "links": [
             "c7765c9647000bba",
             "124a60272946421a",
-            "6fedd96774fc6be3"
+            "6fedd96774fc6be3",
+            "d6f8a53b2862f135",
+            "4bdf019686496f77",
+            "523b13a7db4ddc42",
+            "6a76f882808a5b62",
+            "c70a44a241d273d3"
         ],
         "x": 285,
         "y": 260,
