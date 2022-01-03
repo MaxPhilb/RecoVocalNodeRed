@@ -218,7 +218,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "Quel est le prix d'un ticket",
-        "payload": "Quel est le prix d'un ticket",
+        "payload": "Quel est le prix d'un ticket ?",
         "payloadType": "str",
         "x": 200,
         "y": 200,
