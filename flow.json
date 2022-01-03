@@ -200,6 +200,45 @@
         "wires": []
     },
     {
+        "id": "a7c196c2737d540d",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Quel est le prix d'un ticket",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Quel est le prix d'un ticket",
+        "payloadType": "date",
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "6fedd96774fc6be3"
+            ]
+        ]
+    },
+    {
+        "id": "6fedd96774fc6be3",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [],
+        "x": 375,
+        "y": 200,
+        "wires": []
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
