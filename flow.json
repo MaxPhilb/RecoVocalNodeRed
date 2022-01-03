@@ -64,6 +64,14 @@
         "env": []
     },
     {
+        "id": "6ddb5e4c206db281",
+        "type": "tab",
+        "label": "Defibrilateur",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ab443a039cdf1926",
         "type": "tab",
         "label": "interfaceGraphique",
@@ -83,6 +91,14 @@
         "id": "f4d9ba972926275f",
         "type": "tab",
         "label": "old",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2e150ca287dec739",
+        "type": "tab",
+        "label": "Flow 3",
         "disabled": false,
         "info": "",
         "env": []
@@ -336,14 +352,14 @@
         "id": "3c49492f004306f8",
         "type": "function",
         "z": "755e7fce9de6d2ee",
-        "name": "TRAJET_TRANSPORT",
-        "func": "msg.payload={hypotheses:[{items:[{name:\"\"}]}]};\nmsg.payload.hypotheses[0].items[0].name=\"TRAJET_TRANSPORT\";\nreturn msg;",
+        "name": "NBARRETS",
+        "func": "msg.payload={hypotheses:[{items:[{name:\"\"}]}]};\nmsg.payload.hypotheses[0].items[0].name=\"NBARRETS\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 370,
         "y": 440,
         "wires": [
             []
@@ -353,14 +369,14 @@
         "id": "39eca6426dca2e13",
         "type": "function",
         "z": "755e7fce9de6d2ee",
-        "name": "TRAJET_TRANSPORT",
-        "func": "msg.payload={hypotheses:[{items:[{name:\"\"}]}]};\nmsg.payload.hypotheses[0].items[0].name=\"TRAJET_TRANSPORT\";\nreturn msg;",
+        "name": "DIRECTION",
+        "func": "msg.payload={hypotheses:[{items:[{name:\"\"}]}]};\nmsg.payload.hypotheses[0].items[0].name=\"DIRECTION\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 370,
         "y": 500,
         "wires": [
             []
@@ -370,14 +386,14 @@
         "id": "de2428d8dc8976f5",
         "type": "function",
         "z": "755e7fce9de6d2ee",
-        "name": "TRAJET_TRANSPORT",
-        "func": "msg.payload={hypotheses:[{items:[{name:\"\"}]}]};\nmsg.payload.hypotheses[0].items[0].name=\"TRAJET_TRANSPORT\";\nreturn msg;",
+        "name": "NEXTBUS",
+        "func": "msg.payload={hypotheses:[{items:[{name:\"\"}]}]};\nmsg.payload.hypotheses[0].items[0].name=\"NEXTBUS\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
+        "x": 370,
         "y": 560,
         "wires": [
             []
@@ -1602,8 +1618,8 @@
         "z": "fa2c9998251120d1",
         "name": "defibrilateur",
         "info": "",
-        "x": 1080,
-        "y": 640,
+        "x": 1070,
+        "y": 660,
         "wires": []
     },
     {
@@ -1620,6 +1636,21 @@
             [
                 "d24186cffce08a48"
             ]
+        ]
+    },
+    {
+        "id": "6895304e030b0bcd",
+        "type": "link call",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "links": [
+            "468cdf07f1874e01"
+        ],
+        "timeout": "30",
+        "x": 1070,
+        "y": 620,
+        "wires": [
+            []
         ]
     },
     {
@@ -2731,6 +2762,29 @@
         "info": "",
         "x": 1170,
         "y": 380,
+        "wires": []
+    },
+    {
+        "id": "468cdf07f1874e01",
+        "type": "link in",
+        "z": "6ddb5e4c206db281",
+        "name": "Defibrilateur",
+        "links": [],
+        "x": 265,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c6c9a480cc71647",
+        "type": "link out",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 905,
+        "y": 220,
         "wires": []
     },
     {
