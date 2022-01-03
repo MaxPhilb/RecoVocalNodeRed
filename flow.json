@@ -480,7 +480,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Combien d'arrets j'usqu' à l'arret Les Roses ?",
+        "payload": "Combien d'arrets jusqu' à l'arret Les Roses ?",
         "payloadType": "str",
         "x": 240,
         "y": 420,
