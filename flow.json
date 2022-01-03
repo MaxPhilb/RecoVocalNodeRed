@@ -242,6 +242,47 @@
         "wires": []
     },
     {
+        "id": "265c47c1c42d6cf8",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "resetView",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "6d95b43953434ab8"
+            ]
+        ]
+    },
+    {
+        "id": "6d95b43953434ab8",
+        "type": "link out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "4094d4a5689a30f6"
+        ],
+        "x": 255,
+        "y": 80,
+        "wires": []
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
@@ -2771,7 +2812,8 @@
         "links": [
             "854dc0096230e6a4",
             "63bf9472f419a1ec",
-            "1f2f2d3a1cf469ac"
+            "1f2f2d3a1cf469ac",
+            "6d95b43953434ab8"
         ],
         "x": 285,
         "y": 220,
