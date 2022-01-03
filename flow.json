@@ -1097,7 +1097,7 @@
         "type": "switch",
         "z": "fa2c9998251120d1",
         "name": "",
-        "property": "payload.hypotheses[0].items[0].name",
+        "property": "sttItemName",
         "propertyType": "msg",
         "rules": [
             {
