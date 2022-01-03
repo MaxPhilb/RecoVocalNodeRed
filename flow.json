@@ -1489,48 +1489,6 @@
         "wires": []
     },
     {
-        "id": "417a6fe3167c6080",
-        "type": "inject",
-        "z": "b5b8cea622bb01f7",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 140,
-        "wires": [
-            [
-                "8d1ec7850416a9df"
-            ]
-        ]
-    },
-    {
-        "id": "8d1ec7850416a9df",
-        "type": "link out",
-        "z": "b5b8cea622bb01f7",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "749caaec1faa7187"
-        ],
-        "x": 275,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "8dbf646a20b1d1b8",
         "type": "sqlite",
         "z": "1c438ac302aea20f",
