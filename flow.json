@@ -167,10 +167,7 @@
         "x": 130,
         "y": 200,
         "wires": [
-            [
-                "8f610cf592ce2bfd",
-                "ac9818cd1049b77c"
-            ]
+            []
         ]
     },
     {
@@ -3008,9 +3005,7 @@
         "x": 460,
         "y": 520,
         "wires": [
-            [
-                "37e184919e6e299c"
-            ]
+            []
         ]
     },
     {
@@ -3326,6 +3321,39 @@
         "wires": [
             [
                 "936fad29e25585ef"
+            ]
+        ]
+    },
+    {
+        "id": "5480f42ba0908d78",
+        "type": "link in",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "links": [],
+        "x": 145,
+        "y": 160,
+        "wires": [
+            [
+                "e73a26ded3d923bc"
+            ]
+        ]
+    },
+    {
+        "id": "e73a26ded3d923bc",
+        "type": "function",
+        "z": "da93fe22a4429449",
+        "name": "",
+        "func": "msg.payload=\"SWITCH_ON!\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "8f610cf592ce2bfd"
             ]
         ]
     },
