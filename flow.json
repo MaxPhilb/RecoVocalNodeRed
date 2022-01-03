@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "b5b8cea622bb01f7",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1c438ac302aea20f",
         "type": "tab",
         "label": "Prix ticket",
@@ -112,6 +120,26 @@
         "mode": "RO"
     },
     {
+        "id": "380e2917cce3c84b",
+        "type": "websocket-listener",
+        "path": "192.168.10.12:8000",
+        "wholemsg": "false"
+    },
+    {
+        "id": "1ff5f88ca1d403b7",
+        "type": "websocket-client",
+        "path": "ws://192.168.10.12:8000",
+        "tls": "",
+        "wholemsg": "false",
+        "hb": "0"
+    },
+    {
+        "id": "83fed008d1f691a4",
+        "type": "websocket-listener",
+        "path": "/ws",
+        "wholemsg": "false"
+    },
+    {
         "id": "79fb63e954284bda",
         "type": "serial-port",
         "serialport": "/dev/ttyUSB0",
@@ -131,24 +159,29 @@
         "responsetimeout": "10000"
     },
     {
-        "id": "380e2917cce3c84b",
-        "type": "websocket-listener",
-        "path": "192.168.10.12:8000",
-        "wholemsg": "false"
+        "id": "707537184c55cabb",
+        "type": "serial in",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "serial": "79fb63e954284bda",
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "8f610cf592ce2bfd",
+                "ac9818cd1049b77c"
+            ]
+        ]
     },
     {
-        "id": "1ff5f88ca1d403b7",
-        "type": "websocket-client",
-        "path": "ws://192.168.10.12:8000",
-        "tls": "",
-        "wholemsg": "false",
-        "hb": "0"
-    },
-    {
-        "id": "83fed008d1f691a4",
-        "type": "websocket-listener",
-        "path": "/ws",
-        "wholemsg": "false"
+        "id": "37e184919e6e299c",
+        "type": "serial out",
+        "z": "755e7fce9de6d2ee",
+        "name": "",
+        "serial": "79fb63e954284bda",
+        "x": 710,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "3dfc597eb669681c",
@@ -424,7 +457,7 @@
             "9efe2b8dc16c0a53"
         ],
         "x": 415,
-        "y": 500,
+        "y": 600,
         "wires": []
     },
     {
@@ -1355,6 +1388,48 @@
         "info": "",
         "x": 1080,
         "y": 640,
+        "wires": []
+    },
+    {
+        "id": "417a6fe3167c6080",
+        "type": "inject",
+        "z": "b5b8cea622bb01f7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "8d1ec7850416a9df"
+            ]
+        ]
+    },
+    {
+        "id": "8d1ec7850416a9df",
+        "type": "link out",
+        "z": "b5b8cea622bb01f7",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "749caaec1faa7187"
+        ],
+        "x": 285,
+        "y": 160,
         "wires": []
     },
     {
@@ -2565,7 +2640,8 @@
         "name": "startDisplay",
         "links": [
             "9d943fea897ecf6e",
-            "6a13f682c9099730"
+            "6a13f682c9099730",
+            "8d1ec7850416a9df"
         ],
         "x": 285,
         "y": 140,
@@ -2916,31 +2992,6 @@
         ],
         "x": 1175,
         "y": 120,
-        "wires": []
-    },
-    {
-        "id": "707537184c55cabb",
-        "type": "serial in",
-        "z": "da93fe22a4429449",
-        "name": "",
-        "serial": "79fb63e954284bda",
-        "x": 110,
-        "y": 200,
-        "wires": [
-            [
-                "8f610cf592ce2bfd",
-                "ac9818cd1049b77c"
-            ]
-        ]
-    },
-    {
-        "id": "37e184919e6e299c",
-        "type": "serial out",
-        "z": "da93fe22a4429449",
-        "name": "",
-        "serial": "79fb63e954284bda",
-        "x": 690,
-        "y": 520,
         "wires": []
     },
     {
