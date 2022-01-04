@@ -1188,8 +1188,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1370,
-        "y": 420,
+        "x": 1350,
+        "y": 280,
         "wires": []
     },
     {
@@ -1262,7 +1262,8 @@
         "wires": [
             [
                 "26e79a99900e1edd",
-                "e1dcea6e9a88151c"
+                "e1dcea6e9a88151c",
+                "e9ef2f1bf03f63fc"
             ]
         ]
     },
@@ -1404,7 +1405,8 @@
         "wires": [
             [
                 "26e79a99900e1edd",
-                "e1dcea6e9a88151c"
+                "e1dcea6e9a88151c",
+                "e9ef2f1bf03f63fc"
             ]
         ]
     },
@@ -1514,7 +1516,8 @@
         "wires": [
             [
                 "e1dcea6e9a88151c",
-                "26e79a99900e1edd"
+                "26e79a99900e1edd",
+                "e9ef2f1bf03f63fc"
             ]
         ]
     },
@@ -1794,65 +1797,6 @@
         "wires": []
     },
     {
-        "id": "efe72993b496cfd5",
-        "type": "switch",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "property": "sttItemName",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "PRIX",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "TRAJET_TRANSPORT",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "NBARRETS",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "DIRECTION",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "NEXTBUS",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "DEFIBRILATEUR",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 6,
-        "x": 1690,
-        "y": 400,
-        "wires": [
-            [],
-            [
-                "e9ef2f1bf03f63fc"
-            ],
-            [
-                "e9ef2f1bf03f63fc"
-            ],
-            [
-                "e9ef2f1bf03f63fc"
-            ],
-            [],
-            []
-        ]
-    },
-    {
         "id": "e9ef2f1bf03f63fc",
         "type": "link out",
         "z": "fa2c9998251120d1",
@@ -1861,8 +1805,8 @@
         "links": [
             "f652ca205e6eb293"
         ],
-        "x": 1855,
-        "y": 400,
+        "x": 1355,
+        "y": 460,
         "wires": []
     },
     {
