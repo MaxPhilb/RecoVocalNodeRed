@@ -659,6 +659,33 @@
         ]
     },
     {
+        "id": "b84fa768ecf92f54",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "ou se trouve les toilettes les plus proche",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ou se trouve les toilettes les plus proche",
+        "payloadType": "str",
+        "x": 220,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
