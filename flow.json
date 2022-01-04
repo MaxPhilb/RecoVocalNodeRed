@@ -2520,7 +2520,7 @@
         "type": "function",
         "z": "79dedaa104b8a461",
         "name": "Extract destination",
-        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n   \n    \n    \n} \n\nmsg.destination = destination\n\nreturn msg;",
+        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n   \n    \n    \n} \nnode.warn(destination);\nmsg.destination = destination\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
