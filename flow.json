@@ -1228,11 +1228,10 @@
         "to": "",
         "reg": false,
         "x": 1440,
-        "y": 520,
+        "y": 620,
         "wires": [
             [
-                "13f532013811d581",
-                "efe72993b496cfd5"
+                "13f532013811d581"
             ]
         ]
     },
@@ -1240,13 +1239,13 @@
         "id": "13f532013811d581",
         "type": "link out",
         "z": "fa2c9998251120d1",
-        "name": "",
+        "name": "TTS",
         "mode": "link",
         "links": [
             "f973e2dbbefd369a"
         ],
-        "x": 1755,
-        "y": 540,
+        "x": 1615,
+        "y": 620,
         "wires": []
     },
     {
@@ -1968,6 +1967,16 @@
         ]
     },
     {
+        "id": "4706cb9701ace68c",
+        "type": "comment",
+        "z": "fa2c9998251120d1",
+        "name": "TTS",
+        "info": "",
+        "x": 1660,
+        "y": 580,
+        "wires": []
+    },
+    {
         "id": "8dbf646a20b1d1b8",
         "type": "sqlite",
         "z": "1c438ac302aea20f",
@@ -2416,7 +2425,7 @@
         "type": "function",
         "z": "e8f20bbce7f040f7",
         "name": "",
-        "func": "// itinéraire 1\nlegs = msg.payload.plan.itineraries[0].legs\nnbStops = 0\n\nlegs.forEach(function(leg) {\n    if(leg.intermediateStops.length>0)\n        nbStops = nbStops + leg.intermediateStops.length + 1\n})\n\n\nmsg.tts = \"Il y a \"\nmsg.tts += nbStops\nmsg.tts += \" arrets\"\nmsg.nbStops=nbStops;\nmsg.payload.nbStops=nbStops;\n\nreturn msg;",
+        "func": "// itinéraire 1\nlegs = msg.payload.plan.itineraries[0].legs\nnbStops = 0\n\nlegs.forEach(function(leg) {\n    if(leg.intermediateStops.length>0)\n        nbStops = nbStops + leg.intermediateStops.length + 1\n})\n\n\nmsg.tts = \"Il y a \"\nmsg.tts += nbStops\nmsg.tts += \" arrets\"\nmsg.nbStops=nbStops;\nmsg.payload.nbStops=nbStops;\nmsg.payload.req=\"NBARRETS\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
