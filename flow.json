@@ -1263,7 +1263,7 @@
             [
                 "26e79a99900e1edd",
                 "e1dcea6e9a88151c",
-                "e9ef2f1bf03f63fc"
+                "106e8ad4ea1f158d"
             ]
         ]
     },
@@ -1406,7 +1406,7 @@
             [
                 "26e79a99900e1edd",
                 "e1dcea6e9a88151c",
-                "e9ef2f1bf03f63fc"
+                "106e8ad4ea1f158d"
             ]
         ]
     },
@@ -1517,7 +1517,7 @@
             [
                 "e1dcea6e9a88151c",
                 "26e79a99900e1edd",
-                "e9ef2f1bf03f63fc"
+                "106e8ad4ea1f158d"
             ]
         ]
     },
@@ -1805,7 +1805,7 @@
         "links": [
             "f652ca205e6eb293"
         ],
-        "x": 1355,
+        "x": 1515,
         "y": 460,
         "wires": []
     },
@@ -1919,6 +1919,25 @@
         "x": 1660,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "106e8ad4ea1f158d",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "let data=msg.payload;\nlet it=data.plan.itineraries[0].legs;\nfor(let i=0;i<it.length;i++){\n    if(it[i].mode==\"TRAM\" || it[i].mode==\"BUS\"){\n        \n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 460,
+        "wires": [
+            [
+                "e9ef2f1bf03f63fc"
+            ]
+        ]
     },
     {
         "id": "8dbf646a20b1d1b8",
