@@ -1925,7 +1925,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let data=msg.payload;\nlet it=data.plan.itineraries[0].legs;\nfor(let i=0;i<it.length;i++){\n    if(it[i].mode==\"TRAM\" || it[i].mode==\"BUS\"){\n        \n    }\n}\nreturn msg;",
+        "func": "function msToTime(duration) {\n  var milliseconds = Math.floor((duration % 1000) / 100),\n    seconds = Math.floor((duration / 1000) % 60),\n    minutes = Math.floor((duration / (1000 * 60)) % 60),\n    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);\n\n  hours = (hours < 10) ? \"0\" + hours : hours;\n  minutes = (minutes < 10) ? \"0\" + minutes : minutes;\n  seconds = (seconds < 10) ? \"0\" + seconds : seconds;\n\n  return hours + \":\" + minutes + \":\" + seconds + \".\" + milliseconds;\n}\n\nlet data=msg.payload;\nlet it=data.plan.itineraries[0].legs;\nlet nbIt=0;\nlet itineraire=[];\nfor(let i=0;i<it.length;i++){\n    if(it[i].mode==\"TRAM\" || it[i].mode==\"BUS\"){\n        let intermediate=[];\n        intermediate.push({hour:msToTime(it[i].from.departure),name:it[i].from.name,pmrImp:\"false\"});\n        \n        intermediate.push({hour:msToTime(it[i].to.arrival),name:it[i].to.name,pmrImp:\"false\"});\n        nbIt++;\n        \n        itineraire.push({list:intermediate,colorLine:\"#\"+it[i].routeColor,nameLine:it[i].route,commentIt:\"Durée du trajet \"+(it[i].intermediateStops.length+2)+\" arrêts\",tMStop:true, tMText: \"(\"+(it[i].intermediateStops.length)+\" arrêts)\"});\n    }\n    \n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
