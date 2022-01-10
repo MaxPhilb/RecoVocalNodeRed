@@ -437,7 +437,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Comment me rendre à l'arret Les Roses ?",
+        "payload": "Comment me rendre à l'arret Maurepuis?",
         "payloadType": "str",
         "x": 210,
         "y": 340,
