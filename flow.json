@@ -3472,6 +3472,39 @@
         ]
     },
     {
+        "id": "81ff00131f70ddc4",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "defibrilateur",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"carto\",\"data\":data};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 420,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9"
+            ]
+        ]
+    },
+    {
+        "id": "28c3fa79d34c28d4",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "defibrilateur",
+        "links": [],
+        "x": 275,
+        "y": 420,
+        "wires": [
+            [
+                "81ff00131f70ddc4"
+            ]
+        ]
+    },
+    {
         "id": "904ace6426fb4207",
         "type": "function",
         "z": "da93fe22a4429449",
