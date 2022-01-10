@@ -3148,7 +3148,8 @@
         "y": 200,
         "wires": [
             [
-                "609a5bdab10eef5e"
+                "609a5bdab10eef5e",
+                "c44425b806b3c37a"
             ]
         ]
     },
@@ -3175,8 +3176,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 140,
+        "x": 410,
+        "y": 60,
         "wires": []
     },
     {
@@ -3314,6 +3315,23 @@
         ]
     },
     {
+        "id": "c44425b806b3c37a",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "59bb182ed1a3e8e9",
         "type": "websocket out",
         "z": "ab443a039cdf1926",
@@ -3426,7 +3444,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "call",
-        "func": "msg.payload={\"action\":\"call\"};\nreturn msg;",
+        "func": "msg.payload={\"action\":\"call\",\"data\":msg.faq};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3449,11 +3467,11 @@
             "854dc0096230e6a4",
             "936fad29e25585ef"
         ],
-        "x": 285,
+        "x": 95,
         "y": 180,
         "wires": [
             [
-                "d431ba75f4643003"
+                "5fcb75beddfdccec"
             ]
         ]
     },
@@ -3687,6 +3705,25 @@
         "wires": [
             [
                 "81ff00131f70ddc4"
+            ]
+        ]
+    },
+    {
+        "id": "5fcb75beddfdccec",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "ajout FAQ",
+        "func": "let lquestions=[];\n        lquestions.push(\"Le C1 est il déjà passé ?\");\n        lquestions.push(\"Le bus est-il accessible au fauteuil roulant ?\");\n        lquestions.push(\"Comment aller à l’arrêt Victor Hugo ?\");\n        lquestions.push(\"Comment aller à l’arrêt Ponsard ?\");\n        lquestions.push(\"Combien de temps dure mon trajet ?\");\n        lquestions.push(\"Est-ce que je suis en direction de ... ? \");\n        lquestions.push(\"Quelles sont les horaires du musée ... ?\");\n        lquestions.push(\"Où est le restaurant le plus proche ?\");\nmsg.faq=lquestions;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "d431ba75f4643003"
             ]
         ]
     },
