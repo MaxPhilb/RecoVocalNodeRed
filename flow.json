@@ -470,7 +470,7 @@
         "id": "7dcd4d0883cc4ddf",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "combien d'arrets j'usqu' à l'arret fontaines",
+        "name": "combien d'arrets j'usqu' à l'arret chaulnes",
         "props": [
             {
                 "p": "payload"
@@ -481,7 +481,7 @@
             },
             {
                 "p": "dir",
-                "v": "fontaines",
+                "v": "chaulnes",
                 "vt": "str"
             }
         ],
@@ -490,7 +490,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Combien d'arrets jusqu' à l'arret fontaines ?",
+        "payload": "Combien d'arrets jusqu' à l'arret chaulnes ?",
         "payloadType": "str",
         "x": 240,
         "y": 420,
