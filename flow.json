@@ -576,7 +576,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "quand arrive le prochain bus ?",
+        "payload": "Quand arrive le prochain bus ?",
         "payloadType": "str",
         "x": 200,
         "y": 580,
