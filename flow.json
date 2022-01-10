@@ -3407,7 +3407,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "start",
-        "func": "msg.payload={\"action\":\"start\"};\nreturn msg;",
+        "func": "msg.payload={\"action\":\"start\",\"faq\":msg.faq,\"departure\":global.depart};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
