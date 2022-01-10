@@ -1977,6 +1977,23 @@
         ]
     },
     {
+        "id": "8d455ddd0803b9af",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "defibrillateur",
+        "func": "https://entrepot.metropolegrenoble.fr/opendata/38185-GRE/Sante/csv/defibrillateur_VF%20geocoded.csv\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "8dbf646a20b1d1b8",
         "type": "sqlite",
         "z": "1c438ac302aea20f",
