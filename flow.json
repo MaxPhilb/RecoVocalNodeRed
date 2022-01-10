@@ -689,8 +689,8 @@
         "topic": "",
         "payload": "ou se trouve les toilettes les plus proche",
         "payloadType": "str",
-        "x": 220,
-        "y": 780,
+        "x": 230,
+        "y": 920,
         "wires": [
             []
         ]
@@ -1988,6 +1988,29 @@
         "finalize": "",
         "libs": [],
         "x": 320,
+        "y": 1120,
+        "wires": [
+            [
+                "6afee4535154899d"
+            ]
+        ]
+    },
+    {
+        "id": "6afee4535154899d",
+        "type": "csv",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 510,
         "y": 1120,
         "wires": [
             []
