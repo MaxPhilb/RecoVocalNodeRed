@@ -422,7 +422,7 @@
         "id": "84e561a87c50da27",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "Comment me rendre à les roses",
+        "name": "Comment me rendre à granier",
         "props": [
             {
                 "p": "payload"
@@ -433,7 +433,7 @@
             },
             {
                 "p": "dir",
-                "v": "les roses",
+                "v": "granier",
                 "vt": "str"
             }
         ],
@@ -442,9 +442,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Comment me rendre à l'arret les roses ?",
+        "payload": "Comment me rendre à l'arret granier ?",
         "payloadType": "str",
-        "x": 210,
+        "x": 200,
         "y": 340,
         "wires": [
             [
