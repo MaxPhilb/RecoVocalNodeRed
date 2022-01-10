@@ -619,7 +619,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "ou trouver un défibrilateur ?",
+        "payload": "Où trouver un défibrilateur ?",
         "payloadType": "str",
         "x": 190,
         "y": 680,
