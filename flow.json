@@ -1933,7 +1933,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "stops = {}\nlistName4VDK = \"\"\n\nmsg.payload.forEach(function(element) {\n    \n    stops[element.clusterGtfsId] = {'name':element.name, 'lat':element.lat, 'lon':element.lon}\n    \n    listName4VDK = listName4VDK + (element.name+ \"\").toLowerCase() + \" | \"\n})\n\nlistName4VDK = listName4VDK.trim().slice(0, -1)\n// remove ':' for VDK grammar\n//listName4VDK = listName4VDK.replaceAll(':','')\n\nmsg.stops = stops\nmsg.listName4VDK = listName4VDK\n\nreturn msg;",
+        "func": "stops = []\nlistName4VDK = \"\"\n\nmsg.payload.forEach(function(element) {\n    \n    stops.push( {'name':element.name, 'lat':element.lat, 'lon':element.lon})\n    \n    listName4VDK = listName4VDK + (element.name+ \"\").toLowerCase() + \" | \"\n})\n\nlistName4VDK = listName4VDK.trim().slice(0, -1)\n// remove ':' for VDK grammar\n//listName4VDK = listName4VDK.replaceAll(':','')\n\nmsg.stops = msg.payload\nmsg.listName4VDK = listName4VDK\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
