@@ -1877,7 +1877,8 @@
         "wires": [
             [
                 "e1dcea6e9a88151c",
-                "26e79a99900e1edd"
+                "26e79a99900e1edd",
+                "8d6879c7b0f57a12"
             ]
         ]
     },
@@ -1977,132 +1978,36 @@
         ]
     },
     {
-        "id": "8d455ddd0803b9af",
+        "id": "a6025be97770ffea",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "f652ca205e6eb293"
+        ],
+        "x": 1535,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "8d6879c7b0f57a12",
         "type": "function",
         "z": "fa2c9998251120d1",
-        "name": "defibrillateur",
-        "func": "return msg;",
+        "name": "",
+        "func": "function msToTime(duration) {\n  var milliseconds = Math.floor((duration % 1000) / 100),\n    seconds = Math.floor((duration / 1000) % 60),\n    minutes = Math.floor((duration / (1000 * 60)) % 60),\n    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);\n\n  hours = (hours < 10) ? \"0\" + hours : hours;\n  minutes = (minutes < 10) ? \"0\" + minutes : minutes;\n  seconds = (seconds < 10) ? \"0\" + seconds : seconds;\n\n  return hours + \":\" + minutes ;\n}\n\nlet data=msg.payload;\nlet it=data.plan.itineraries[0].legs;\nlet nbIt=0;\nlet itineraire=[];\nfor(let i=0;i<it.length;i++){\n    if(it[i].mode==\"TRAM\" || it[i].mode==\"BUS\"){\n        let intermediate=[];\n        intermediate.push({hour:msToTime(it[i].from.departure),name:it[i].from.name,pmrImp:\"false\"});\n        \n        intermediate.push({hour:msToTime(it[i].to.arrival),name:it[i].to.name,pmrImp:\"false\"});\n        nbIt++;\n        \n        itineraire.push({list:intermediate,colorLine:\"#\"+it[i].routeColor,nameLine:it[i].route,commentIt:\"Durée du trajet \"+(it[i].intermediateStops.length+2)+\" arrêts\",tMStop:true, tMText: \"(\"+(it[i].intermediateStops.length)+\" arrêts)\"});\n    }\n    \n}\nmsg.it=itineraire;\nmsg.payload=itineraire;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1120,
+        "x": 1410,
+        "y": 540,
         "wires": [
             [
-                "6afee4535154899d"
+                "a6025be97770ffea"
             ]
         ]
-    },
-    {
-        "id": "6afee4535154899d",
-        "type": "csv",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "sep": ",",
-        "hdrin": true,
-        "hdrout": "none",
-        "multi": "mult",
-        "ret": "\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 510,
-        "y": 1120,
-        "wires": [
-            [
-                "acaa392b3c0adc72"
-            ]
-        ]
-    },
-    {
-        "id": "f265462dd9215bb4",
-        "type": "http request",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "https://entrepot.metropolegrenoble.fr/opendata/38185-GRE/Sante/csv/defibrillateur_VF%20geocoded.csv",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 340,
-        "y": 1220,
-        "wires": [
-            [
-                "6afee4535154899d",
-                "73df4e9ee474ec4e"
-            ]
-        ]
-    },
-    {
-        "id": "712edfe41969105d",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 170,
-        "y": 1180,
-        "wires": [
-            [
-                "f265462dd9215bb4"
-            ]
-        ]
-    },
-    {
-        "id": "73df4e9ee474ec4e",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 1260,
-        "wires": []
-    },
-    {
-        "id": "acaa392b3c0adc72",
-        "type": "debug",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 1160,
-        "wires": []
     },
     {
         "id": "8dbf646a20b1d1b8",
@@ -3275,6 +3180,134 @@
         "wires": []
     },
     {
+        "id": "b22157babcaf73b0",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "defibrillateur",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "7dc99738e0e1284d"
+            ]
+        ]
+    },
+    {
+        "id": "7dc99738e0e1284d",
+        "type": "csv",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "38c7da820631680c"
+            ]
+        ]
+    },
+    {
+        "id": "83f712e8f83b721e",
+        "type": "http request",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://entrepot.metropolegrenoble.fr/opendata/38185-GRE/Sante/csv/defibrillateur_VF%20geocoded.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "7dc99738e0e1284d",
+                "2702d9421e380875"
+            ]
+        ]
+    },
+    {
+        "id": "a5a3739e27f69cb0",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [
+                "83f712e8f83b721e"
+            ]
+        ]
+    },
+    {
+        "id": "2702d9421e380875",
+        "type": "debug",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "38c7da820631680c",
+        "type": "debug",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 480,
+        "wires": []
+    },
+    {
         "id": "59bb182ed1a3e8e9",
         "type": "websocket out",
         "z": "ab443a039cdf1926",
@@ -3524,7 +3557,8 @@
         "z": "ab443a039cdf1926",
         "name": "trajetDisplay",
         "links": [
-            "e9ef2f1bf03f63fc"
+            "e9ef2f1bf03f63fc",
+            "a6025be97770ffea"
         ],
         "x": 285,
         "y": 300,
