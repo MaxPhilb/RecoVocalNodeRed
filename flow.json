@@ -3439,6 +3439,39 @@
         ]
     },
     {
+        "id": "8ffd263e7d95be03",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "prix",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"prix\",\"data\":data};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 380,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9"
+            ]
+        ]
+    },
+    {
+        "id": "dfb0077134f8b639",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "prix",
+        "links": [],
+        "x": 275,
+        "y": 380,
+        "wires": [
+            [
+                "8ffd263e7d95be03"
+            ]
+        ]
+    },
+    {
         "id": "904ace6426fb4207",
         "type": "function",
         "z": "da93fe22a4429449",
