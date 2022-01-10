@@ -1490,7 +1490,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "Arret de départ",
-        "func": "\n\ndepart = \"GARES\" // Grenoble, Gares\nstops = global.get('stops')\nvar keys = Object.keys(stops);\nfor (var i = 0; i < keys.length; i++) {\n    if(keys[i].indexOf(depart)>=0) {\n        destination = stops[keys[i]]\n        break\n    }\n  \n}\n\n// verrue pour depart abri gares avec ligne C1 = 45.19149,5.71514\ndestination.lat = \"45.19149\"\ndestination.lon = \"5.71514\"\ndestination.name = \"Grenoble, Gares\"\n\n\nmsg.payload = {}\nmsg.payload.lat = parseFloat(destination.lat)\nmsg.payload.lon = parseFloat(destination.lon)\nmsg.payload.name = destination.name\nmsg.payload.stopId = \"0893\"\n\n\n\nreturn msg;",
+        "func": "\n\ndepart = \"GARES\" // Grenoble, Gares\nstops = global.get('stops')\n\nfor (var i = 0; i < stops.length; i++) {\n    if(stops[i].name.indexOf(depart)>=0) {\n        destination = stops[i]\n        break\n    }\n  \n}\n\n// verrue pour depart abri gares avec ligne C1 = 45.19149,5.71514\ndestination.lat = \"45.19149\"\ndestination.lon = \"5.71514\"\ndestination.name = \"Grenoble, Gares\"\n\n\nmsg.payload = {}\nmsg.payload.lat = parseFloat(destination.lat)\nmsg.payload.lon = parseFloat(destination.lon)\nmsg.payload.name = destination.name\nmsg.payload.stopId = \"0893\"\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
