@@ -372,8 +372,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 500,
+        "x": 650,
+        "y": 680,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -410,8 +410,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 600,
+        "x": 450,
+        "y": 560,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -535,8 +535,8 @@
         "topic": "",
         "payload": "est ce que je suis dans la direction pour aller à l'arret saillants ?",
         "payloadType": "str",
-        "x": 300,
-        "y": 500,
+        "x": 260,
+        "y": 680,
         "wires": [
             [
                 "523b13a7db4ddc42",
@@ -553,8 +553,8 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 575,
-        "y": 500,
+        "x": 535,
+        "y": 680,
         "wires": []
     },
     {
@@ -640,7 +640,7 @@
             "8e217170ba11d68a"
         ],
         "x": 385,
-        "y": 560,
+        "y": 520,
         "wires": []
     },
     {
