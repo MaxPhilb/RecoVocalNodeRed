@@ -3389,7 +3389,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "\nreturn msg;",
+        "func": "let departure=global.depart;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
