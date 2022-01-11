@@ -3285,8 +3285,8 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 905,
-        "y": 220,
+        "x": 895,
+        "y": 200,
         "wires": []
     },
     {
@@ -3450,8 +3450,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 220,
+        "x": 740,
+        "y": 200,
         "wires": [
             [
                 "1c6c9a480cc71647"
@@ -3463,24 +3463,28 @@
         "type": "switch",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "property": "payload",
+        "property": "poi",
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "",
+                "t": "cont",
+                "v": "Defibrilateur",
                 "vt": "str"
+            },
+            {
+                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 530,
         "y": 220,
         "wires": [
             [
                 "c44425b806b3c37a"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -3488,7 +3492,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "let data=msg.payload;\nlet items=data.hypotheses[0].items[0].items;\nlet namePOI=\"\";\nitems.forEach(function(item){\n    if(item.name && item.name.indexOf(\"POI\")>0){\n        item.times.forEach(function(poi){\n            namePOI+=\" \"+poi.othography;\n        })\n        \n    }\n})\nreturn msg;",
+        "func": "let data=msg.payload;\nlet items=data.hypotheses[0].items[0].items;\nlet namePOI=\"\";\nitems.forEach(function(item){\n    if(item.name && item.name.indexOf(\"POI\")>0){\n        item.times.forEach(function(poi){\n            namePOI+=\" \"+poi.othography;\n        })\n        \n    }\n});\nmsg.poi=namePOI;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
