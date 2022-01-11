@@ -2048,14 +2048,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "3",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "{\"idBus\":\"0893\"}",
         "payloadType": "json",
-        "x": 140,
+        "x": 130,
         "y": 1140,
         "wires": [
             [
@@ -2150,14 +2150,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "3",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "{\"idBus\":\"0893\"}",
         "payloadType": "json",
-        "x": 140,
+        "x": 130,
         "y": 1200,
         "wires": [
             [
