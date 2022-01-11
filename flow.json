@@ -2003,14 +2003,14 @@
         "id": "7c27dc6a2e32fcf6",
         "type": "function",
         "z": "fa2c9998251120d1",
-        "name": "recupr horaire temps reel",
+        "name": "recupr horaire temps reel 26",
         "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:26\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 380,
         "y": 1140,
         "wires": [
             [
@@ -2105,14 +2105,14 @@
         "id": "4b2d492ed9f10f08",
         "type": "function",
         "z": "fa2c9998251120d1",
-        "name": "recupr horaire temps reel",
+        "name": "recupr horaire temps reel c1",
         "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:C1\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 380,
         "y": 1200,
         "wires": [
             [
