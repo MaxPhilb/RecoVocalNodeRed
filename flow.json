@@ -1208,7 +1208,8 @@
         "wires": [
             [
                 "e1dcea6e9a88151c",
-                "26e79a99900e1edd"
+                "26e79a99900e1edd",
+                "b70a365258382b1d"
             ]
         ]
     },
@@ -2006,6 +2007,38 @@
         "wires": [
             [
                 "a6025be97770ffea"
+            ]
+        ]
+    },
+    {
+        "id": "4db4fd7478ebd801",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "dfb0077134f8b639"
+        ],
+        "x": 1515,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b70a365258382b1d",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "var data=msg.payload;\n\nmsg.payload=\"Le prix d'un ticket est de \"+data[0].price;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 380,
+        "wires": [
+            [
+                "4db4fd7478ebd801"
             ]
         ]
     },
@@ -3667,7 +3700,9 @@
         "type": "link in",
         "z": "ab443a039cdf1926",
         "name": "prix",
-        "links": [],
+        "links": [
+            "4db4fd7478ebd801"
+        ],
         "x": 275,
         "y": 380,
         "wires": [
