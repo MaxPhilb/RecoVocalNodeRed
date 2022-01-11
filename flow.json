@@ -2030,7 +2030,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
+        "x": 1210,
         "y": 1140,
         "wires": []
     },
@@ -2075,7 +2075,7 @@
         "y": 1140,
         "wires": [
             [
-                "67429b44631b7a1d"
+                "ab18a484fad2764b"
             ]
         ]
     },
@@ -2132,38 +2132,9 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
+        "x": 1170,
         "y": 1200,
         "wires": []
-    },
-    {
-        "id": "ec0cecb1e38bbf3e",
-        "type": "inject",
-        "z": "fa2c9998251120d1",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"idBus\":\"0893\"}",
-        "payloadType": "json",
-        "x": 130,
-        "y": 1200,
-        "wires": [
-            [
-                "4b2d492ed9f10f08"
-            ]
-        ]
     },
     {
         "id": "7d4dc4b3b09787f2",
@@ -2177,8 +2148,81 @@
         "y": 1200,
         "wires": [
             [
-                "c9b59c634b999f19"
+                "e7a980ad62fbb7ef"
             ]
+        ]
+    },
+    {
+        "id": "ab18a484fad2764b",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tpsReel26",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 1140,
+        "wires": [
+            [
+                "67429b44631b7a1d",
+                "4b2d492ed9f10f08"
+            ]
+        ]
+    },
+    {
+        "id": "e7a980ad62fbb7ef",
+        "type": "change",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tpsReelC1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 1200,
+        "wires": [
+            [
+                "c9b59c634b999f19",
+                "221d40ab979832be"
+            ]
+        ]
+    },
+    {
+        "id": "221d40ab979832be",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1300,
+        "wires": [
+            []
         ]
     },
     {
