@@ -533,7 +533,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "est ce que je suis dans la direction pour aller à l'arret saillants",
+        "payload": "est ce que je suis dans la direction pour aller à l'arret saillants ?",
         "payloadType": "str",
         "x": 300,
         "y": 500,
