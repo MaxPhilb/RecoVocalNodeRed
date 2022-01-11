@@ -518,7 +518,7 @@
         "id": "edaaadfdc492404c",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "Dans quel direction va le bus C1",
+        "name": "est ce que je suis dans la direction pour aller à l'arret verdun",
         "props": [
             {
                 "p": "payload"
@@ -533,9 +533,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Dans quel direction va le bus C1 ?",
+        "payload": "est ce que je suis dans la direction pour aller à l'arret verdun",
         "payloadType": "str",
-        "x": 210,
+        "x": 300,
         "y": 500,
         "wires": [
             [
