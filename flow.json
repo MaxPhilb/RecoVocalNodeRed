@@ -1985,7 +1985,7 @@
         "name": "",
         "mode": "link",
         "links": [
-            "f652ca205e6eb293"
+            "dde931e26549b834"
         ],
         "x": 1535,
         "y": 540,
@@ -3380,25 +3380,6 @@
         "y": 200,
         "wires": [
             [
-                "03f19da0ef084838"
-            ]
-        ]
-    },
-    {
-        "id": "03f19da0ef084838",
-        "type": "function",
-        "z": "6ddb5e4c206db281",
-        "name": "",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 750,
-        "y": 200,
-        "wires": [
-            [
                 "1c6c9a480cc71647"
             ]
         ]
@@ -3653,8 +3634,7 @@
         "z": "ab443a039cdf1926",
         "name": "trajetDisplay",
         "links": [
-            "e9ef2f1bf03f63fc",
-            "a6025be97770ffea"
+            "e9ef2f1bf03f63fc"
         ],
         "x": 285,
         "y": 300,
@@ -3706,7 +3686,9 @@
         "type": "link in",
         "z": "ab443a039cdf1926",
         "name": "cartoDisplay",
-        "links": [],
+        "links": [
+            "a6025be97770ffea"
+        ],
         "x": 275,
         "y": 340,
         "wires": [
