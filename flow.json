@@ -2344,7 +2344,7 @@
         "type": "debug",
         "z": "519fe3bfa0f9c4d6",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2417,9 +2417,27 @@
         "y": 340,
         "wires": [
             [
-                "c533c4977909ee20"
+                "c533c4977909ee20",
+                "8d273a869c9664c5"
             ]
         ]
+    },
+    {
+        "id": "8d273a869c9664c5",
+        "type": "debug",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "tts",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "12e9048d1def56fe",
