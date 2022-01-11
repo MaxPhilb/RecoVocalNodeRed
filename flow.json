@@ -3274,7 +3274,7 @@
         "wires": [
             [
                 "609a5bdab10eef5e",
-                "c54faeee9afab46f"
+                "83eb6331a7562699"
             ]
         ]
     },
@@ -3475,11 +3475,30 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
+        "x": 530,
         "y": 220,
         "wires": [
             [
                 "c44425b806b3c37a"
+            ]
+        ]
+    },
+    {
+        "id": "83eb6331a7562699",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "let data=msg.payload;\nlet items=data.hypotheses[0].items[0].items;\nlet namePOI=\"\";\nitems.forEach(function(item){\n    if(item.name && item.name.indexOf(\"POI\")>0){\n        item.times.forEach(function(poi){\n            namePOI+=\" \"+poi.othography;\n        })\n        \n    }\n})\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "c54faeee9afab46f"
             ]
         ]
     },
