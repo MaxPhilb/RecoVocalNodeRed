@@ -2256,7 +2256,7 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 1115,
+        "x": 1255,
         "y": 340,
         "wires": []
     },
@@ -2381,7 +2381,7 @@
         "wires": [
             [],
             [
-                "c533c4977909ee20"
+                "521d2c160ac66aa6"
             ]
         ]
     },
@@ -2401,6 +2401,25 @@
         "x": 380,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "521d2c160ac66aa6",
+        "type": "function",
+        "z": "519fe3bfa0f9c4d6",
+        "name": "",
+        "func": "msg.rep=\"Voici votre intineraire\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 340,
+        "wires": [
+            [
+                "c533c4977909ee20"
+            ]
+        ]
     },
     {
         "id": "12e9048d1def56fe",
@@ -3650,7 +3669,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "trajetDisplay",
-        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"trajet\",\"data\":data,\"reponse\":msg.tts};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"trajet\",\"data\":data,\"reponse\":msg.rep};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
