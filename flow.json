@@ -347,7 +347,7 @@
         "type": "function",
         "z": "755e7fce9de6d2ee",
         "name": "NBARRETS",
-        "func": "let data=\"fontaine\";\nmsg.payload={hypotheses:[{items:[{name:\"\",items:[{items:[{orthography:data}]}]}]}]};\nmsg.sttItemName=\"NBARRETS\";\n\n\nreturn msg;",
+        "func": "let data=msg.dir;\nmsg.payload={hypotheses:[{items:[{name:\"\",items:[{items:[{orthography:data}]}]}]}]};\nmsg.sttItemName=\"NBARRETS\";\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -422,7 +422,7 @@
         "id": "84e561a87c50da27",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "Comment me rendre à granier",
+        "name": "Comment me rendre à chaulnes",
         "props": [
             {
                 "p": "payload"
@@ -433,7 +433,7 @@
             },
             {
                 "p": "dir",
-                "v": "granier",
+                "v": "chaulnes",
                 "vt": "str"
             }
         ],
@@ -442,9 +442,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Comment me rendre à l'arret granier ?",
+        "payload": "Comment me rendre à l'arret chaulnes?",
         "payloadType": "str",
-        "x": 200,
+        "x": 210,
         "y": 340,
         "wires": [
             [
@@ -470,7 +470,7 @@
         "id": "7dcd4d0883cc4ddf",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "combien d'arrets j'usqu' à l'arret chaulnes",
+        "name": "combien d'arrets j'usqu' à l'arret granier",
         "props": [
             {
                 "p": "payload"
@@ -481,7 +481,7 @@
             },
             {
                 "p": "dir",
-                "v": "chaulnes",
+                "v": "Granier",
                 "vt": "str"
             }
         ],
@@ -490,9 +490,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Combien d'arrets jusqu' à l'arret chaulnes ?",
+        "payload": "Combien d'arrets jusqu' à l'arret granier ?",
         "payloadType": "str",
-        "x": 240,
+        "x": 230,
         "y": 420,
         "wires": [
             [
