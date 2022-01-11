@@ -2528,7 +2528,7 @@
         "type": "function",
         "z": "e8f20bbce7f040f7",
         "name": "",
-        "func": "// itinéraire 1\nlet itineraire=msg.payload.plan.itineraries[0];\n\nnbStops = 0\n\n        itineraire.legs.forEach(function(leg) {\n        if(leg.mode!==\"WALK\"  || leg.intermediateStops.length>0)\n            nbStops = nbStops + leg.intermediateStops.length + 1\n    })\n\n\nmsg.tts = \"Il y a \"\nmsg.tts += nbStops\nmsg.tts += \" arrets\"\nmsg.nbStops=nbStops;\nmsg.payload.nbStops=nbStops;\nmsg.payload.req=\"NBARRETS\";\n\nreturn msg;",
+        "func": "// itinéraire 1\nlet itineraire=msg.payload.plan.itineraries[0];\n\nnbStops = 0\n\n        itineraire.legs.forEach(function(leg) {\n        if(leg.mode!==\"WALK\"  || leg.intermediateStops.length>0)\n            nbStops = nbStops + leg.intermediateStops.length + 2\n    })\n\n\nmsg.tts = \"Il y a \"\nmsg.tts += nbStops\nmsg.tts += \" arrets\"\nmsg.nbStops=nbStops;\nmsg.payload.nbStops=nbStops;\nmsg.payload.req=\"NBARRETS\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
