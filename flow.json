@@ -2028,7 +2028,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "var data=msg.payload;\n\nmsg.payload=\"Le prix d'un ticket est de \"+data[0].price;\nreturn msg;",
+        "func": "var data=msg.tts;\n\nmsg.payload=data;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
