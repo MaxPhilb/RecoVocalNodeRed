@@ -2213,7 +2213,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "\nreturn msg;",
+        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet pbus=[];\ntpsc1.forEach(function(trajetc1){\n    \n    tps26.forEach(function(trajet26){\n        \n        if(trajetc1.times[0].realtimeArrival<trajet26.times[0].realtimeArrival){\n            pbus=trajetc1;\n        }else\n        {\n            pbus=trajet26;\n        }\n    \n    });\n});\n\nnode.warn(pbus);\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
