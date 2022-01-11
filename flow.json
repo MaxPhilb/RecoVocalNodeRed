@@ -58,7 +58,7 @@
     {
         "id": "6ddb5e4c206db281",
         "type": "tab",
-        "label": "Defibrillateur",
+        "label": "POI",
         "disabled": false,
         "info": "",
         "env": []
@@ -1164,7 +1164,7 @@
             },
             {
                 "t": "cont",
-                "v": "DEFIBRILLATEUR",
+                "v": "TRAJET_POI",
                 "vt": "str"
             }
         ],
@@ -1873,7 +1873,7 @@
             "468cdf07f1874e01"
         ],
         "timeout": "30",
-        "x": 1080,
+        "x": 1070,
         "y": 620,
         "wires": [
             [
