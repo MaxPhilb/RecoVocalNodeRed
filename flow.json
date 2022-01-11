@@ -2213,7 +2213,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet maxTab=(tpsc1.length>tps26.length) ? tpsc1.length: tps26.length\n\nlet tpsreel=[];\ntpsreel=tpsc1.concat(tps26);\n\ntpsreel.sort(function (a, b) {\n  return a.times[0].realtimeArrival - b.times[0].realtimeArrival;\n});\n\nlet pbus=[];\n\n\nnode.warn(tpsreel);\n\n\nreturn msg;",
+        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet maxTab=(tpsc1.length>tps26.length) ? tpsc1.length: tps26.length\n\nlet tpsreel=[];\ntpsreel=tpsc1.concat(tps26);\n\ntpsreel.sort(function (a, b) {\n  return a.times[0].realtimeArrival - b.times[0].realtimeArrival;\n});\n\n\"aller chercher la couleur pour les lignes\"\n\nnode.warn(tpsreel);\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
