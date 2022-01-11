@@ -2213,7 +2213,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet pbus=[];\ntpsc1.forEach(function(trajetc1){\n    \n    tps26.forEach(function(trajet26){\n        \n        if(trajetc1.times[0].realtimeArrival<trajet26.times[0].realtimeArrival){\n            pbus.push(trajetc1);\n        }else\n        {\n            pbus.push(trajet26);\n        }\n    \n    });\n});\n\nnode.warn(pbus);\n\n\nreturn msg;",
+        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet maxTab=(tpsc1.length>tps26.length) ? tpsc1.length: tps26.length\n\n\nlet pbus=[];\nfor (let i=0;i<maxTab;i++){\n    if(tpsc1.length<i && tps26.length<i){\n        if(tpsc1[i].times[0].realtimeArrival<tps26[i].times[0].realtimeArrival){\n            pbus.push(tpsc1[i]);\n        }else\n        {\n            pbus.push(tps26[i]);\n        }\n    }else if(tpsc1.length<i){\n        pbus.push(tpsc1[i]);\n    }else if(tps26.length<i ){\n        pbus.push(tps26[i]);\n    }\n    \n    \n}\n\n\nnode.warn(pbus);\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
