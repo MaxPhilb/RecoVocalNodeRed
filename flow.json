@@ -366,7 +366,7 @@
         "type": "function",
         "z": "755e7fce9de6d2ee",
         "name": "DIRECTION",
-        "func": "let data=\"verdun\";\nmsg.payload={hypotheses:[{items:[{name:\"\",items:[{items:[{orthography:data}]}]}]}]};\nmsg.sttItemName=\"DIRECTION\";\n\n\nreturn msg;",
+        "func": "let data=\"saillants\";\nmsg.payload={hypotheses:[{items:[{name:\"\",items:[{items:[{orthography:data}]}]}]}]};\nmsg.sttItemName=\"DIRECTION\";\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -518,7 +518,7 @@
         "id": "edaaadfdc492404c",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "est ce que je suis dans la direction pour aller à l'arret vif",
+        "name": "est ce que je suis dans la direction pour aller à l'arret Saillants",
         "props": [
             {
                 "p": "payload"
@@ -533,9 +533,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "est ce que je suis dans la direction pour aller à l'arret vif",
+        "payload": "est ce que je suis dans la direction pour aller à l'arret saillants",
         "payloadType": "str",
-        "x": 280,
+        "x": 300,
         "y": 500,
         "wires": [
             [
