@@ -2047,7 +2047,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let data=msg.payload;\n\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"name\":data.name+\"\"+data.adresse,\"zoom\":18};\nreturn msg;",
+        "func": "let data=msg.payload;\n\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"name\":data.titre+\"\"+data.adresse,\"zoom\":18};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
