@@ -1879,7 +1879,7 @@
             [
                 "e1dcea6e9a88151c",
                 "26e79a99900e1edd",
-                "a6025be97770ffea"
+                "2ac0e1082c92e885"
             ]
         ]
     },
@@ -2039,6 +2039,25 @@
         "wires": [
             [
                 "e9ef2f1bf03f63fc"
+            ]
+        ]
+    },
+    {
+        "id": "2ac0e1082c92e885",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "let data=msg.payload;\n\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"name\":data.name+\"\"+data.adresse,\"zoom\":18};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 560,
+        "wires": [
+            [
+                "a6025be97770ffea"
             ]
         ]
     },
