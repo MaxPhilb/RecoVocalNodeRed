@@ -3389,7 +3389,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "let departure=global.get('depart');\nnode.warn(departure);\nreturn msg;",
+        "func": "let departure=global.get('depart');\nlet listDefibrillateur=global.get('defibrillateurs')\nnode.warn(departure);\nnode.warn(listDefibrillateur);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
