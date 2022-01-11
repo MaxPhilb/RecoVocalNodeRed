@@ -2690,7 +2690,7 @@
         "type": "function",
         "z": "79dedaa104b8a461",
         "name": "",
-        "func": "destination = msg.destination\n\nmsg.result = {}\n// valeur direction\n// 0 : arret non déservi sur les lignes\n// 1 : bonne direction\n// -1 : mauvaise direction\nmsg.result.direction = 0\nmsg.result.ligne = \"\"\n\n\n// index de l'abri Gares sur ligne C1\nindexArretDepart = 2\nstops = msg.ligneC1\n\nstops.forEach(function(stop, index,array) {\n    node.warn(stop);\n    node.warn(\"C1 : \" + stop.stopName + \" - \" + destination)\n    if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n        msg.result.ligne = \"C1\"\n        if(index>indexArretDepart) {\n            msg.result.direction = 1\n        } else {\n            msg.result.direction = -1\n        }\n        \n        //node.warn(\"C1 : \" + msg.result)\n    }\n})\n\nif(msg.result.ligne.length===0) {\n    // index de l'abri Gares sur ligne 26\n    indexArretDepart = 1\n    stops = msg.ligne26\n    \n    stops.forEach(function(stop, index,array) {\n        node.warn(\"26 : \" + stop.stopName + \" - \" + destination)\n        if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n            msg.result.ligne = \"26\"\n            if(index>indexArretDepart) {\n                msg.result.direction = 1\n            } else {\n                msg.result.direction = -1\n            }\n            \n            //node.warn(\"26 : \" + msg.result)\n        }\n    })\n}\n\nreturn msg;",
+        "func": "destination = msg.destination\n\nmsg.result = {}\n// valeur direction\n// 0 : arret non déservi sur les lignes\n// 1 : bonne direction\n// -1 : mauvaise direction\nmsg.result.direction = 0\nmsg.result.ligne = \"\"\n\n\n// index de l'abri Gares sur ligne C1\nindexArretDepart = 2\nstops = msg.ligneC1\n\nstops.forEach(function(stop, index,array) {\n    //node.warn(stop);\n    //node.warn(\"C1 : \" + stop.stopName + \" - \" + destination)\n    if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n        msg.result.ligne = \"C1\"\n        if(index>indexArretDepart) {\n            msg.result.direction = 1\n        } else {\n            msg.result.direction = -1\n        }\n        \n        //node.warn(\"C1 : \" + msg.result)\n    }\n})\n\nif(msg.result.ligne.length===0) {\n    // index de l'abri Gares sur ligne 26\n    indexArretDepart = 1\n    stops = msg.ligne26\n    \n    stops.forEach(function(stop, index,array) {\n        //node.warn(\"26 : \" + stop.stopName + \" - \" + destination)\n        if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n            msg.result.ligne = \"26\"\n            if(index>indexArretDepart) {\n                msg.result.direction = 1\n            } else {\n                msg.result.direction = -1\n            }\n            \n            //node.warn(\"26 : \" + msg.result)\n        }\n    })\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3398,7 +3398,28 @@
         "x": 510,
         "y": 200,
         "wires": [
-            []
+            [
+                "03f19da0ef084838"
+            ]
+        ]
+    },
+    {
+        "id": "03f19da0ef084838",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "1c6c9a480cc71647"
+            ]
         ]
     },
     {
