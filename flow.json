@@ -3389,7 +3389,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "let departure=global.get('depart');\nlet listDefibrillateur=global.get('defibrillateurs')\nnode.warn(departure);\nnode.warn(listDefibrillateur);\n\nreturn msg;",
+        "func": "function distance(lat1, lon1, lat2, lon2, unit) {\n\tif ((lat1 == lat2) && (lon1 == lon2)) {\n\t\treturn 0;\n\t}\n\telse {\n\t\tvar radlat1 = Math.PI * lat1/180;\n\t\tvar radlat2 = Math.PI * lat2/180;\n\t\tvar theta = lon1-lon2;\n\t\tvar radtheta = Math.PI * theta/180;\n\t\tvar dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);\n\t\tif (dist > 1) {\n\t\t\tdist = 1;\n\t\t}\n\t\tdist = Math.acos(dist);\n\t\tdist = dist * 180/Math.PI;\n\t\tdist = dist * 60 * 1.1515;\n\t\tif (unit==\"K\") { dist = dist * 1.609344 }\n\t\tif (unit==\"N\") { dist = dist * 0.8684 }\n\t\treturn dist;\n\t}\n}\n\nlet departure=global.get('depart');\nlet listDefibrillateur=global.get('defibrillateurs')\nnode.warn(departure);\nnode.warn(listDefibrillateur);\nlet minDistance=1000000;\nlet refDefi={};\n\nlistDefibrillateur.forEach(function(defi){\n    let dist=distance(departure.lat,departure.lon,defi.lat,defi.lon,\"K\");\n    if(dist<minDistance)\n    {\n        minDistance=dist;\n        refDefi=defi;\n    }\n    \n})\nnode.warn(refDefi);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
