@@ -3492,7 +3492,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "let data=msg.payload;\nlet items=data.hypotheses[0].items[0].items;\nlet namePOI=\"\";\nitems.forEach(function(item){\n    \n    if(item.items && item.items.length>0 && item.name && item.name.indexOf(\"POI\")>0){\n        node.warn(item);\n        item.times.forEach(function(poi){\n            node.warn(poi);\n             \n                namePOI+=\" \"+poi.othography;\n            \n        })\n        \n    }\n});\nmsg.poi=namePOI;\nreturn msg;",
+        "func": "let data=msg.payload;\nlet items=data.hypotheses[0].items[0].items;\nlet namePOI=\"\";\nitems.forEach(function(item){\n    \n    if(item.items && item.items.length>0 && item.name && item.name.indexOf(\"POI\")>0){\n        node.warn(item);\n        item.items.forEach(function(poi){\n            node.warn(poi);\n             \n                namePOI+=\" \"+poi.othography;\n            \n        })\n        \n    }\n});\nmsg.poi=namePOI;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
