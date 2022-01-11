@@ -3468,7 +3468,7 @@
         "rules": [
             {
                 "t": "cont",
-                "v": "Defibrilateur",
+                "v": "Defibrillateur",
                 "vt": "str"
             },
             {
