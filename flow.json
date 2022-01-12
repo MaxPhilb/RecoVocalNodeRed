@@ -2512,8 +2512,27 @@
         "x": 760,
         "y": 1400,
         "wires": [
-            []
+            [
+                "1edcab239944d8a3"
+            ]
         ]
+    },
+    {
+        "id": "1edcab239944d8a3",
+        "type": "debug",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 1400,
+        "wires": []
     },
     {
         "id": "8dbf646a20b1d1b8",
