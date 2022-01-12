@@ -2056,14 +2056,14 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "10",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "{\"idBus\":\"0893\"}",
         "payloadType": "json",
-        "x": 190,
+        "x": 200,
         "y": 1000,
         "wires": [
             [
@@ -2231,7 +2231,8 @@
         "y": 1280,
         "wires": [
             [
-                "ca4dea491160f4fb"
+                "ca4dea491160f4fb",
+                "71f37b8fbd636dcc"
             ]
         ]
     },
@@ -2293,8 +2294,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 1320,
+        "x": 750,
+        "y": 1240,
         "wires": []
     },
     {
@@ -2467,6 +2468,19 @@
         "statusType": "auto",
         "x": 920,
         "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "71f37b8fbd636dcc",
+        "type": "link out",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "1cd452f732de1c6c"
+        ],
+        "x": 685,
+        "y": 1300,
         "wires": []
     },
     {
@@ -4330,6 +4344,41 @@
         "x": 460,
         "y": 580,
         "wires": []
+    },
+    {
+        "id": "f2800cf64cabdd9b",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "realtime",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"realtime\",\"data\":data};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9"
+            ]
+        ]
+    },
+    {
+        "id": "1cd452f732de1c6c",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "realtime",
+        "links": [
+            "71f37b8fbd636dcc"
+        ],
+        "x": 275,
+        "y": 460,
+        "wires": [
+            [
+                "f2800cf64cabdd9b"
+            ]
+        ]
     },
     {
         "id": "904ace6426fb4207",
