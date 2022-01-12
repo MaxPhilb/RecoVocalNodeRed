@@ -2212,7 +2212,7 @@
         "wires": [
             [
                 "15978cef958c9a26",
-                "b6e870993eb86f24"
+                "01a2ef1d78a262f4"
             ]
         ]
     },
@@ -2227,8 +2227,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 1160,
+        "x": 480,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -2244,8 +2244,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 1160,
+        "x": 1110,
+        "y": 1320,
         "wires": [
             []
         ]
@@ -2255,14 +2255,14 @@
         "type": "function",
         "z": "1716b79ab91a3357",
         "name": "info C1",
-        "func": "msg.url=\"https://data.mobilites-m.fr/api/lines/json?types=ligne&codes=SEM_C1\";\nreturn msg;",
+        "func": "msg.url=\"https://data.mobilites-m.fr/api/lines/json?types=ligne&codes=SEM_C1\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 1260,
+        "x": 320,
+        "y": 1180,
         "wires": [
             [
                 "409591ac785b9d32"
@@ -2275,14 +2275,16 @@
         "z": "1716b79ab91a3357",
         "name": "",
         "method": "GET",
-        "ret": "txt",
-        "paytoqs": false,
+        "ret": "obj",
+        "paytoqs": "ignore",
         "url": "",
+        "tls": "",
         "persist": false,
+        "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 590,
-        "y": 1260,
+        "x": 480,
+        "y": 1180,
         "wires": [
             [
                 "59bf1790e34ea225"
@@ -2300,8 +2302,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 1320,
+        "x": 810,
+        "y": 1180,
         "wires": [
             [
                 "dd080d48a24e8393"
@@ -2314,16 +2316,20 @@
         "z": "1716b79ab91a3357",
         "name": "",
         "method": "GET",
-        "ret": "txt",
-        "paytoqs": false,
+        "ret": "obj",
+        "paytoqs": "ignore",
         "url": "",
+        "tls": "",
         "persist": false,
+        "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 580,
-        "y": 1320,
+        "x": 980,
+        "y": 1180,
         "wires": [
-            []
+            [
+                "ca6cef3bc8de8181"
+            ]
         ]
     },
     {
@@ -2331,16 +2337,37 @@
         "type": "function",
         "z": "1716b79ab91a3357",
         "name": "",
-        "func": "\nreturn msg;",
+        "func": "msg.infoC1=msg.payload;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
-        "y": 1260,
+        "x": 650,
+        "y": 1180,
         "wires": [
-            []
+            [
+                "d8d8c60edf05e9ce"
+            ]
+        ]
+    },
+    {
+        "id": "ca6cef3bc8de8181",
+        "type": "function",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "func": "msg.info26=msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 1180,
+        "wires": [
+            [
+                "b6e870993eb86f24"
+            ]
         ]
     },
     {
