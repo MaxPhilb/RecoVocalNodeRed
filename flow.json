@@ -2451,6 +2451,23 @@
         "wires": []
     },
     {
+        "id": "239a81dc6217630c",
+        "type": "function",
+        "z": "1716b79ab91a3357",
+        "name": "list des lignes",
+        "func": "msg.url=\"https://data.mobilites-m.fr/api/routers/default/index/routes\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "8dbf646a20b1d1b8",
         "type": "sqlite",
         "z": "1c438ac302aea20f",
