@@ -2429,7 +2429,8 @@
         "y": 1440,
         "wires": [
             [
-                "01a2ef1d78a262f4"
+                "01a2ef1d78a262f4",
+                "239a81dc6217630c"
             ]
         ]
     },
@@ -2462,6 +2463,53 @@
         "finalize": "",
         "libs": [],
         "x": 370,
+        "y": 1400,
+        "wires": [
+            [
+                "72e33189b7cb861a"
+            ]
+        ]
+    },
+    {
+        "id": "72e33189b7cb861a",
+        "type": "http request",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "authType": "",
+        "senderr": false,
+        "x": 570,
+        "y": 1400,
+        "wires": [
+            [
+                "fc64a559c04079b4"
+            ]
+        ]
+    },
+    {
+        "id": "fc64a559c04079b4",
+        "type": "change",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lines",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
         "y": 1400,
         "wires": [
             []
