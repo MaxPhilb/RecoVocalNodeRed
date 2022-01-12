@@ -1986,9 +1986,9 @@
         "wires": []
     },
     {
-        "id": "5635524102b560d6",
+        "id": "0f26fddc180118b9",
         "type": "http request",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "method": "GET",
         "ret": "txt",
@@ -1999,18 +1999,18 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 610,
-        "y": 1140,
+        "x": 670,
+        "y": 1000,
         "wires": [
             [
-                "04315504cc460e51"
+                "2e067892b55d25fc"
             ]
         ]
     },
     {
-        "id": "7c27dc6a2e32fcf6",
+        "id": "2c5d3e109df3f2e8",
         "type": "function",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "recupr horaire temps reel 26",
         "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:26\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
         "outputs": 1,
@@ -2018,18 +2018,18 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 1140,
+        "x": 440,
+        "y": 1000,
         "wires": [
             [
-                "5635524102b560d6"
+                "0f26fddc180118b9"
             ]
         ]
     },
     {
-        "id": "67429b44631b7a1d",
+        "id": "88ea2b978a22b2ee",
         "type": "debug",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2038,14 +2038,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1210,
-        "y": 1140,
+        "x": 1270,
+        "y": 1000,
         "wires": []
     },
     {
-        "id": "9197a5b17e377261",
+        "id": "3481d627fd727232",
         "type": "inject",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "props": [
             {
@@ -2063,34 +2063,34 @@
         "topic": "",
         "payload": "{\"idBus\":\"0893\"}",
         "payloadType": "json",
-        "x": 130,
-        "y": 1140,
+        "x": 190,
+        "y": 1000,
         "wires": [
             [
-                "7c27dc6a2e32fcf6"
+                "2c5d3e109df3f2e8"
             ]
         ]
     },
     {
-        "id": "04315504cc460e51",
+        "id": "2e067892b55d25fc",
         "type": "json",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 790,
-        "y": 1140,
+        "x": 850,
+        "y": 1000,
         "wires": [
             [
-                "ab18a484fad2764b"
+                "7b03484d32838a29"
             ]
         ]
     },
     {
-        "id": "e6fde605eff0d670",
+        "id": "fe84012542f5c181",
         "type": "http request",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "method": "GET",
         "ret": "txt",
@@ -2101,18 +2101,18 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 610,
-        "y": 1200,
+        "x": 670,
+        "y": 1060,
         "wires": [
             [
-                "7d4dc4b3b09787f2"
+                "5ee635c7c9597a33"
             ]
         ]
     },
     {
-        "id": "4b2d492ed9f10f08",
+        "id": "89ab6ca3e66855ef",
         "type": "function",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "recupr horaire temps reel c1",
         "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:C1\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
         "outputs": 1,
@@ -2120,18 +2120,18 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 1200,
+        "x": 440,
+        "y": 1060,
         "wires": [
             [
-                "e6fde605eff0d670"
+                "fe84012542f5c181"
             ]
         ]
     },
     {
-        "id": "c9b59c634b999f19",
+        "id": "15978cef958c9a26",
         "type": "debug",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -2140,30 +2140,30 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1170,
-        "y": 1200,
+        "x": 1230,
+        "y": 1060,
         "wires": []
     },
     {
-        "id": "7d4dc4b3b09787f2",
+        "id": "5ee635c7c9597a33",
         "type": "json",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 790,
-        "y": 1200,
+        "x": 850,
+        "y": 1060,
         "wires": [
             [
-                "e7a980ad62fbb7ef"
+                "2ae1a1e4340f2c9a"
             ]
         ]
     },
     {
-        "id": "ab18a484fad2764b",
+        "id": "7b03484d32838a29",
         "type": "change",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "rules": [
             {
@@ -2179,19 +2179,19 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 1140,
+        "x": 1030,
+        "y": 1000,
         "wires": [
             [
-                "67429b44631b7a1d",
-                "4b2d492ed9f10f08"
+                "88ea2b978a22b2ee",
+                "89ab6ca3e66855ef"
             ]
         ]
     },
     {
-        "id": "e7a980ad62fbb7ef",
+        "id": "2ae1a1e4340f2c9a",
         "type": "change",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "",
         "rules": [
             {
@@ -2207,19 +2207,19 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 1200,
+        "x": 1030,
+        "y": 1060,
         "wires": [
             [
-                "c9b59c634b999f19",
-                "221d40ab979832be"
+                "15978cef958c9a26",
+                "b6e870993eb86f24"
             ]
         ]
     },
     {
-        "id": "221d40ab979832be",
+        "id": "b6e870993eb86f24",
         "type": "function",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "trier les infos horaire",
         "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet maxTab=(tpsc1.length>tps26.length) ? tpsc1.length: tps26.length\n\nlet tpsreel=[];\ntpsreel=tpsc1.concat(tps26);\n\ntpsreel.sort(function (a, b) {\n  return a.times[0].realtimeArrival - b.times[0].realtimeArrival;\n});\n\n\"aller chercher la couleur pour les lignes\"\n\nnode.warn(tpsreel);\n\n\nreturn msg;",
         "outputs": 1,
@@ -2227,16 +2227,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 1300,
+        "x": 420,
+        "y": 1160,
         "wires": [
             []
         ]
     },
     {
-        "id": "6119024a0e86822d",
+        "id": "1b0bddb0107a7e90",
         "type": "function",
-        "z": "fa2c9998251120d1",
+        "z": "1716b79ab91a3357",
         "name": "aller chercher les perturbations",
         "func": "\nreturn msg;",
         "outputs": 1,
@@ -2244,8 +2244,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 1300,
+        "x": 740,
+        "y": 1160,
         "wires": [
             []
         ]
