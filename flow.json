@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "1716b79ab91a3357",
+        "type": "tab",
+        "label": "tps reel",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1c438ac302aea20f",
         "type": "tab",
         "label": "Prix ticket",
