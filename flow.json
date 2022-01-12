@@ -2454,7 +2454,7 @@
         "id": "239a81dc6217630c",
         "type": "function",
         "z": "1716b79ab91a3357",
-        "name": "list des lignes",
+        "name": "liste des lignes",
         "func": "msg.url=\"https://data.mobilites-m.fr/api/routers/default/index/routes\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
