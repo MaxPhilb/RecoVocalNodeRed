@@ -2212,7 +2212,7 @@
         "wires": [
             [
                 "15978cef958c9a26",
-                "01a2ef1d78a262f4"
+                "b6e870993eb86f24"
             ]
         ]
     },
@@ -2261,8 +2261,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 1180,
+        "x": 160,
+        "y": 1520,
         "wires": [
             [
                 "409591ac785b9d32"
@@ -2283,8 +2283,8 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 480,
-        "y": 1180,
+        "x": 320,
+        "y": 1520,
         "wires": [
             [
                 "987e8b1c50dba061"
@@ -2302,8 +2302,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 1180,
+        "x": 650,
+        "y": 1520,
         "wires": [
             [
                 "dd080d48a24e8393"
@@ -2324,8 +2324,8 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 980,
-        "y": 1180,
+        "x": 820,
+        "y": 1520,
         "wires": [
             [
                 "d4473504bd38ffcb"
@@ -2345,8 +2345,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1360,
-        "y": 1180,
+        "x": 1200,
+        "y": 1520,
         "wires": []
     },
     {
@@ -2358,7 +2358,7 @@
             {
                 "t": "set",
                 "p": "info26",
-                "pt": "msg",
+                "pt": "global",
                 "to": "payload",
                 "tot": "msg"
             }
@@ -2368,12 +2368,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
-        "y": 1180,
+        "x": 1000,
+        "y": 1520,
         "wires": [
             [
-                "3430badae576819c",
-                "b6e870993eb86f24"
+                "3430badae576819c"
             ]
         ]
     },
@@ -2386,7 +2385,7 @@
             {
                 "t": "set",
                 "p": "infoc1",
-                "pt": "msg",
+                "pt": "global",
                 "to": "payload",
                 "tot": "msg"
             }
@@ -2396,11 +2395,39 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 1180,
+        "x": 500,
+        "y": 1520,
         "wires": [
             [
                 "d8d8c60edf05e9ce"
+            ]
+        ]
+    },
+    {
+        "id": "18e4475db70d8e59",
+        "type": "inject",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1440,
+        "wires": [
+            [
+                "01a2ef1d78a262f4"
             ]
         ]
     },
