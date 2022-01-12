@@ -2221,7 +2221,7 @@
         "type": "function",
         "z": "1716b79ab91a3357",
         "name": "trier les infos horaire",
-        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet tpsreel=[];\ntpsreel=tpsc1.concat(tps26);\n\ntpsreel.sort(function (a, b) {\n  return a.times[0].realtimeArrival - b.times[0].realtimeArrival;\n});\n\nlet lines=global.get('lines');\nfunction searchLine(name){\n    let selectedLine={};\n    lines.forEach(function( line){\n        if(line.shortName.indexOf(name)>=0){\n            \n            selectedLine=line;\n        }\n    });\n    return selectedLine;\n    \n}\n\n\nnode.warn(tpsreel);\nlet nextBus=[];\ntpsreel.forEach(function(ntb){\n    let objNTB={};\n    let infoLine=searchLine(ntb.pattern.id.split(':')[1]);\n  \n    objNTB.lineName=ntb.pattern.id.split(':')[1];\n    if(infoLine!==undefined){\n        objNTB.colorLine=\"#\"+infoLine.color;\n        \n    }\n   \n    objNTB.direction=ntb.times[0].headsign;\n    \n    objNTB.HO1=ntb.times[0].realtimeDeparture;\n    objNTB.HO1Delay=ntb.times[0].departureDelay;\n    if(ntb.times.length>1){\n        objNTB.HO2=ntb.times[1].realtimeDeparture;\n        objNTB.HO2Delay=ntb.times[1].departureDelay;\n    }\n    \n    nextBus.push(objNTB);\n});\nmsg.nextBus=nextBus;\nreturn msg;",
+        "func": "let tpsc1=msg.tpsReelC1;\nlet tps26=msg.tpsReel26;\n\nlet tpsreel=[];\ntpsreel=tpsc1.concat(tps26);\n\ntpsreel.sort(function (a, b) {\n  return a.times[0].realtimeArrival - b.times[0].realtimeArrival;\n});\n\nlet lines=global.get('lines');\nfunction searchLine(name){\n    let selectedLine={};\n    lines.forEach(function( line){\n        if(line.shortName.indexOf(name)>=0){\n            \n            selectedLine=line;\n        }\n    });\n    return selectedLine;\n    \n}\n\n\nnode.warn(tpsreel);\nlet nextBus=[];\ntpsreel.forEach(function(ntb){\n    let objNTB={};\n    let infoLine=searchLine(ntb.pattern.id.split(':')[1]);\n  \n    objNTB.lineName=ntb.pattern.id.split(':')[1];\n    if(infoLine!==undefined){\n        objNTB.colorLine=\"#\"+infoLine.color;\n        let stateId=msg.etatLigne[infoLine.id.replace(':','_')][0].nsv_id;\n        let descState=\"\";\n        let colorState=\"\";\n        if(stateId==0){ }\n        if(stateId==1){ descState=\"Trafic Normal\"; colorState=\"#61B045\" }\n        if(stateId==2){ descState=\"Trafic Perturbé\"; colorState=\"#ffaa00\" }\n        if(stateId==3){ descState=\"Trafic très perturbé\"; colorState=\"#D21619\" }\n        objNTB.pertText=descState;\n        objNTB.colorPert=colorState;\n        \n        \n    }\n   \n    objNTB.direction=ntb.times[0].headsign;\n    \n    objNTB.HO1=ntb.times[0].realtimeDeparture;\n    objNTB.HO1Delay=ntb.times[0].departureDelay;\n    if(ntb.times.length>1){\n        objNTB.HO2=ntb.times[1].realtimeDeparture;\n        objNTB.HO2Delay=ntb.times[1].departureDelay;\n    }\n    \n    nextBus.push(objNTB);\n});\nmsg.nextBus=nextBus;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2253,159 +2253,6 @@
         ]
     },
     {
-        "id": "01a2ef1d78a262f4",
-        "type": "function",
-        "z": "1716b79ab91a3357",
-        "name": "info C1",
-        "func": "msg.url=\"https://data.mobilites-m.fr/api/lines/json?types=ligne&codes=SEM_C1\";\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 160,
-        "y": 1520,
-        "wires": [
-            [
-                "409591ac785b9d32"
-            ]
-        ]
-    },
-    {
-        "id": "409591ac785b9d32",
-        "type": "http request",
-        "z": "1716b79ab91a3357",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 320,
-        "y": 1520,
-        "wires": [
-            [
-                "987e8b1c50dba061"
-            ]
-        ]
-    },
-    {
-        "id": "d8d8c60edf05e9ce",
-        "type": "function",
-        "z": "1716b79ab91a3357",
-        "name": "info 26",
-        "func": "msg.url=\"https://data.mobilites-m.fr/api/lines/json?types=ligne&codes=SEM_26\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 650,
-        "y": 1520,
-        "wires": [
-            [
-                "dd080d48a24e8393"
-            ]
-        ]
-    },
-    {
-        "id": "dd080d48a24e8393",
-        "type": "http request",
-        "z": "1716b79ab91a3357",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 820,
-        "y": 1520,
-        "wires": [
-            [
-                "d4473504bd38ffcb"
-            ]
-        ]
-    },
-    {
-        "id": "3430badae576819c",
-        "type": "debug",
-        "z": "1716b79ab91a3357",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1200,
-        "y": 1520,
-        "wires": []
-    },
-    {
-        "id": "d4473504bd38ffcb",
-        "type": "change",
-        "z": "1716b79ab91a3357",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "info26",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1000,
-        "y": 1520,
-        "wires": [
-            [
-                "3430badae576819c"
-            ]
-        ]
-    },
-    {
-        "id": "987e8b1c50dba061",
-        "type": "change",
-        "z": "1716b79ab91a3357",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "infoc1",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 1520,
-        "wires": [
-            [
-                "d8d8c60edf05e9ce"
-            ]
-        ]
-    },
-    {
         "id": "18e4475db70d8e59",
         "type": "inject",
         "z": "1716b79ab91a3357",
@@ -2429,7 +2276,6 @@
         "y": 1440,
         "wires": [
             [
-                "01a2ef1d78a262f4",
                 "239a81dc6217630c"
             ]
         ]
