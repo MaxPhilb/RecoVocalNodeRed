@@ -2031,7 +2031,7 @@
         "type": "debug",
         "z": "1716b79ab91a3357",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2133,7 +2133,7 @@
         "type": "debug",
         "z": "1716b79ab91a3357",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2287,7 +2287,7 @@
         "y": 1180,
         "wires": [
             [
-                "59bf1790e34ea225"
+                "987e8b1c50dba061"
             ]
         ]
     },
@@ -2328,45 +2328,79 @@
         "y": 1180,
         "wires": [
             [
-                "ca6cef3bc8de8181"
+                "d4473504bd38ffcb"
             ]
         ]
     },
     {
-        "id": "59bf1790e34ea225",
-        "type": "function",
+        "id": "3430badae576819c",
+        "type": "debug",
         "z": "1716b79ab91a3357",
         "name": "",
-        "func": "msg.infoC1=msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 650,
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
         "y": 1180,
-        "wires": [
-            [
-                "d8d8c60edf05e9ce"
-            ]
-        ]
+        "wires": []
     },
     {
-        "id": "ca6cef3bc8de8181",
-        "type": "function",
+        "id": "d4473504bd38ffcb",
+        "type": "change",
         "z": "1716b79ab91a3357",
         "name": "",
-        "func": "msg.info26=msg.payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
+        "rules": [
+            {
+                "t": "set",
+                "p": "info26",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
         "x": 1160,
         "y": 1180,
         "wires": [
             [
+                "3430badae576819c",
                 "b6e870993eb86f24"
+            ]
+        ]
+    },
+    {
+        "id": "987e8b1c50dba061",
+        "type": "change",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "infoc1",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1180,
+        "wires": [
+            [
+                "d8d8c60edf05e9ce"
             ]
         ]
     },
