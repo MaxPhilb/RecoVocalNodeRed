@@ -2251,6 +2251,99 @@
         ]
     },
     {
+        "id": "01a2ef1d78a262f4",
+        "type": "function",
+        "z": "1716b79ab91a3357",
+        "name": "info C1",
+        "func": "msg.url=\"https://data.mobilites-m.fr/api/lines/json?types=ligne&codes=SEM_C1\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1260,
+        "wires": [
+            [
+                "409591ac785b9d32"
+            ]
+        ]
+    },
+    {
+        "id": "409591ac785b9d32",
+        "type": "http request",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "authType": "",
+        "senderr": false,
+        "x": 590,
+        "y": 1260,
+        "wires": [
+            [
+                "59bf1790e34ea225"
+            ]
+        ]
+    },
+    {
+        "id": "d8d8c60edf05e9ce",
+        "type": "function",
+        "z": "1716b79ab91a3357",
+        "name": "info 26",
+        "func": "msg.url=\"https://data.mobilites-m.fr/api/lines/json?types=ligne&codes=SEM_26\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1320,
+        "wires": [
+            [
+                "dd080d48a24e8393"
+            ]
+        ]
+    },
+    {
+        "id": "dd080d48a24e8393",
+        "type": "http request",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "authType": "",
+        "senderr": false,
+        "x": 580,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59bf1790e34ea225",
+        "type": "function",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "8dbf646a20b1d1b8",
         "type": "sqlite",
         "z": "1c438ac302aea20f",
