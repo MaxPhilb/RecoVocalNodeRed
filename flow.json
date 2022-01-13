@@ -2212,7 +2212,7 @@
         "wires": [
             [
                 "15978cef958c9a26",
-                "f7ecd8576e96bc23"
+                "ecf6aba2413956e3"
             ]
         ]
     },
@@ -2482,6 +2482,25 @@
         "x": 685,
         "y": 1300,
         "wires": []
+    },
+    {
+        "id": "ecf6aba2413956e3",
+        "type": "function",
+        "z": "1716b79ab91a3357",
+        "name": "",
+        "func": "msg.payload=\"\";\nmsg.properties=\"\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1100,
+        "wires": [
+            [
+                "f7ecd8576e96bc23"
+            ]
+        ]
     },
     {
         "id": "8dbf646a20b1d1b8",
