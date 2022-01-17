@@ -4368,7 +4368,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "infoTrafic",
-        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"infoTrafic\",\"data\":data};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"infoTrafic\",\"data\":data,\"infoTrafic\":msg.trafic};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
