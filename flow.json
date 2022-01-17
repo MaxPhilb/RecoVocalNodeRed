@@ -2237,23 +2237,6 @@
         ]
     },
     {
-        "id": "1b0bddb0107a7e90",
-        "type": "function",
-        "z": "1716b79ab91a3357",
-        "name": "aller chercher les perturbations",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1070,
-        "y": 1220,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "18e4475db70d8e59",
         "type": "inject",
         "z": "1716b79ab91a3357",
