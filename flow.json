@@ -4364,39 +4364,6 @@
         ]
     },
     {
-        "id": "e53e92882c3cf9e4",
-        "type": "function",
-        "z": "ab443a039cdf1926",
-        "name": "infoTrafic",
-        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"infoTrafic\",\"data\":data,\"infoTrafic\":msg.trafic};\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 500,
-        "y": 500,
-        "wires": [
-            [
-                "59bb182ed1a3e8e9"
-            ]
-        ]
-    },
-    {
-        "id": "7cc864b5bf743090",
-        "type": "link in",
-        "z": "ab443a039cdf1926",
-        "name": "infoTrafic",
-        "links": [],
-        "x": 275,
-        "y": 500,
-        "wires": [
-            [
-                "e53e92882c3cf9e4"
-            ]
-        ]
-    },
-    {
         "id": "904ace6426fb4207",
         "type": "function",
         "z": "da93fe22a4429449",
