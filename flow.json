@@ -4383,6 +4383,20 @@
         ]
     },
     {
+        "id": "7cc864b5bf743090",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "infoTrafic",
+        "links": [],
+        "x": 275,
+        "y": 500,
+        "wires": [
+            [
+                "e53e92882c3cf9e4"
+            ]
+        ]
+    },
+    {
         "id": "904ace6426fb4207",
         "type": "function",
         "z": "da93fe22a4429449",
