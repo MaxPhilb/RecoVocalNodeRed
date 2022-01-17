@@ -4380,7 +4380,7 @@
         "type": "function",
         "z": "ab443a039cdf1926",
         "name": "realtime",
-        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"realtime\",\"data\":data};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"realtime\",\"data\":data,\"infoTrafic\":msg.trafic};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
