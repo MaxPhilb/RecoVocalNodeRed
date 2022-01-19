@@ -3894,7 +3894,7 @@
         "type": "debug",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
