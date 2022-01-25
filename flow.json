@@ -805,6 +805,36 @@
         ]
     },
     {
+        "id": "f963d2979daa729d",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à la Leclerq",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "leclerq",
+        "payloadType": "str",
+        "x": 190,
+        "y": 800,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
