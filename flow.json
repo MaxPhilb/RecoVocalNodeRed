@@ -4380,7 +4380,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "\nmsg.payload.sort(function(a, b) {\n    return a.distance - b.distance\n});\n\nnode.warn(msg.payload);\n//poi = msg.payload[0]\npoi = {}\npoi.latitude = msg.payload[0].lat\npoi.longitude = msg.payload[0].lng\npoi.adresse = msg.payload[0].way+\"/n\"+msg.payload[0].pCode+\" \"+msg.payload[0].town\npoi.name = msg.payload[0].name.replace(\" -\",\"\")\n\nif(msg.payload[0].distance>=1) {\n    distance = Number.parseFloat(msg.payload[0]).toFixed(0);\n    msg.tts=\"Le magasin \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" kilomètres environ.\";\n} else {\n    distance = Number.parseFloat(poi.distance*1000).toFixed(0);\n    msg.tts=\"Le magasin \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" mètres environ.\";\n}\n\n\nmsg.payload=poi;\n\nreturn msg;",
+        "func": "\nmsg.payload.sort(function(a, b) {\n    return a.distance - b.distance\n});\n\nnode.warn(msg.payload);\n//poi = msg.payload[0]\npoi = {}\npoi.latitude = msg.payload[0].lat\npoi.longitude = msg.payload[0].lng\npoi.adresse = msg.payload[0].way+\"\\n\"+msg.payload[0].pCode+\" \"+msg.payload[0].town\npoi.name = msg.payload[0].name.replace(\" -\",\"\")\n\nif(msg.payload[0].distance>=1) {\n    distance = Number.parseFloat(msg.payload[0]).toFixed(0);\n    msg.tts=\"Le magasin \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" kilomètres environ.\";\n} else {\n    distance = Number.parseFloat(poi.distance*1000).toFixed(0);\n    msg.tts=\"Le magasin \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" mètres environ.\";\n}\n\n\nmsg.payload=poi;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
