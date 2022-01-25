@@ -702,11 +702,16 @@
         "name": "Comment se rendre à la Fnac ?",
         "props": [
             {
-                "p": "payload"
+                "p": "lieu",
+                "v": "fnac",
+                "vt": "str"
             },
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -714,7 +719,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "fnac",
+        "payload": "Comment se rendre à la Fnac ?",
         "payloadType": "str",
         "x": 190,
         "y": 620,
@@ -730,14 +735,14 @@
         "type": "function",
         "z": "755e7fce9de6d2ee",
         "name": "TRAJET_POI",
-        "func": "let data=msg.payload\nmsg.payload={\"activeStartRules\":[\"ASRFRA-FR#main\"],\"beginTime\":0,\"bosTime\":430,\"endTime\":3260,\"hypotheses\":[{\"beginTime\":900,\"confidence\":4561,\"endTime\":2840,\"items\":[{\"beginTime\":900,\"confidence\":4561,\"endTime\":2840,\"items\":[{\"beginTime\":900,\"confidence\":3523,\"endTime\":1010,\"lmScore\":65,\"orthography\":\"ou\",\"score\":6055,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1010,\"confidence\":13,\"endTime\":1040,\"lmScore\":0,\"orthography\":\"se\",\"score\":1823,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1040,\"confidence\":5840,\"endTime\":1340,\"lmScore\":0,\"orthography\":\"trouve\",\"score\":16154,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1530,\"confidence\":5,\"endTime\":1580,\"lmScore\":0,\"orthography\":\"le\",\"score\":2983,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1580,\"confidence\":5638,\"endTime\":2840,\"items\":[{\"beginTime\":1580,\"confidence\":6426,\"endTime\":2460,\"lmScore\":0,\"orthography\":data,\"score\":47340,\"stability\":10000,\"type\":\"terminal\"}],\"lmScore\":0,\"name\":\"ASRFRA-FR#POI\",\"score\":47340,\"stability\":10000,\"type\":\"tag\"}],\"lmScore\":0,\"name\":\"ASRFRA-FR#TRAJET_POI\",\"score\":84971,\"stability\":10000,\"type\":\"tag\"}],\"lmScore\":65,\"score\":137174,\"startRule\":\"ASRFRA-FR#main\"}],\"status\":\"stable\",\"type\":\"NBest\",\"version\":\"1.0.0\"};\nmsg.sttItemName=\"TRAJET_POI\";\n\n\nreturn msg;",
+        "func": "let data=msg.lieu\nmsg.payload={\"activeStartRules\":[\"ASRFRA-FR#main\"],\"beginTime\":0,\"bosTime\":430,\"endTime\":3260,\"hypotheses\":[{\"beginTime\":900,\"confidence\":4561,\"endTime\":2840,\"items\":[{\"beginTime\":900,\"confidence\":4561,\"endTime\":2840,\"items\":[{\"beginTime\":900,\"confidence\":3523,\"endTime\":1010,\"lmScore\":65,\"orthography\":\"ou\",\"score\":6055,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1010,\"confidence\":13,\"endTime\":1040,\"lmScore\":0,\"orthography\":\"se\",\"score\":1823,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1040,\"confidence\":5840,\"endTime\":1340,\"lmScore\":0,\"orthography\":\"trouve\",\"score\":16154,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1530,\"confidence\":5,\"endTime\":1580,\"lmScore\":0,\"orthography\":\"le\",\"score\":2983,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1580,\"confidence\":5638,\"endTime\":2840,\"items\":[{\"beginTime\":1580,\"confidence\":6426,\"endTime\":2460,\"lmScore\":0,\"orthography\":data,\"score\":47340,\"stability\":10000,\"type\":\"terminal\"}],\"lmScore\":0,\"name\":\"ASRFRA-FR#POI\",\"score\":47340,\"stability\":10000,\"type\":\"tag\"}],\"lmScore\":0,\"name\":\"ASRFRA-FR#TRAJET_POI\",\"score\":84971,\"stability\":10000,\"type\":\"tag\"}],\"lmScore\":65,\"score\":137174,\"startRule\":\"ASRFRA-FR#main\"}],\"status\":\"stable\",\"type\":\"NBest\",\"version\":\"1.0.0\"};\nmsg.sttItemName=\"TRAJET_POI\";\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 600,
+        "x": 540,
+        "y": 680,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -751,11 +756,16 @@
         "name": "Comment se rendre à la McDonald",
         "props": [
             {
-                "p": "payload"
+                "p": "lieu",
+                "v": "mcdonald",
+                "vt": "str"
             },
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -763,7 +773,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "mcdonald",
+        "payload": "Comment se rendre au McDonald ?",
         "payloadType": "str",
         "x": 200,
         "y": 680,
@@ -781,11 +791,16 @@
         "name": "Comment se rendre à la Séphora",
         "props": [
             {
-                "p": "payload"
+                "p": "lieu",
+                "v": "sephora",
+                "vt": "str"
             },
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -793,7 +808,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "sephora",
+        "payload": "Comment se rendre au Séphora ?",
         "payloadType": "str",
         "x": 190,
         "y": 740,
@@ -811,11 +826,16 @@
         "name": "Comment se rendre à la mairie",
         "props": [
             {
-                "p": "payload"
+                "p": "lieu",
+                "v": "mairie",
+                "vt": "str"
             },
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -823,7 +843,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "mairie",
+        "payload": "Comment se rendre à la mairie ?",
         "payloadType": "str",
         "x": 190,
         "y": 800,
@@ -841,11 +861,16 @@
         "name": "Comment se rendre à Casino",
         "props": [
             {
-                "p": "payload"
+                "p": "lieu",
+                "v": "casino",
+                "vt": "str"
             },
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -853,7 +878,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "casino",
+        "payload": "Comment se rendre à supermarché Casino ?",
         "payloadType": "str",
         "x": 180,
         "y": 860,
