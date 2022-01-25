@@ -372,8 +372,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
-        "y": 760,
+        "x": 670,
+        "y": 1020,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -391,8 +391,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 880,
+        "x": 570,
+        "y": 1140,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -535,8 +535,8 @@
         "topic": "",
         "payload": "est ce que je suis dans la direction pour aller à l'arret saillants ?",
         "payloadType": "str",
-        "x": 240,
-        "y": 760,
+        "x": 280,
+        "y": 1020,
         "wires": [
             [
                 "523b13a7db4ddc42",
@@ -553,8 +553,8 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 515,
-        "y": 740,
+        "x": 555,
+        "y": 1000,
         "wires": []
     },
     {
@@ -578,8 +578,8 @@
         "topic": "",
         "payload": "Quand arrive le prochain bus ?",
         "payloadType": "str",
-        "x": 220,
-        "y": 840,
+        "x": 260,
+        "y": 1100,
         "wires": [
             [
                 "6a76f882808a5b62",
@@ -596,8 +596,8 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 405,
-        "y": 840,
+        "x": 445,
+        "y": 1100,
         "wires": []
     },
     {
@@ -689,8 +689,8 @@
         "topic": "",
         "payload": "ou se trouve les toilettes les plus proche",
         "payloadType": "str",
-        "x": 230,
-        "y": 920,
+        "x": 270,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -767,6 +767,36 @@
         "payloadType": "str",
         "x": 200,
         "y": 680,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
+        "id": "528bc7b0b420b646",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à la Séphora",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "sephora",
+        "payloadType": "str",
+        "x": 190,
+        "y": 740,
         "wires": [
             [
                 "6ec567d331e3b888",
@@ -4380,7 +4410,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "\nmsg.payload.sort(function(a, b) {\n    return a.distance - b.distance\n});\n\nnode.warn(msg.payload);\n//poi = msg.payload[0]\npoi = {}\npoi.latitude = msg.payload[0].lat\npoi.longitude = msg.payload[0].lng\npoi.adresse = msg.payload[0].way+\"\\n\"+msg.payload[0].pCode+\" \"+msg.payload[0].town\npoi.name = msg.payload[0].name.replace(\" -\",\"\")\npoi.titre = msg.poi\npoi.zoom = 16\n\nif(msg.payload[0].distance>=1) {\n    distance = Number.parseFloat(msg.payload[0].distance).toFixed(0);\n    msg.tts=\"Le magasin \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" kilomètres environ.\";\n} else {\n    distance = Number.parseFloat(msg.payload[0].distance*1000).toFixed(0);\n    msg.tts=\"Le magasin \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" mètres environ.\";\n}\n\n\nmsg.payload=poi;\n\nreturn msg;",
+        "func": "\nmsg.payload.sort(function(a, b) {\n    return a.distance - b.distance\n});\n\nnode.warn(msg.payload);\n//poi = msg.payload[0]\npoi = {}\npoi.latitude = msg.payload[0].lat\npoi.longitude = msg.payload[0].lng\npoi.adresse = msg.payload[0].way+\"\\n\"+msg.payload[0].pCode+\" \"+msg.payload[0].town\npoi.name = msg.payload[0].name.replace(\" -\",\"\")\npoi.titre = msg.poi\npoi.zoom = 16\n\nif(msg.payload[0].distance>=1) {\n    distance = Number.parseFloat(msg.payload[0].distance).toFixed(0);\n    msg.tts=\"Le \" +  msg.payload[0].rubric.label +\" \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" kilomètres environ.\";\n} else {\n    distance = Number.parseFloat(msg.payload[0].distance*1000).toFixed(0);\n    msg.tts=\"Le \" +  msg.payload[0].rubric.label +\" \"+ msg.poi + \" le plus proche se trouve à \"+ distance +\" mètres environ.\";\n}\n\n\nmsg.payload=poi;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
