@@ -835,6 +835,36 @@
         ]
     },
     {
+        "id": "33718415b31586dd",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à Casino",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "casino",
+        "payloadType": "str",
+        "x": 180,
+        "y": 860,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
