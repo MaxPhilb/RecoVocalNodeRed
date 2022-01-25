@@ -96,14 +96,6 @@
         "env": []
     },
     {
-        "id": "2e150ca287dec739",
-        "type": "tab",
-        "label": "Flow 3",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "87fb38d3b12f7fd7",
         "type": "mqtt-broker",
         "name": "",
