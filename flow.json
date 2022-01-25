@@ -696,6 +696,35 @@
         ]
     },
     {
+        "id": "ed2ae084a2444b0e",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "où trouver un defibrillateur",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment se rendre à la Fnac ?",
+        "payloadType": "str",
+        "x": 190,
+        "y": 620,
+        "wires": [
+            [
+                "16699e8cadb69462"
+            ]
+        ]
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
