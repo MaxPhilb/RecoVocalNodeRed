@@ -4378,7 +4378,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "\nmsg.payload.sort(function(a, b) {\n    return b.distance - a.distance\n});\n\nnode.warn(msg.payload);\npoi = msg.payload[0]\n\ndistance = Number.parseFloat(poi.disctance).toFixed(0);\n\nmsg.payload=refDefi;\nmsg.payload.name=poi.name\nmsg.tts=\"Le magasin \"+ poi.name + \" le plus proche se trouve à \"+ distance +\" environ.\";\n\n\nreturn msg;",
+        "func": "\nmsg.payload.sort(function(a, b) {\n    return b.distance - a.distance\n});\n\nnode.warn(msg.payload);\npoi = msg.payload[0]\n\ndistance = Number.parseFloat(poi.disctance).toFixed(0);\n\nmsg.payload=poi;\nmsg.payload.name=poi.name\nmsg.tts=\"Le magasin \"+ poi.name + \" le plus proche se trouve à \"+ distance +\" environ.\";\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
