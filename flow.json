@@ -2114,7 +2114,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let data=msg.payload;\nmsg.departure=global.get(\"depart\");\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"titre\":data.titre,\"adresse\":data.adresse};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.departure=global.get(\"depart\");\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"titre\":data.titre,\"adresse\":data.adresse, \"name\":data.name};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4213,31 +4213,6 @@
         ]
     },
     {
-        "id": "dea21fe3b4092c69",
-        "type": "inject",
-        "z": "6ddb5e4c206db281",
-        "name": "Paul",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"q\":\"fnac grenoble\"}",
-        "payloadType": "json",
-        "x": 390,
-        "y": 320,
-        "wires": [
-            [
-                "c318c126cee4f395"
-            ]
-        ]
-    },
-    {
         "id": "3f13db0d9602cdd9",
         "type": "debug",
         "z": "6ddb5e4c206db281",
@@ -4253,151 +4228,6 @@
         "x": 910,
         "y": 440,
         "wires": []
-    },
-    {
-        "id": "0786c22b86182778",
-        "type": "inject",
-        "z": "6ddb5e4c206db281",
-        "name": "Séphora",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"q\":\"sephora grenoble\"}",
-        "payloadType": "json",
-        "x": 400,
-        "y": 380,
-        "wires": [
-            [
-                "c318c126cee4f395"
-            ]
-        ]
-    },
-    {
-        "id": "b95e7b7b8f0e7f3a",
-        "type": "inject",
-        "z": "6ddb5e4c206db281",
-        "name": "Monoprix",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"q\":\"monoprix grenoble\"}",
-        "payloadType": "json",
-        "x": 400,
-        "y": 460,
-        "wires": [
-            [
-                "c318c126cee4f395"
-            ]
-        ]
-    },
-    {
-        "id": "d9eb44dd055c2326",
-        "type": "inject",
-        "z": "6ddb5e4c206db281",
-        "name": "McDo",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"q\":\"mcdonald grenoble\"}",
-        "payloadType": "json",
-        "x": 410,
-        "y": 520,
-        "wires": [
-            [
-                "c318c126cee4f395"
-            ]
-        ]
-    },
-    {
-        "id": "414e6f830faaeae2",
-        "type": "inject",
-        "z": "6ddb5e4c206db281",
-        "name": "Fnac",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"q\":\"fnac grenoble\"}",
-        "payloadType": "json",
-        "x": 410,
-        "y": 600,
-        "wires": [
-            [
-                "c318c126cee4f395"
-            ]
-        ]
-    },
-    {
-        "id": "2091f4acae3f0696",
-        "type": "inject",
-        "z": "6ddb5e4c206db281",
-        "name": "Casino",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"q\":\"casino grenoble\"}",
-        "payloadType": "json",
-        "x": 410,
-        "y": 680,
-        "wires": [
-            [
-                "c318c126cee4f395"
-            ]
-        ]
     },
     {
         "id": "ddbd79b7374b2432",
