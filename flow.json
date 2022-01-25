@@ -3769,8 +3769,8 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 895,
-        "y": 200,
+        "x": 2235,
+        "y": 340,
         "wires": []
     },
     {
@@ -3804,8 +3804,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 500,
-        "y": 440,
+        "x": 570,
+        "y": 940,
         "wires": [
             [
                 "38c7da820631680c",
@@ -3827,8 +3827,8 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 330,
-        "y": 540,
+        "x": 400,
+        "y": 1040,
         "wires": [
             [
                 "7dc99738e0e1284d",
@@ -3856,8 +3856,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 540,
+        "x": 220,
+        "y": 1040,
         "wires": [
             [
                 "83f712e8f83b721e"
@@ -3877,8 +3877,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 580,
+        "x": 660,
+        "y": 1080,
         "wires": []
     },
     {
@@ -3894,8 +3894,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 480,
+        "x": 690,
+        "y": 980,
         "wires": []
     },
     {
@@ -3917,8 +3917,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 420,
+        "x": 860,
+        "y": 920,
         "wires": [
             []
         ]
@@ -3968,7 +3968,9 @@
             [
                 "c44425b806b3c37a"
             ],
-            []
+            [
+                "f975f1d0ae36e59f"
+            ]
         ]
     },
     {
@@ -4014,9 +4016,382 @@
         "z": "6ddb5e4c206db281",
         "name": "Chargement liste des défibrillateurs",
         "info": "",
-        "x": 230,
-        "y": 480,
+        "x": 300,
+        "y": 980,
         "wires": []
+    },
+    {
+        "id": "c318c126cee4f395",
+        "type": "http request",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "query",
+        "url": "https://search.mappy.net/search/1.1/find?",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 770,
+        "y": 520,
+        "wires": [
+            [
+                "3f13db0d9602cdd9",
+                "30dac0f21ccf4422"
+            ]
+        ]
+    },
+    {
+        "id": "dea21fe3b4092c69",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "Paul",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"q\":\"fnac grenoble\"}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "3f13db0d9602cdd9",
+        "type": "debug",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "0786c22b86182778",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "Séphora",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"q\":\"sephora grenoble\"}",
+        "payloadType": "json",
+        "x": 400,
+        "y": 380,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "b95e7b7b8f0e7f3a",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "Monoprix",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"q\":\"monoprix grenoble\"}",
+        "payloadType": "json",
+        "x": 400,
+        "y": 460,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "d9eb44dd055c2326",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "McDo",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"q\":\"mcdonald grenoble\"}",
+        "payloadType": "json",
+        "x": 410,
+        "y": 520,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "414e6f830faaeae2",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "Fnac",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"q\":\"fnac grenoble\"}",
+        "payloadType": "json",
+        "x": 410,
+        "y": 600,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "2091f4acae3f0696",
+        "type": "inject",
+        "z": "6ddb5e4c206db281",
+        "name": "Casino",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"q\":\"casino grenoble\"}",
+        "payloadType": "json",
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "ddbd79b7374b2432",
+        "type": "split",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1430,
+        "y": 520,
+        "wires": [
+            [
+                "73943389ca1e76ff"
+            ]
+        ]
+    },
+    {
+        "id": "73943389ca1e76ff",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "function distance(lat1, lon1, lat2, lon2, unit) {\n\tif ((lat1 == lat2) && (lon1 == lon2)) {\n\t\treturn 0;\n\t}\n\telse {\n\t\tvar radlat1 = Math.PI * lat1/180;\n\t\tvar radlat2 = Math.PI * lat2/180;\n\t\tvar theta = lon1-lon2;\n\t\tvar radtheta = Math.PI * theta/180;\n\t\tvar dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);\n\t\tif (dist > 1) {\n\t\t\tdist = 1;\n\t\t}\n\t\tdist = Math.acos(dist);\n\t\tdist = dist * 180/Math.PI;\n\t\tdist = dist * 60 * 1.1515;\n\t\tif (unit==\"K\") { dist = dist * 1.609344 }\n\t\tif (unit==\"N\") { dist = dist * 0.8684 }\n\t\treturn dist;\n\t}\n}\n\nlet departure=global.get('depart');\nlet dist=distance(departure.lat,departure.lon,msg.payload.lat,msg.payload.lng,\"K\");\n\nmsg.payload.distance = dist\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 520,
+        "wires": [
+            [
+                "aa7f2b4d68c539c2"
+            ]
+        ]
+    },
+    {
+        "id": "aa7f2b4d68c539c2",
+        "type": "join",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "mode": "auto",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1770,
+        "y": 520,
+        "wires": [
+            [
+                "806b6e54533b4567"
+            ]
+        ]
+    },
+    {
+        "id": "806b6e54533b4567",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "\nmsg.payload.sort(function(a, b) {\n    return b.distance - a.distance\n});\n\nnode.warn(msg.payload);\npoi = msg.payload[0]\n\ndistance = Number.parseFloat(poi.disctance).toFixed(0);\n\nmsg.payload=refDefi;\nmsg.payload.name=poi.name\nmsg.tts=\"Le magasin \"+ poi.name + \" le plus proche se trouve à \"+ distance +\" environ.\";\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1920,
+        "y": 520,
+        "wires": [
+            [
+                "37d9a0689df90e7b"
+            ]
+        ]
+    },
+    {
+        "id": "37d9a0689df90e7b",
+        "type": "debug",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2010,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "30dac0f21ccf4422",
+        "type": "json",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1050,
+        "y": 520,
+        "wires": [
+            [
+                "cf052505d1f31f09"
+            ]
+        ]
+    },
+    {
+        "id": "cf052505d1f31f09",
+        "type": "change",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.pois",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 520,
+        "wires": [
+            [
+                "ddbd79b7374b2432"
+            ]
+        ]
+    },
+    {
+        "id": "f975f1d0ae36e59f",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "msg.payload = {\"q\":msg.poi+\" \"+\"grenoble\"}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 360,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
     },
     {
         "id": "59bb182ed1a3e8e9",
