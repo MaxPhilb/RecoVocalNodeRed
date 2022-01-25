@@ -4009,6 +4009,16 @@
         "wires": []
     },
     {
+        "id": "a773d636cff0ed37",
+        "type": "comment",
+        "z": "6ddb5e4c206db281",
+        "name": "Chargement liste des défibrillateurs",
+        "info": "",
+        "x": 230,
+        "y": 480,
+        "wires": []
+    },
+    {
         "id": "59bb182ed1a3e8e9",
         "type": "websocket out",
         "z": "ab443a039cdf1926",
