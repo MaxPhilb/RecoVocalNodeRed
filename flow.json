@@ -2139,7 +2139,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let data=msg.payload;\nmsg.departure=global.get(\"depart\");\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"titre\":data.titre,\"adresse\":data.adresse, \"name\":data.name};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.departure=global.get(\"depart\");\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"titre\":data.titre,\"adresse\":data.adresse, \"name\":data.name, \"imgURL\":data.imgURL};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
