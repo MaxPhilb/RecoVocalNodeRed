@@ -4057,7 +4057,7 @@
         "type": "function",
         "z": "048311bebe6e223a",
         "name": "Extract destination",
-        "func": "msg.payload = \"\"\nmsg.url =\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:0893/stoptimes\"\n\n\nreturn msg;",
+        "func": "msg.payload = \"\"\nmsg.url =\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:0893/stoptimes\"\n    \n    msg.headers={\n    \t\torigin: 'tpsreelGrenoble'\n    \t};\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
