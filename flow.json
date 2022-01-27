@@ -689,8 +689,8 @@
         "topic": "",
         "payload": "ou se trouve les toilettes les plus proche",
         "payloadType": "str",
-        "x": 270,
-        "y": 1180,
+        "x": 250,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -912,6 +912,36 @@
         "payloadType": "str",
         "x": 250,
         "y": 1120,
+        "wires": [
+            [
+                "6a76f882808a5b62",
+                "de2428d8dc8976f5"
+            ]
+        ]
+    },
+    {
+        "id": "9c7a02c012cd6c96",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "quand arrive le prochain bus 875",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "875",
+        "payload": "Quand arrive le prochain bus ?",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1160,
         "wires": [
             [
                 "6a76f882808a5b62",
