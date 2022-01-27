@@ -1358,7 +1358,7 @@
         "to": "",
         "reg": false,
         "x": 1440,
-        "y": 620,
+        "y": 720,
         "wires": [
             [
                 "13f532013811d581"
@@ -1374,8 +1374,8 @@
         "links": [
             "f973e2dbbefd369a"
         ],
-        "x": 1615,
-        "y": 620,
+        "x": 1595,
+        "y": 720,
         "wires": []
     },
     {
@@ -1752,7 +1752,8 @@
         "wires": [
             [
                 "e1dcea6e9a88151c",
-                "26e79a99900e1edd"
+                "26e79a99900e1edd",
+                "7de0cc0a2bb2393f"
             ]
         ]
     },
@@ -2047,8 +2048,8 @@
         "z": "fa2c9998251120d1",
         "name": "TTS",
         "info": "",
-        "x": 1660,
-        "y": 580,
+        "x": 1630,
+        "y": 680,
         "wires": []
     },
     {
@@ -2170,6 +2171,23 @@
         "x": 1650,
         "y": 520,
         "wires": []
+    },
+    {
+        "id": "7de0cc0a2bb2393f",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "\nmsg.payload=msg.tts\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1400,
+        "y": 620,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "0f26fddc180118b9",
@@ -4711,8 +4729,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
-        "y": 300,
+        "x": 870,
+        "y": 260,
         "wires": []
     },
     {
@@ -4910,8 +4928,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 700,
-        "y": 720,
+        "x": 1020,
+        "y": 380,
         "wires": [
             [
                 "48cf66866fd16414"
@@ -4934,6 +4952,40 @@
         "x": 720,
         "y": 500,
         "wires": []
+    },
+    {
+        "id": "dcf1c68d42941fe3",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "nextBus",
+        "links": [],
+        "x": 275,
+        "y": 500,
+        "wires": [
+            [
+                "5e61afeec68a857d"
+            ]
+        ]
+    },
+    {
+        "id": "5e61afeec68a857d",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "nextBus",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"nextbus\",\"reponse\":data};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9",
+                "eb7580e56c091ea3"
+            ]
+        ]
     },
     {
         "id": "904ace6426fb4207",
