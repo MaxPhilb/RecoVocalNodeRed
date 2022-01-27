@@ -4053,6 +4053,54 @@
         "wires": []
     },
     {
+        "id": "6ad47c1470bb601a",
+        "type": "function",
+        "z": "048311bebe6e223a",
+        "name": "Extract destination",
+        "func": "\nmsg.url =\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:0893/stoptimes\"\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "b9bf3b7951ad1ce9"
+            ]
+        ]
+    },
+    {
+        "id": "2875def57da61f75",
+        "type": "inject",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "6ad47c1470bb601a"
+            ]
+        ]
+    },
+    {
         "id": "468cdf07f1874e01",
         "type": "link in",
         "z": "6ddb5e4c206db281",
