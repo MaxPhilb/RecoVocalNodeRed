@@ -2186,8 +2186,23 @@
         "x": 1400,
         "y": 620,
         "wires": [
-            []
+            [
+                "98f9b8a8730362b6"
+            ]
         ]
+    },
+    {
+        "id": "98f9b8a8730362b6",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "nextBus",
+        "mode": "link",
+        "links": [
+            "dcf1c68d42941fe3"
+        ],
+        "x": 1515,
+        "y": 620,
+        "wires": []
     },
     {
         "id": "0f26fddc180118b9",
@@ -4958,7 +4973,9 @@
         "type": "link in",
         "z": "ab443a039cdf1926",
         "name": "nextBus",
-        "links": [],
+        "links": [
+            "98f9b8a8730362b6"
+        ],
         "x": 275,
         "y": 500,
         "wires": [
