@@ -2004,7 +2004,7 @@
         "type": "function",
         "z": "1716b79ab91a3357",
         "name": "recupr horaire temps reel 26",
-        "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:26\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
+        "func": "\nlet arret=msg.payload.idBus;\n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\nlet url=\"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:0893/stoptimes?route=SEM:26\"\n\nmsg.url=url;\nmsg.headers={\n\t\torigin: 'tpsreelGrenoble'\n\t};\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
