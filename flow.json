@@ -561,7 +561,7 @@
         "id": "98ac8f8e4ad1d828",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "quand arrive le prochain bus",
+        "name": "quand arrive le prochain bus 26",
         "props": [
             {
                 "p": "payload"
@@ -578,7 +578,7 @@
         "topic": "",
         "payload": "Quand arrive le prochain bus ?",
         "payloadType": "str",
-        "x": 260,
+        "x": 270,
         "y": 1100,
         "wires": [
             [
