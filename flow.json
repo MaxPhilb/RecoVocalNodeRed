@@ -2160,7 +2160,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "tpsReel26",
+                "p": "tpsReel",
                 "pt": "msg",
                 "to": "payload",
                 "tot": "msg"
@@ -2171,11 +2171,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1090,
+        "x": 1080,
         "y": 80,
         "wires": [
             [
-                "88ea2b978a22b2ee"
+                "88ea2b978a22b2ee",
+                "ec5e069dd111511c"
             ]
         ]
     },
@@ -2202,8 +2203,7 @@
         "y": 140,
         "wires": [
             [
-                "15978cef958c9a26",
-                "ec5e069dd111511c"
+                "15978cef958c9a26"
             ]
         ]
     },
