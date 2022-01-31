@@ -372,8 +372,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 680,
+        "x": 670,
+        "y": 1020,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -385,14 +385,14 @@
         "type": "function",
         "z": "755e7fce9de6d2ee",
         "name": "NEXTBUS",
-        "func": "let data=\"hotel de ville\";\nmsg.payload={hypotheses:[{items:[{name:\"\",items:[{items:[{orthography:data}]}]}]}]};\nmsg.sttItemName=\"NEXTBUS\";\n\n\nreturn msg;",
+        "func": "let data=\"26\";\nmsg.payload={hypotheses:[{items:[{name:\"\",items:[{items:[{orthography:msg.topic}]}]}]}]};\nmsg.sttItemName=\"NEXTBUS\";\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 880,
+        "x": 590,
+        "y": 1120,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -410,8 +410,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 560,
+        "x": 460,
+        "y": 540,
         "wires": [
             [
                 "7c0589f338df76f2"
@@ -445,7 +445,7 @@
         "payload": "Comment me rendre à l'arret chaulnes?",
         "payloadType": "str",
         "x": 210,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "d6f8a53b2862f135",
@@ -535,8 +535,8 @@
         "topic": "",
         "payload": "est ce que je suis dans la direction pour aller à l'arret saillants ?",
         "payloadType": "str",
-        "x": 260,
-        "y": 680,
+        "x": 280,
+        "y": 1020,
         "wires": [
             [
                 "523b13a7db4ddc42",
@@ -553,15 +553,15 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 535,
-        "y": 660,
+        "x": 555,
+        "y": 1000,
         "wires": []
     },
     {
         "id": "98ac8f8e4ad1d828",
         "type": "inject",
         "z": "755e7fce9de6d2ee",
-        "name": "quand arrive le prochain bus",
+        "name": "quand arrive le prochain bus 26",
         "props": [
             {
                 "p": "payload"
@@ -575,11 +575,11 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "26",
         "payload": "Quand arrive le prochain bus ?",
         "payloadType": "str",
-        "x": 220,
-        "y": 840,
+        "x": 250,
+        "y": 1080,
         "wires": [
             [
                 "6a76f882808a5b62",
@@ -596,8 +596,8 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 405,
-        "y": 840,
+        "x": 445,
+        "y": 1100,
         "wires": []
     },
     {
@@ -639,8 +639,8 @@
         "links": [
             "8e217170ba11d68a"
         ],
-        "x": 385,
-        "y": 520,
+        "x": 315,
+        "y": 500,
         "wires": []
     },
     {
@@ -689,8 +689,8 @@
         "topic": "",
         "payload": "ou se trouve les toilettes les plus proche",
         "payloadType": "str",
-        "x": 230,
-        "y": 920,
+        "x": 250,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -948,7 +948,7 @@
         "type": "debug",
         "z": "fa2c9998251120d1",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1164,7 +1164,7 @@
         "to": "",
         "reg": false,
         "x": 1440,
-        "y": 620,
+        "y": 720,
         "wires": [
             [
                 "13f532013811d581"
@@ -1180,8 +1180,8 @@
         "links": [
             "f973e2dbbefd369a"
         ],
-        "x": 1615,
-        "y": 620,
+        "x": 1595,
+        "y": 720,
         "wires": []
     },
     {
@@ -1558,7 +1558,8 @@
         "wires": [
             [
                 "e1dcea6e9a88151c",
-                "26e79a99900e1edd"
+                "26e79a99900e1edd",
+                "7de0cc0a2bb2393f"
             ]
         ]
     },
@@ -1853,8 +1854,8 @@
         "z": "fa2c9998251120d1",
         "name": "TTS",
         "info": "",
-        "x": 1660,
-        "y": 580,
+        "x": 1630,
+        "y": 680,
         "wires": []
     },
     {
@@ -1945,7 +1946,7 @@
         "type": "function",
         "z": "fa2c9998251120d1",
         "name": "",
-        "func": "let data=msg.payload;\nmsg.departure=global.get(\"depart\");\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"titre\":data.titre,\"adresse\":data.adresse,\"zoom\":18};\nreturn msg;",
+        "func": "let data=msg.payload;\nmsg.departure=global.get(\"depart\");\nmsg.payload={\"lat\":data.latitude,\"lon\":data.longitude,\"titre\":data.titre,\"adresse\":data.adresse, \"name\":data.name, \"imgURL\":data.imgURL};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1973,8 +1974,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1680,
-        "y": 460,
+        "x": 1650,
+        "y": 520,
         "wires": []
     },
     {
@@ -3228,7 +3229,7 @@
         "type": "function",
         "z": "79dedaa104b8a461",
         "name": "",
-        "func": "destination = msg.destination\n\nmsg.result = {}\n// valeur direction\n// 0 : arret non déservi sur les lignes\n// 1 : bonne direction\n// -1 : mauvaise direction\nmsg.result.direction = 0\nmsg.result.ligne = \"\"\n\n\n// index de l'abri Gares sur ligne C1\nindexArretDepart = 2\nstops = msg.ligneC1\n\nstops.forEach(function(stop, index,array) {\n    //node.warn(stop);\n    //node.warn(\"C1 : \" + stop.stopName + \" - \" + destination)\n    if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n        msg.result.ligne = \"C1\"\n        if(index>indexArretDepart) {\n            msg.result.direction = 1\n        } else {\n            msg.result.direction = -1\n        }\n        \n        //node.warn(\"C1 : \" + msg.result)\n    }\n})\n\nif(msg.result.ligne.length===0) {\n    // index de l'abri Gares sur ligne 26\n    indexArretDepart = 1\n    stops = msg.ligne26\n    \n    stops.forEach(function(stop, index,array) {\n        //node.warn(\"26 : \" + stop.stopName + \" - \" + destination)\n        if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n            msg.result.ligne = \"26\"\n            if(index>indexArretDepart) {\n                msg.result.direction = 1\n            } else {\n                msg.result.direction = -1\n            }\n            \n            //node.warn(\"26 : \" + msg.result)\n        }\n    })\n}\n\nreturn msg;",
+        "func": "destination = msg.destination\n\nmsg.result = {}\n// valeur direction\n// 0 : arret non déservi sur les lignes\n// 1 : bonne direction\n// -1 : mauvaise direction\n//msg.result.direction = 0\nmsg.rep=\"Cet arret n'est pas déservi sur les lignes de cet abribus\";\nmsg.result.ligne = \"\"\n\n\n// index de l'abri Gares sur ligne C1\nindexArretDepart = 2\nstops = msg.ligneC1\n\nstops.forEach(function(stop, index,array) {\n    //node.warn(stop);\n    //node.warn(\"C1 : \" + stop.stopName + \" - \" + destination)\n    if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n        msg.result.ligne = \"C1\"\n        if(index>indexArretDepart) {\n            //msg.result.direction = 1\n            msg.rep=\"Vous êtes au bon abribus pour vous rendre à cet arret avec la ligne C1.\";\n        } else {\n            //msg.result.direction = -1\n            msg.rep=\"Vous n'êtes pas au bon abribus pour vous rendre à cet arret avec la ligne C1.\"\n        }\n        \n        msg.result.lat = stop.lat\n        msg.result.lon = stop.lon\n        \n        //node.warn(\"C1 : \" + msg.result)\n    }\n})\n\nif(msg.result.ligne.length===0) {\n    // index de l'abri Gares sur ligne 26\n    indexArretDepart = 1\n    stops = msg.ligne26\n    \n    stops.forEach(function(stop, index,array) {\n        //node.warn(\"26 : \" + stop.stopName + \" - \" + destination)\n        if(stop.stopName.toLowerCase().indexOf(destination.toLowerCase())>=0) {\n            msg.result.ligne = \"26\"\n            if(index>indexArretDepart) {\n                //msg.result.direction = 1\n                msg.rep=\"Vous êtes au bon abribus pour vous rendre à cet arret avec la ligne 26.\";\n            } else {\n                //msg.result.direction = -1\n                msg.rep=\"Vous n'êtes pas au bon abribus pour vous rendre à cet arret avec la ligne 26.\"\n            }\n            \n            msg.result.lat = stop.lat\n            msg.result.lon = stop.lon\n            \n            //node.warn(\"26 : \" + msg.result)\n        }\n    })\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3454,7 +3455,7 @@
         "type": "function",
         "z": "79dedaa104b8a461",
         "name": "",
-        "func": "msg.url = \"https://data.mobilites-m.fr/api/routers/default/plan\"\n\npayload = \"routerId=prod&otp=undefined&mode=WALK,TRANSIT&showIntermediateStops=true&minTransferTime=60&transferPenalty=60&numItineraries=2&walkBoardCost=300&\"\n//payload += \"fromPlace=45.19078,5.71554&toPlace=45.18731,5.73714&\"\npayload += \"fromPlace=\"+global.get('depart').lat+\",\"+global.get('depart').lon+\"&toPlace=\"+msg.destination.lat+\",\"+msg.destination.lon+\"&\"\npayload += \"arriveBy=false&locale=fr_FR&walkSpeed=1.1112&walkReluctance=5\"\n//payload += \"time=14%20:%2006&date=2021-11-24&ui_date=mercredi%2024%20novembre%20-%2024/11/2021\"\n\nmsg.url = msg.url +\"?\"+payload\n\n//msg.payload = payload\n\nreturn msg;",
+        "func": "msg.url = \"https://data.mobilites-m.fr/api/routers/default/plan\"\n\npayload = \"routerId=prod&otp=undefined&mode=WALK,TRANSIT&showIntermediateStops=true&minTransferTime=60&transferPenalty=60&numItineraries=2&walkBoardCost=300&\"\n//payload += \"fromPlace=45.19078,5.71554&toPlace=45.18731,5.73714&\"\npayload += \"fromPlace=\"+global.get('depart').lat+\",\"+global.get('depart').lon+\"&toPlace=\"+msg.result.lat+\",\"+msg.result.lon+\"&\"\npayload += \"arriveBy=false&locale=fr_FR&walkSpeed=1.1112&walkReluctance=5\"\n//payload += \"time=14%20:%2006&date=2021-11-24&ui_date=mercredi%2024%20novembre%20-%2024/11/2021\"\n\nmsg.url = msg.url +\"?\"+payload\n\n//msg.payload = payload\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3464,7 +3465,8 @@
         "y": 260,
         "wires": [
             [
-                "eb99ec072a275dc6"
+                "eb99ec072a275dc6",
+                "5002f9ecad502939"
             ]
         ]
     },
@@ -3611,7 +3613,7 @@
         "type": "function",
         "z": "048311bebe6e223a",
         "name": "Extract destination",
-        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n    //node.warn(destination)\n    msg.ligne = destination.trim()\n    \n    // Attention pas propre - gestion UTC\n    msg.url = \"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:\"\n    \n    if(destination.indexOf(\"C1\")>=0) {\n        msg.url = msg.url+\"C1\"\n    } else if(destination.indexOf(\"26\")>=0) {\n        msg.url = msg.url+\"26\"\n    }\n    \n    msg.headers={\n    \t\torigin: 'tpsreelGrenoble'\n    \t};    \n\n    \n} \n\n\nreturn msg;",
+        "func": "items_size = msg.payload.hypotheses[0].items[0].items.length\nlast_item = msg.payload.hypotheses[0].items[0].items[items_size-1]\n\n\ndestination = \"\"\nif(last_item.hasOwnProperty(\"items\") && last_item.items.length>0) {\n\n    last_item.items.forEach(function(item){\n        destination = destination + \" \" + item.orthography\n    })\n    \n    //node.warn(destination)\n    msg.ligne = destination.trim()\n    \n    // Attention pas propre - gestion UTC\n    msg.url = \"https://data.mobilites-m.fr/api/routers/default/index/clusters/SEM:GENGARES/stoptimes?route=SEM:\"\n    \n    if(destination.indexOf(\"C1\")>=0) {\n        msg.url = msg.url+\"C1\"\n    } else if(destination.indexOf(\"26\")>=0) {\n        msg.url = msg.url+\"26\"\n    }\n    \n    msg.headers={\n    \t\torigin: 'tpsreelGrenoble'\n    \t};    \n\n    \n} \n\n//let url=\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:\"+arret+\"/stoptimes\"\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3768,8 +3770,8 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 895,
-        "y": 200,
+        "x": 2235,
+        "y": 340,
         "wires": []
     },
     {
@@ -3803,8 +3805,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 500,
-        "y": 440,
+        "x": 570,
+        "y": 940,
         "wires": [
             [
                 "38c7da820631680c",
@@ -3826,8 +3828,8 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 330,
-        "y": 540,
+        "x": 400,
+        "y": 1040,
         "wires": [
             [
                 "7dc99738e0e1284d",
@@ -3855,8 +3857,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 540,
+        "x": 220,
+        "y": 1040,
         "wires": [
             [
                 "83f712e8f83b721e"
@@ -3876,8 +3878,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 580,
+        "x": 660,
+        "y": 1080,
         "wires": []
     },
     {
@@ -3893,8 +3895,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 480,
+        "x": 690,
+        "y": 980,
         "wires": []
     },
     {
@@ -3916,8 +3918,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 420,
+        "x": 860,
+        "y": 920,
         "wires": [
             []
         ]
@@ -3927,7 +3929,7 @@
         "type": "function",
         "z": "6ddb5e4c206db281",
         "name": "",
-        "func": "function distance(lat1, lon1, lat2, lon2, unit) {\n\tif ((lat1 == lat2) && (lon1 == lon2)) {\n\t\treturn 0;\n\t}\n\telse {\n\t\tvar radlat1 = Math.PI * lat1/180;\n\t\tvar radlat2 = Math.PI * lat2/180;\n\t\tvar theta = lon1-lon2;\n\t\tvar radtheta = Math.PI * theta/180;\n\t\tvar dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);\n\t\tif (dist > 1) {\n\t\t\tdist = 1;\n\t\t}\n\t\tdist = Math.acos(dist);\n\t\tdist = dist * 180/Math.PI;\n\t\tdist = dist * 60 * 1.1515;\n\t\tif (unit==\"K\") { dist = dist * 1.609344 }\n\t\tif (unit==\"N\") { dist = dist * 0.8684 }\n\t\treturn dist;\n\t}\n}\n\nlet departure=global.get('depart');\nlet listDefibrillateur=global.get('defibrillateurs')\n//node.warn(departure);\n//node.warn(listDefibrillateur);\nlet minDistance=1000000;\nlet refDefi={};\n\nlistDefibrillateur.forEach(function(defi){\n    let dist=distance(departure.lat,departure.lon,defi.latitude,defi.longitude,\"K\");\n    if(dist<minDistance)\n    {\n        minDistance=dist;\n        refDefi=defi;\n    }\n    \n})\nnode.warn(refDefi);\nmsg.payload=refDefi;\nmsg.payload.name=refDefi.titre+\" <br /> \"+refDefi.adresse;\nmsg.tts=\"Le defibrillateur le plus proche se trouve au \"+refDefi.titre+\".\";\nreturn msg;",
+        "func": "function distance(lat1, lon1, lat2, lon2, unit) {\n\tif ((lat1 == lat2) && (lon1 == lon2)) {\n\t\treturn 0;\n\t}\n\telse {\n\t\tvar radlat1 = Math.PI * lat1/180;\n\t\tvar radlat2 = Math.PI * lat2/180;\n\t\tvar theta = lon1-lon2;\n\t\tvar radtheta = Math.PI * theta/180;\n\t\tvar dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);\n\t\tif (dist > 1) {\n\t\t\tdist = 1;\n\t\t}\n\t\tdist = Math.acos(dist);\n\t\tdist = dist * 180/Math.PI;\n\t\tdist = dist * 60 * 1.1515;\n\t\tif (unit==\"K\") { dist = dist * 1.609344 }\n\t\tif (unit==\"N\") { dist = dist * 0.8684 }\n\t\treturn dist;\n\t}\n}\n\nlet departure=global.get('depart');\nlet listDefibrillateur=global.get('defibrillateurs')\n//node.warn(departure);\n//node.warn(listDefibrillateur);\nlet minDistance=1000000;\nlet refDefi={};\n\nlistDefibrillateur.forEach(function(defi){\n    let dist=distance(departure.lat,departure.lon,defi.latitude,defi.longitude,\"K\");\n    if(dist<minDistance)\n    {\n        minDistance=dist;\n        refDefi=defi;\n    }\n    \n})\nnode.warn(refDefi);\nmsg.payload=refDefi;\nmsg.payload.name=refDefi.titre+\" <br /> \"+refDefi.adresse;\nmsg.payload.zoom = 18\nmsg.tts=\"Le defibrillateur le plus proche se trouve au \"+refDefi.titre+\".\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3967,7 +3969,9 @@
             [
                 "c44425b806b3c37a"
             ],
-            []
+            [
+                "f975f1d0ae36e59f"
+            ]
         ]
     },
     {
@@ -4282,8 +4286,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 890,
-        "y": 300,
+        "x": 870,
+        "y": 260,
         "wires": []
     },
     {
@@ -4443,7 +4447,8 @@
         "y": 460,
         "wires": [
             [
-                "59bb182ed1a3e8e9"
+                "59bb182ed1a3e8e9",
+                "8d16fee72d057b2a"
             ]
         ]
     },
@@ -4469,8 +4474,8 @@
         "z": "ab443a039cdf1926",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "minutes",
+        "timeout": "20",
+        "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -4480,8 +4485,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 700,
-        "y": 720,
+        "x": 1020,
+        "y": 380,
         "wires": [
             [
                 "48cf66866fd16414"
@@ -5357,6 +5362,681 @@
         "wires": [
             [
                 "218145e98722a429"
+            ]
+        ]
+    },
+    {
+        "id": "ed2ae084a2444b0e",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à la Fnac ?",
+        "props": [
+            {
+                "p": "lieu",
+                "v": "fnac",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment se rendre à la Fnac ?",
+        "payloadType": "str",
+        "x": 190,
+        "y": 620,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
+        "id": "6ec567d331e3b888",
+        "type": "function",
+        "z": "755e7fce9de6d2ee",
+        "name": "TRAJET_POI",
+        "func": "let data=msg.lieu\nmsg.payload={\"activeStartRules\":[\"ASRFRA-FR#main\"],\"beginTime\":0,\"bosTime\":430,\"endTime\":3260,\"hypotheses\":[{\"beginTime\":900,\"confidence\":4561,\"endTime\":2840,\"items\":[{\"beginTime\":900,\"confidence\":4561,\"endTime\":2840,\"items\":[{\"beginTime\":900,\"confidence\":3523,\"endTime\":1010,\"lmScore\":65,\"orthography\":\"ou\",\"score\":6055,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1010,\"confidence\":13,\"endTime\":1040,\"lmScore\":0,\"orthography\":\"se\",\"score\":1823,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1040,\"confidence\":5840,\"endTime\":1340,\"lmScore\":0,\"orthography\":\"trouve\",\"score\":16154,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1530,\"confidence\":5,\"endTime\":1580,\"lmScore\":0,\"orthography\":\"le\",\"score\":2983,\"stability\":10000,\"type\":\"terminal\"},{\"beginTime\":1580,\"confidence\":5638,\"endTime\":2840,\"items\":[{\"beginTime\":1580,\"confidence\":6426,\"endTime\":2460,\"lmScore\":0,\"orthography\":data,\"score\":47340,\"stability\":10000,\"type\":\"terminal\"}],\"lmScore\":0,\"name\":\"ASRFRA-FR#POI\",\"score\":47340,\"stability\":10000,\"type\":\"tag\"}],\"lmScore\":0,\"name\":\"ASRFRA-FR#TRAJET_POI\",\"score\":84971,\"stability\":10000,\"type\":\"tag\"}],\"lmScore\":65,\"score\":137174,\"startRule\":\"ASRFRA-FR#main\"}],\"status\":\"stable\",\"type\":\"NBest\",\"version\":\"1.0.0\"};\nmsg.sttItemName=\"TRAJET_POI\";\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 680,
+        "wires": [
+            [
+                "7c0589f338df76f2"
+            ]
+        ]
+    },
+    {
+        "id": "578d323efed98526",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à la McDonald",
+        "props": [
+            {
+                "p": "lieu",
+                "v": "mcdonald",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment se rendre au McDonald ?",
+        "payloadType": "str",
+        "x": 200,
+        "y": 680,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
+        "id": "528bc7b0b420b646",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à la Séphora",
+        "props": [
+            {
+                "p": "lieu",
+                "v": "sephora",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment se rendre au Séphora ?",
+        "payloadType": "str",
+        "x": 190,
+        "y": 740,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
+        "id": "f963d2979daa729d",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à la mairie",
+        "props": [
+            {
+                "p": "lieu",
+                "v": "mairie",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment se rendre à la mairie ?",
+        "payloadType": "str",
+        "x": 190,
+        "y": 800,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
+        "id": "33718415b31586dd",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment se rendre à Casino",
+        "props": [
+            {
+                "p": "lieu",
+                "v": "casino",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment se rendre à supermarché Casino ?",
+        "payloadType": "str",
+        "x": 180,
+        "y": 860,
+        "wires": [
+            [
+                "6ec567d331e3b888",
+                "c70a44a241d273d3"
+            ]
+        ]
+    },
+    {
+        "id": "a87b30613c35fec7",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "quand arrive le prochain bus C1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "C1",
+        "payload": "Quand arrive le prochain bus ?",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1120,
+        "wires": [
+            [
+                "6a76f882808a5b62",
+                "de2428d8dc8976f5"
+            ]
+        ]
+    },
+    {
+        "id": "9c7a02c012cd6c96",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "quand arrive le prochain bus 875",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "875",
+        "payload": "Quand arrive le prochain bus ?",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1160,
+        "wires": [
+            [
+                "6a76f882808a5b62",
+                "de2428d8dc8976f5"
+            ]
+        ]
+    },
+    {
+        "id": "53bc4fc78f1a2af6",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment me rendre à Ponsart",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "dir",
+                "v": "ponsart",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment me rendre à l'arret Ponsart ?",
+        "payloadType": "str",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "d6f8a53b2862f135",
+                "b81cc92e90dd4ccc"
+            ]
+        ]
+    },
+    {
+        "id": "7de0cc0a2bb2393f",
+        "type": "function",
+        "z": "fa2c9998251120d1",
+        "name": "",
+        "func": "\nmsg.payload=msg.tts\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1400,
+        "y": 620,
+        "wires": [
+            [
+                "98f9b8a8730362b6"
+            ]
+        ]
+    },
+    {
+        "id": "98f9b8a8730362b6",
+        "type": "link out",
+        "z": "fa2c9998251120d1",
+        "name": "nextBus",
+        "mode": "link",
+        "links": [
+            "dcf1c68d42941fe3"
+        ],
+        "x": 1515,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5002f9ecad502939",
+        "type": "debug",
+        "z": "79dedaa104b8a461",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1990,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6ad47c1470bb601a",
+        "type": "function",
+        "z": "048311bebe6e223a",
+        "name": "Extract destination",
+        "func": "msg.payload = \"\"\nmsg.url =\"https://data.mobilites-m.fr/api/routers/default/index/stops/SEM:0893/stoptimes\"\n    \n    msg.headers={\n    \t\torigin: 'tpsreelGrenoble'\n    \t};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 140,
+        "wires": [
+            [
+                "b68d7f402afa55d5"
+            ]
+        ]
+    },
+    {
+        "id": "2875def57da61f75",
+        "type": "inject",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "6ad47c1470bb601a"
+            ]
+        ]
+    },
+    {
+        "id": "b68d7f402afa55d5",
+        "type": "http request",
+        "z": "048311bebe6e223a",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "78391d0a10011c77"
+            ]
+        ]
+    },
+    {
+        "id": "a773d636cff0ed37",
+        "type": "comment",
+        "z": "6ddb5e4c206db281",
+        "name": "Chargement liste des défibrillateurs",
+        "info": "",
+        "x": 300,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "c318c126cee4f395",
+        "type": "http request",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "query",
+        "url": "https://search.mappy.net/search/1.1/find?",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 770,
+        "y": 520,
+        "wires": [
+            [
+                "3f13db0d9602cdd9",
+                "30dac0f21ccf4422"
+            ]
+        ]
+    },
+    {
+        "id": "3f13db0d9602cdd9",
+        "type": "debug",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ddbd79b7374b2432",
+        "type": "split",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1430,
+        "y": 520,
+        "wires": [
+            [
+                "73943389ca1e76ff"
+            ]
+        ]
+    },
+    {
+        "id": "73943389ca1e76ff",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "function distance(lat1, lon1, lat2, lon2, unit) {\n\tif ((lat1 == lat2) && (lon1 == lon2)) {\n\t\treturn 0;\n\t}\n\telse {\n\t\tvar radlat1 = Math.PI * lat1/180;\n\t\tvar radlat2 = Math.PI * lat2/180;\n\t\tvar theta = lon1-lon2;\n\t\tvar radtheta = Math.PI * theta/180;\n\t\tvar dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);\n\t\tif (dist > 1) {\n\t\t\tdist = 1;\n\t\t}\n\t\tdist = Math.acos(dist);\n\t\tdist = dist * 180/Math.PI;\n\t\tdist = dist * 60 * 1.1515;\n\t\tif (unit==\"K\") { dist = dist * 1.609344 }\n\t\tif (unit==\"N\") { dist = dist * 0.8684 }\n\t\treturn dist;\n\t}\n}\n\nlet departure=global.get('depart');\nlet dist=distance(departure.lat,departure.lon,msg.payload.lat,msg.payload.lng,\"K\");\n\nmsg.payload.distance = dist\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 520,
+        "wires": [
+            [
+                "aa7f2b4d68c539c2"
+            ]
+        ]
+    },
+    {
+        "id": "aa7f2b4d68c539c2",
+        "type": "join",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "mode": "auto",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1770,
+        "y": 520,
+        "wires": [
+            [
+                "806b6e54533b4567"
+            ]
+        ]
+    },
+    {
+        "id": "806b6e54533b4567",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "\nmsg.payload.sort(function(a, b) {\n    return a.distance - b.distance\n});\n\nnode.warn(msg.payload);\n//poi = msg.payload[0]\npoi = {}\npoi.latitude = msg.payload[0].lat\npoi.longitude = msg.payload[0].lng\n\npoi.adresse = msg.payload[0].way+\", \"+msg.payload[0].pCode+\" \"+msg.payload[0].town\npoi.adresse = poi.adresse + \"\\r\\n\\r\\n\" + msg.payload[0].openingHours + \"\\r\\n\" + \"Tél: \" + msg.payload[0].phone\n\npoi.name = msg.payload[0].name.replace(\" -\",\"\")\npoi.titre = msg.poi.trim().charAt(0).toUpperCase() + msg.poi.trim().slice(1);\npoi.imgURL = \"\"\npoi.zoom = 16\n\nmsg.tts = \"\"\npoiType = msg.payload[0].rubric.parent\nif(poiType.indexOf(\"restaurant\")>=0) {\n    msg.tts = \"Le restaurant \"+ poi.titre + \" le plus proche se trouve à \"\n} else if(poiType.indexOf(\"magasin\")>=0) {\n    msg.tts = \"Le magasin \"+ poi.titrei + \" le plus proche se trouve à \"\n} else if(poiType.indexOf(\"parfumeries\")>=0) {\n    msg.tts = \"La parfumerie \"+ poi.titre + \" la plus proche se trouve à \"\n} else if(poiType.indexOf(\"services-publics\")>=0 && msg.payload[0].rubric.id==\"mairie\") {\n    msg.tts = \"La mairie de \"+ msg.payload[0].town + \" se trouve à \"\n} else if(poiType.indexOf(\"supermarches-hypermarches\")>=0) {\n    msg.tts = \"Le supermarché \"+ poi.titre + \" le plus proche se trouve à \"\n} else {\n    msg.tts = \"Le \" + msg.payload[0].rubric.label +\" \"+ poi.titre + \" le plus proche se trouve à \"\n}\n\nif(msg.payload[0].distance>=1) {\n    distance = \n    distance = Math.round(msg.payload[0].distance)\n    msg.tts= msg.tts + distance +\" kilomètres environ.\";\n} else {\n    distance = Math.round(msg.payload[0].distance*1000)\n    if(distance<100) {\n      \tdistance = Math.round(distance/10)*10\n    } else {\n      \tdistance = Math.round(distance/100)*100\n    }\n\n    msg.tts= msg.tts + distance +\" mètres environ.\";\n}\n\n\nmsg.payload=poi;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1920,
+        "y": 520,
+        "wires": [
+            [
+                "37d9a0689df90e7b",
+                "1c6c9a480cc71647"
+            ]
+        ]
+    },
+    {
+        "id": "37d9a0689df90e7b",
+        "type": "debug",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2010,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "30dac0f21ccf4422",
+        "type": "json",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1050,
+        "y": 520,
+        "wires": [
+            [
+                "cf052505d1f31f09"
+            ]
+        ]
+    },
+    {
+        "id": "cf052505d1f31f09",
+        "type": "change",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.pois",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 520,
+        "wires": [
+            [
+                "ddbd79b7374b2432"
+            ]
+        ]
+    },
+    {
+        "id": "f975f1d0ae36e59f",
+        "type": "function",
+        "z": "6ddb5e4c206db281",
+        "name": "",
+        "func": "msg.payload = {\"q\":msg.poi+\" \"+\"grenoble\"}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 360,
+        "wires": [
+            [
+                "c318c126cee4f395"
+            ]
+        ]
+    },
+    {
+        "id": "8d16fee72d057b2a",
+        "type": "debug",
+        "z": "ab443a039cdf1926",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "dcf1c68d42941fe3",
+        "type": "link in",
+        "z": "ab443a039cdf1926",
+        "name": "nextBus",
+        "links": [
+            "98f9b8a8730362b6"
+        ],
+        "x": 275,
+        "y": 500,
+        "wires": [
+            [
+                "5e61afeec68a857d"
+            ]
+        ]
+    },
+    {
+        "id": "5e61afeec68a857d",
+        "type": "function",
+        "z": "ab443a039cdf1926",
+        "name": "nextBus",
+        "func": "let data=msg.payload;\nmsg.payload={\"action\":\"nextbus\",\"reponse\":data};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "59bb182ed1a3e8e9",
+                "eb7580e56c091ea3"
             ]
         ]
     }
