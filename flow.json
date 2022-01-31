@@ -950,6 +950,41 @@
         ]
     },
     {
+        "id": "53bc4fc78f1a2af6",
+        "type": "inject",
+        "z": "755e7fce9de6d2ee",
+        "name": "Comment me rendre à chaulnes",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "dir",
+                "v": "ponsart",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Comment me rendre à l'arret Ponsart ?",
+        "payloadType": "str",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "d6f8a53b2862f135",
+                "b81cc92e90dd4ccc"
+            ]
+        ]
+    },
+    {
         "id": "3dfc597eb669681c",
         "type": "inject",
         "z": "fa2c9998251120d1",
