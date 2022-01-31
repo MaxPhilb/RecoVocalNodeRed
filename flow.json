@@ -445,7 +445,7 @@
         "payload": "Comment me rendre à l'arret chaulnes?",
         "payloadType": "str",
         "x": 210,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "d6f8a53b2862f135",
